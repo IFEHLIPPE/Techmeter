@@ -2,7 +2,9 @@
 
 > Repositório central da **Techmeter** — documentação da empresa, tarefas e projetos.
 
-⚠️ *Em construção: as informações da empresa serão preenchidas conforme forem apresentadas.*
+A Techmeter (São Paulo/SP, desde 1991) é especialista em **medição e controle de vazão**: medidores de vazão (eletromagnéticos, vórtex, turbina, rotâmetros), transmissores de nível e serviços de calibração em laboratório próprio. Site: https://www.techmeter.com.br/
+
+⚠️ *Em construção: as informações são complementadas conforme a empresa for apresentada.*
 
 ## Sobre a empresa
 

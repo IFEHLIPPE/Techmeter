@@ -7,3 +7,4 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 
 ### Adicionado
 - Estrutura inicial do repositório: README, CLAUDE.md, CONTRIBUTING, CHANGELOG, `docs/` e template de PR.
+- `docs/empresa.md` com informações públicas da Techmeter (produtos, serviços, mercados, contato).
