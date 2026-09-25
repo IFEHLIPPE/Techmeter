@@ -22,11 +22,25 @@ Ver [`docs/empresa.md`](docs/empresa.md).
 │   ├── empresa.md            # Quem somos, produtos, clientes, equipe
 │   ├── tarefas.md            # Backlog e status das tarefas
 │   └── decisoes.md           # Registro de decisões importantes
+├── projetos/
+│   └── geo/                  # Projeto GEO — Otimização para Mecanismos Generativos
+│       ├── README.md         # Plano, frentes, KPIs e cronograma de 90 dias
+│       ├── semana-1.md       # Checklist da primeira semana
+│       ├── auditoria-tecnica.md
+│       ├── baseline/         # 50 prompts + registro dos testes (D0/D30/D60/D90)
+│       ├── ferramentas/      # Scripts: auditoria técnica e AI Citation Share
+│       └── piloto-eletromagnetico/
 └── .github/
     └── pull_request_template.md
 ```
 
-Novos projetos/códigos entram em pastas próprias na raiz (ex.: `site/`, `app/`, `scripts/`) e são listados aqui.
+Cada projeto tem sua pasta em `projetos/`.
+
+## Projetos ativos
+
+| Projeto | Responsáveis | Status |
+|---|---|---|
+| [GEO — Otimização para Mecanismos Generativos](projetos/geo/README.md) | Mariana (estratégia) · Felippe (operacional) | 🔄 Semana 1 — diagnóstico |
 
 ## Como trabalhamos
 

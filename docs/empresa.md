@@ -25,13 +25,16 @@ Linha completa de medidores de vazão e transmissores de nível:
 - **Medidores de vazão tipo turbina**
 - **Rotâmetros** — tubo e flutuador, resposta linear, rangeabilidade padrão 10:1
 - **Medidores de vazão para líquidos** e para **gases / vapores**
-- **Transmissores de nível**
+- **Medidores de vazão mássicos termais**
+- **Transmissores de nível**: radar, ultrassônico, hidrostático
+- **Hidrômetros**: Woltmann, tangencial, multijato, unijato
 - **Instrumentos de pressão e temperatura**
 - **Instrumentação eletrônica**
 
 ## Serviços
 - Calibração de medidores de vazão em laboratório próprio (calibração rastreável)
 - Recondicionamento de medidores de vazão eletromagnéticos
+- Manutenção, start-up e comissionamento, suporte técnico
 - Assistência técnica em todo o território nacional
 - Rede de representantes (página "Representantes" no site)
 
@@ -51,7 +54,12 @@ Embarcações fluviais · Irrigação · Saneamento · entre outros.
 ## Equipe
 | Nome | Função | Contato |
 |------|--------|---------|
-| _a definir_ | | |
+| Mariana | Gestão e estratégia (Projeto GEO) | _a definir_ |
+| Felippe | Responsável operacional (Projeto GEO) | _a definir_ |
+
+## Territórios de autoridade (definidos no Projeto GEO)
+Medição de Vazão · Medição de Nível · Hidrômetros · Serviços técnicos · Aplicações industriais.
+Detalhes em [`projetos/geo/README.md`](../projetos/geo/README.md).
 
 ## Ferramentas e tecnologia internas
 _a definir_
@@ -60,3 +68,4 @@ _a definir_
 - https://www.techmeter.com.br/ (páginas: /servicos, /contato, /representantes, /produto/medidor-de-vazao-eletromagnetico, /artigo/rotametros)
 - https://www.aecweb.com.br/empresa/techmeter/23588/sobre
 - https://br.linkedin.com/company/techmeter-measurement-and-control
+- Página do Notion "Projeto GEO — Otimização para Mecanismos Generativos" (enviada pela gestão)
