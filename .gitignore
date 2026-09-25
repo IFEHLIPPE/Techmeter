@@ -1,0 +1,20 @@
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Dependências / builds
+node_modules/
+dist/
+build/
+__pycache__/
+.venv/
+
+# Segredos
+.env
+.env.*
+!.env.example
