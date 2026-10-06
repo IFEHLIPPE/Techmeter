@@ -15,7 +15,7 @@ def sim(valor):
 
 def main(caminho):
     with open(caminho, newline="", encoding="utf-8-sig") as f:
-        linhas = [l for l in csv.DictReader(f) if l.get("prompt_id")]
+        linhas = [l for l in csv.DictReader(f) if l.get("prompt_id") and l.get("techmeter_apareceu", "").strip()]
     if not linhas:
         print("Registro vazio: nenhum teste registrado ainda.")
         return

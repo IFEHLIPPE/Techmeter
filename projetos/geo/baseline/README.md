@@ -5,15 +5,17 @@ O mesmo conjunto é repetido em **30, 60 e 90 dias**, mantendo o histórico para
 
 ## Arquivos
 
-- [`prompts.csv`](prompts.csv): os 50 prompts. Colunas: `id`, `territorio`, `cluster`, `intencao`, `prompt` e `origem` (`Notion` = exemplo da Mariana, `sugestão` = rascunho para revisar).
+- [`prompts.csv`](prompts.csv): os 50 prompts. Colunas: `id`, `territorio`, `cluster`, `intencao`, `prompt`, `pagina_alvo` e `origem`. `EM-01` a `EM-20` são os **20 prompts oficiais da Mariana** (documento do Ciclo 1). Os outros 30 ainda são sugestões para revisar.
 - [`registro.csv`](registro.csv): uma linha por **prompt × plataforma × rodada**.
 
-> A base atual é um **rascunho**. Antes de rodar o D0, revisar com a Mariana e, se possível, com vendas e suporte: as melhores perguntas vêm de dúvidas reais de clientes (e-mails, WhatsApp, orçamentos).
+> Os 30 prompts fora de Eletromagnético ainda são **rascunho**. Antes de rodar o D0, revisar com a Mariana e, se possível, com vendas e suporte: as melhores perguntas vêm de dúvidas reais de clientes (e-mails, WhatsApp, orçamentos).
 > Depois do D0, **não alterar o texto dos prompts**. Prompt novo recebe ID novo, para a comparação continuar válida.
 
 Distribuição atual: 30 de Vazão (20 de Eletromagnético, o piloto), 7 de Nível, 5 de Hidrômetros, 4 de Serviços e 4 de Aplicações.
 
-## Plataformas (sugestão, confirmar com Mariana)
+> **Ciclo 1 (Eletromagnético):** para o teste dos 20 prompts oficiais, use a planilha [`../ciclo1-eletromagnetico/teste-prompts-ciclo1.xlsx`](../ciclo1-eletromagnetico/teste-prompts-ciclo1.xlsx). Ela já vem com os prompts e as plataformas preenchidos e calcula o resumo sozinha.
+
+## Plataformas (definidas pela Mariana no documento do Ciclo 1)
 
 | Plataforma | Onde testar |
 |---|---|
@@ -21,7 +23,7 @@ Distribuição atual: 30 de Vazão (20 de Eletromagnético, o piloto), 7 de Nív
 | Google AI | Visão geral de IA (AI Overviews) e Modo IA na busca do Google |
 | Gemini | gemini.google.com |
 | Copilot | copilot.microsoft.com |
-| Perplexity *(opcional)* | perplexity.ai, que mostra as fontes de forma explícita |
+| Perplexity *(opcional, fora da lista da Mariana)* | perplexity.ai, que mostra as fontes de forma explícita |
 
 ## Regras para o teste ser comparável
 
@@ -44,7 +46,7 @@ Distribuição atual: 30 de Vazão (20 de Eletromagnético, o piloto), 7 de Nív
 | `techmeter_apareceu` | `Sim` ou `Não` (menção à marca **ou** link para techmeter.com.br) |
 | `concorrentes_ou_fontes_citadas` | Marcas e sites citados, separados por `;` (ex.: `Empresa X; site-y.com.br`) |
 | `pagina_techmeter_encontrada` | URL da página Techmeter citada, se houver |
-| `tipo_intencao` | `educacional`, `comparação`, `seleção`, `aplicação` ou `comercial` |
+| `tipo_intencao` | `informacional`, `seleção`, `comparação`, `aplicação`, `comercial` ou `troubleshooting` |
 | `observacoes` | Lacunas e oportunidades (ex.: "resposta cita trecho reto 5D/3D, não temos essa informação no site") |
 
 > Dica: importe o `registro.csv` no Google Sheets para preencher e depois exporte de volta como CSV para o repositório.

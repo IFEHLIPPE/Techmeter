@@ -16,6 +16,7 @@
 
 | Arquivo | Para que serve |
 |---|---|
+| [`ciclo1-eletromagnetico/`](ciclo1-eletromagnetico/README.md) | **Ciclo 1:** documento da Mariana, planilha de teste dos 20 prompts e priorização para os vídeos |
 | [`semana-1.md`](semana-1.md) | Checklist da primeira semana (Felippe) com status |
 | [`baseline/README.md`](baseline/README.md) | Metodologia do baseline: como rodar e registrar os prompts |
 | [`baseline/prompts.csv`](baseline/prompts.csv) | Base dos 50 prompts estratégicos (abre no Excel/Google Sheets) |
@@ -81,7 +82,7 @@ Exemplo: 6 aparições em 50 prompts = 12%. Métrica interna de acompanhamento, 
 ## 6. Cronograma de 90 dias
 
 ### Dias 1–15 — Diagnóstico
-- [ ] Construir os 50 prompts *(rascunho pronto em `baseline/prompts.csv` — revisar com Mariana)*
+- [ ] Construir os 50 prompts *(20 de Eletromagnético definidos pela Mariana; 30 em rascunho em `baseline/prompts.csv`)*
 - [ ] Rodar baseline
 - [ ] Executar auditoria técnica
 - [ ] Criar mapa de autoridade

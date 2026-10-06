@@ -27,6 +27,7 @@ Ver [`docs/empresa.md`](docs/empresa.md).
 │       ├── README.md         # Plano, frentes, KPIs e cronograma de 90 dias
 │       ├── semana-1.md       # Checklist da primeira semana
 │       ├── auditoria-tecnica.md
+│       ├── ciclo1-eletromagnetico/  # Documento da Mariana + planilha de teste e priorização
 │       ├── baseline/         # 50 prompts + registro dos testes (D0/D30/D60/D90)
 │       ├── ferramentas/      # Scripts: auditoria técnica e AI Citation Share
 │       └── piloto-eletromagnetico/
@@ -40,7 +41,7 @@ Cada projeto tem sua pasta em `projetos/`.
 
 | Projeto | Responsáveis | Status |
 |---|---|---|
-| [GEO — Otimização para Mecanismos Generativos](projetos/geo/README.md) | Mariana (estratégia) · Felippe (operacional) | 🔄 Semana 1 — diagnóstico |
+| [GEO — Otimização para Mecanismos Generativos](projetos/geo/README.md) | Mariana (estratégia) · Felippe (operacional) | 🔄 Ciclo 1 (Eletromagnético) — teste dos prompts |
 
 ## Como trabalhamos
 

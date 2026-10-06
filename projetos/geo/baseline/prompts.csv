@@ -1,51 +1,51 @@
-id,territorio,cluster,intencao,prompt,origem
-EM-01,Medição de Vazão,Eletromagnético,educacional,Como funciona um medidor de vazão eletromagnético?,sugestão
-EM-02,Medição de Vazão,Eletromagnético,comparação,Qual a diferença entre medidor eletromagnético e ultrassônico?,Notion
-EM-03,Medição de Vazão,Eletromagnético,seleção,Medidor eletromagnético funciona com água desmineralizada?,Notion
-EM-04,Medição de Vazão,Eletromagnético,seleção,Qual a condutividade mínima para usar um medidor de vazão eletromagnético?,sugestão
-EM-05,Medição de Vazão,Eletromagnético,seleção,Qual medidor usar para líquidos condutivos?,Notion
-EM-06,Medição de Vazão,Eletromagnético,seleção,Qual medidor usar para medir água com sólidos?,Notion
-EM-07,Medição de Vazão,Eletromagnético,seleção,Como medir vazão sem partes móveis?,Notion
-EM-08,Medição de Vazão,Eletromagnético,educacional,Qual trecho reto preciso instalar antes de um medidor eletromagnético?,Notion
-EM-09,Medição de Vazão,Eletromagnético,educacional,Como fazer o aterramento de um medidor de vazão eletromagnético?,sugestão
-EM-10,Medição de Vazão,Eletromagnético,seleção,"Qual revestimento escolher para medidor eletromagnético: PTFE, borracha ou cerâmica?",sugestão
-EM-11,Medição de Vazão,Eletromagnético,seleção,Qual material de eletrodo usar em medidor eletromagnético para fluidos corrosivos?,sugestão
-EM-12,Medição de Vazão,Eletromagnético,seleção,Como dimensionar um medidor de vazão eletromagnético? Qual diâmetro escolher?,sugestão
-EM-13,Medição de Vazão,Eletromagnético,educacional,Qual a precisão de um medidor de vazão eletromagnético?,sugestão
-EM-14,Medição de Vazão,Eletromagnético,educacional,Medidor eletromagnético pode ser instalado na vertical?,sugestão
-EM-15,Medição de Vazão,Eletromagnético,educacional,Por que o medidor eletromagnético está oscilando ou dando leitura errada?,sugestão
-EM-16,Medição de Vazão,Eletromagnético,comparação,Medidor eletromagnético integrado ou remoto: qual escolher?,sugestão
-EM-17,Medição de Vazão,Eletromagnético,aplicação,Qual o melhor medidor de vazão para esgoto e efluentes?,sugestão
-EM-18,Medição de Vazão,Eletromagnético,aplicação,Medidor eletromagnético serve para polpa de mineração?,sugestão
-EM-19,Medição de Vazão,Eletromagnético,aplicação,Medidor de vazão eletromagnético para indústria de alimentos com limpeza CIP,sugestão
-EM-20,Medição de Vazão,Eletromagnético,comercial,Fabricantes de medidor de vazão eletromagnético no Brasil,sugestão
-VZ-01,Medição de Vazão,Vortex / Mássico termal,comparação,Vortex ou mássico termal para vapor?,Notion
-VZ-02,Medição de Vazão,Mássico termal,seleção,Como medir vazão de ar comprimido?,Notion
-VZ-03,Medição de Vazão,Vortex,educacional,Como funciona um medidor de vazão tipo vortex?,sugestão
-VZ-04,Medição de Vazão,Vortex,seleção,Qual medidor de vazão usar para vapor saturado?,sugestão
-VZ-05,Medição de Vazão,Mássico termal,seleção,Qual medidor usar para vazão de gás natural na indústria?,sugestão
-VZ-06,Medição de Vazão,Mássico termal,educacional,Como funciona um medidor de vazão mássico termal?,sugestão
-VZ-07,Medição de Vazão,Turbina,seleção,Quando usar medidor de vazão tipo turbina?,sugestão
-VZ-08,Medição de Vazão,Rotâmetro,comparação,Rotâmetro ou medidor eletrônico: qual escolher?,sugestão
-VZ-09,Medição de Vazão,Geral,seleção,Como escolher um medidor de vazão para líquidos?,sugestão
-VZ-10,Medição de Vazão,Geral,comparação,Quais os tipos de medidores de vazão e para que serve cada um?,sugestão
-NV-01,Medição de Nível,Radar / Ultrassônico,comparação,Radar ou ultrassônico para tanque?,Notion
-NV-02,Medição de Nível,Radar,educacional,Como funciona um transmissor de nível tipo radar?,sugestão
-NV-03,Medição de Nível,Ultrassônico,seleção,Sensor de nível ultrassônico funciona com espuma ou vapor?,sugestão
-NV-04,Medição de Nível,Hidrostático,seleção,Quando usar transmissor de nível hidrostático?,sugestão
-NV-05,Medição de Nível,Radar,aplicação,Qual medidor de nível usar em silo de sólidos?,sugestão
-NV-06,Medição de Nível,Geral,aplicação,Como medir nível de reservatório de água em saneamento?,sugestão
-NV-07,Medição de Nível,Geral,seleção,Como escolher um transmissor de nível para tanque químico?,sugestão
-HD-01,Hidrômetros,Geral,seleção,Como escolher hidrômetro para irrigação?,Notion
-HD-02,Hidrômetros,Woltmann,educacional,O que é um hidrômetro Woltmann e quando usar?,sugestão
-HD-03,Hidrômetros,Multijato / Unijato,comparação,Qual a diferença entre hidrômetro multijato e unijato?,sugestão
-HD-04,Hidrômetros,Tangencial,educacional,Como funciona um hidrômetro tangencial?,sugestão
-HD-05,Hidrômetros,Geral,comparação,Hidrômetro ou medidor eletromagnético para macromedição de água?,sugestão
-SV-01,Serviços técnicos,Calibração,educacional,Com que frequência calibrar um medidor de vazão?,sugestão
-SV-02,Serviços técnicos,Calibração,comercial,Onde calibrar medidor de vazão com certificado rastreável?,sugestão
-SV-03,Serviços técnicos,Start-Up e Comissionamento,educacional,Como é feito o start-up e comissionamento de um medidor de vazão?,sugestão
-SV-04,Serviços técnicos,Manutenção,comercial,Recuperação ou manutenção de medidor de vazão eletromagnético,sugestão
-AP-01,Aplicações industriais,Saneamento,aplicação,Qual medidor de vazão usar em estação de tratamento de água?,sugestão
-AP-02,Aplicações industriais,Papel e celulose,aplicação,Como medir vazão de massa (celulose) na indústria de papel?,sugestão
-AP-03,Aplicações industriais,Química,aplicação,Qual medidor de vazão usar para ácidos e produtos químicos corrosivos?,sugestão
-AP-04,Aplicações industriais,Energia,aplicação,Como medir vazão de água de resfriamento em usinas e caldeiras?,sugestão
+id,territorio,cluster,intencao,prompt,pagina_alvo,origem
+EM-01,Medição de Vazão,Eletromagnético,informacional,Como funciona um medidor de vazão eletromagnético?,Hub eletromagnético,Mariana (Ciclo 1)
+EM-02,Medição de Vazão,Eletromagnético,informacional,Medidor eletromagnético precisa de trecho reto? Quanto?,Guia de instalação,Mariana (Ciclo 1)
+EM-03,Medição de Vazão,Eletromagnético,informacional,Qual a condutividade mínima para usar medidor eletromagnético?,Hub + FAQ,Mariana (Ciclo 1)
+EM-04,Medição de Vazão,Eletromagnético,informacional,Por que o medidor eletromagnético precisa de aterramento?,Guia de instalação,Mariana (Ciclo 1)
+EM-05,Medição de Vazão,Eletromagnético,seleção,Qual medidor de vazão usar para água com sólidos?,Hub + aplicação efluentes,Mariana (Ciclo 1)
+EM-06,Medição de Vazão,Eletromagnético,seleção,Como escolher o revestimento de um medidor eletromagnético?,Guia de revestimentos e eletrodos,Mariana (Ciclo 1)
+EM-07,Medição de Vazão,Eletromagnético,seleção,Como dimensionar um medidor eletromagnético (qual DN escolher)?,Guia de dimensionamento,Mariana (Ciclo 1)
+EM-08,Medição de Vazão,Eletromagnético,seleção,Qual material de eletrodo usar para ácidos e produtos corrosivos?,Guia de revestimentos e eletrodos,Mariana (Ciclo 1)
+EM-09,Medição de Vazão,Eletromagnético,comparação,Qual a diferença entre medidor eletromagnético e ultrassônico?,Comparativo eletromagnético × ultrassônico,Mariana (Ciclo 1)
+EM-10,Medição de Vazão,Eletromagnético,comparação,Medidor eletromagnético ou vortex: qual escolher?,Guia de seleção de tecnologia de vazão,Mariana (Ciclo 1)
+EM-11,Medição de Vazão,Eletromagnético,comparação,Medidor eletromagnético ou hidrômetro Woltmann para rede de água?,Aplicação saneamento,Mariana (Ciclo 1)
+EM-12,Medição de Vazão,Eletromagnético,comparação,Medidor eletromagnético ou turbina para água limpa?,Guia de seleção de tecnologia de vazão,Mariana (Ciclo 1)
+EM-13,Medição de Vazão,Eletromagnético,aplicação,Qual medidor usar para vazão de efluentes em ETE?,Aplicação saneamento / efluentes,Mariana (Ciclo 1)
+EM-14,Medição de Vazão,Eletromagnético,aplicação,Como medir vazão de polpa de mineração?,Aplicação mineração,Mariana (Ciclo 1)
+EM-15,Medição de Vazão,Eletromagnético,aplicação,Medidor de vazão para irrigação com outorga de água,Aplicação irrigação / outorga,Mariana (Ciclo 1)
+EM-16,Medição de Vazão,Eletromagnético,aplicação,Medidor eletromagnético sanitário para indústria de alimentos (CIP),Aplicação alimentos e bebidas,Mariana (Ciclo 1)
+EM-17,Medição de Vazão,Eletromagnético,comercial,Fabricante brasileiro de medidor de vazão eletromagnético,Hub + página institucional,Mariana (Ciclo 1)
+EM-18,Medição de Vazão,Eletromagnético,comercial,Onde comprar medidor eletromagnético com calibração e suporte técnico no Brasil,Hub + página de calibração,Mariana (Ciclo 1)
+EM-19,Medição de Vazão,Eletromagnético,troubleshooting,Por que meu medidor eletromagnético está marcando vazão errada?,Guia de diagnóstico,Mariana (Ciclo 1)
+EM-20,Medição de Vazão,Eletromagnético,troubleshooting,Medidor eletromagnético oscilando ou marcando vazão com a linha parada: o que fazer?,Guia de diagnóstico,Mariana (Ciclo 1)
+VZ-01,Medição de Vazão,Vortex / Mássico termal,comparação,Vortex ou mássico termal para vapor?,,Notion
+VZ-02,Medição de Vazão,Mássico termal,seleção,Como medir vazão de ar comprimido?,,Notion
+VZ-03,Medição de Vazão,Vortex,informacional,Como funciona um medidor de vazão tipo vortex?,,sugestão
+VZ-04,Medição de Vazão,Vortex,seleção,Qual medidor de vazão usar para vapor saturado?,,sugestão
+VZ-05,Medição de Vazão,Mássico termal,seleção,Qual medidor usar para vazão de gás natural na indústria?,,sugestão
+VZ-06,Medição de Vazão,Mássico termal,informacional,Como funciona um medidor de vazão mássico termal?,,sugestão
+VZ-07,Medição de Vazão,Turbina,seleção,Quando usar medidor de vazão tipo turbina?,,sugestão
+VZ-08,Medição de Vazão,Rotâmetro,comparação,Rotâmetro ou medidor eletrônico: qual escolher?,,sugestão
+VZ-09,Medição de Vazão,Geral,seleção,Como escolher um medidor de vazão para líquidos?,,sugestão
+VZ-10,Medição de Vazão,Geral,comparação,Quais os tipos de medidores de vazão e para que serve cada um?,,sugestão
+NV-01,Medição de Nível,Radar / Ultrassônico,comparação,Radar ou ultrassônico para tanque?,,Notion
+NV-02,Medição de Nível,Radar,informacional,Como funciona um transmissor de nível tipo radar?,,sugestão
+NV-03,Medição de Nível,Ultrassônico,seleção,Sensor de nível ultrassônico funciona com espuma ou vapor?,,sugestão
+NV-04,Medição de Nível,Hidrostático,seleção,Quando usar transmissor de nível hidrostático?,,sugestão
+NV-05,Medição de Nível,Radar,aplicação,Qual medidor de nível usar em silo de sólidos?,,sugestão
+NV-06,Medição de Nível,Geral,aplicação,Como medir nível de reservatório de água em saneamento?,,sugestão
+NV-07,Medição de Nível,Geral,seleção,Como escolher um transmissor de nível para tanque químico?,,sugestão
+HD-01,Hidrômetros,Geral,seleção,Como escolher hidrômetro para irrigação?,,Notion
+HD-02,Hidrômetros,Woltmann,informacional,O que é um hidrômetro Woltmann e quando usar?,,sugestão
+HD-03,Hidrômetros,Multijato / Unijato,comparação,Qual a diferença entre hidrômetro multijato e unijato?,,sugestão
+HD-04,Hidrômetros,Tangencial,informacional,Como funciona um hidrômetro tangencial?,,sugestão
+HD-05,Hidrômetros,Geral,comparação,Hidrômetro ou medidor eletromagnético para macromedição de água?,,sugestão
+SV-01,Serviços técnicos,Calibração,informacional,Com que frequência calibrar um medidor de vazão?,,sugestão
+SV-02,Serviços técnicos,Calibração,comercial,Onde calibrar medidor de vazão com certificado rastreável?,,sugestão
+SV-03,Serviços técnicos,Start-Up e Comissionamento,informacional,Como é feito o start-up e comissionamento de um medidor de vazão?,,sugestão
+SV-04,Serviços técnicos,Manutenção,comercial,Recuperação ou manutenção de medidor de vazão eletromagnético,,sugestão
+AP-01,Aplicações industriais,Saneamento,aplicação,Qual medidor de vazão usar em estação de tratamento de água?,,sugestão
+AP-02,Aplicações industriais,Papel e celulose,aplicação,Como medir vazão de massa (celulose) na indústria de papel?,,sugestão
+AP-03,Aplicações industriais,Química,aplicação,Qual medidor de vazão usar para ácidos e produtos químicos corrosivos?,,sugestão
+AP-04,Aplicações industriais,Energia,aplicação,Como medir vazão de água de resfriamento em usinas e caldeiras?,,sugestão
