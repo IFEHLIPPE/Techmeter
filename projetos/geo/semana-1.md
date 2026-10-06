@@ -14,7 +14,7 @@ Legenda: 🔲 a fazer · 🔄 em andamento · ✅ concluída
 | 8 | Apresentar diagnóstico inicial para Mariana | 🔲 | Juntar resultados dos itens 3–7 |
 
 ## Pendências / dúvidas para levantar
-- Quais plataformas entram oficialmente no baseline? (sugestão em `baseline/README.md`)
+- ~~Quais plataformas entram no baseline?~~ Definido: ChatGPT, Google AI, Gemini e Copilot (documento do Ciclo 1)
 - Quem é o developer do site e como abrir chamados para ele?
 - Quem tem acesso ao Google Search Console e ao Bing Webmaster Tools?
 - Quais concorrentes a Techmeter já considera diretos?
