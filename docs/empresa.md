@@ -5,6 +5,7 @@
 
 ## Visão geral
 - **Nome:** Techmeter — Medição e Controle de Vazão
+- **Razão social (assinatura de e-mail):** K&K do Brasil Ltda — Techmeter Division
 - **Segmento:** Instrumentação e controle de processos industriais
 - **Fundação:** 1991 (mais de 30 anos de mercado)
 - **Perfil:** Empresa familiar, com relações baseadas em igualdade, lealdade e crescimento mútuo
@@ -54,8 +55,9 @@ Embarcações fluviais · Irrigação · Saneamento · entre outros.
 ## Equipe
 | Nome | Função | Contato |
 |------|--------|---------|
-| Mariana | Gestão e estratégia (Projeto GEO) | _a definir_ |
-| Felippe | Responsável operacional (Projeto GEO) | _a definir_ |
+| Mariana Costa | Gestão e estratégia (Projeto GEO) | _a definir_ |
+| Felippe | Responsável operacional (Projeto GEO) | felippe@techmeter.com.br |
+| Victor | Manutenção — prioriza perguntas para os scripts de vídeo (GEO) | victor@techmeter.com.br |
 
 ## Territórios de autoridade (definidos no Projeto GEO)
 Medição de Vazão · Medição de Nível · Hidrômetros · Serviços técnicos · Aplicações industriais.

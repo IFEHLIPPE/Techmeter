@@ -3,6 +3,11 @@
 Legenda: 🔲 a fazer · 🔄 em andamento · ✅ concluída
 
 ## Em andamento
+- 🔄 **GEO Ciclo 1 — Eletromagnético: scripts para vídeos** (e-mail da Mariana, 02/10/2026; arquivo `GEO Ciclo1-Eletromagnetico - Scripts p videos.docx`)
+  - 🔲 Trazer o conteúdo do .docx para o repositório
+  - 🔲 Mariana + Felippe: testar os termos nas IAs e estudar o que aparece
+  - 🔲 Victor (manutenção): priorizar as perguntas para os scripts dos vídeos
+  - 🔲 Usar as perguntas para melhorar a página de Eletromagnéticos
 - 🔄 **Projeto GEO: semana 1** (detalhes em [`projetos/geo/semana-1.md`](../projetos/geo/semana-1.md))
   - 🔄 Revisar com a Mariana a base dos 50 prompts (`projetos/geo/baseline/prompts.csv`)
   - 🔲 Rodar o baseline D0 nas plataformas e registrar em `registro.csv`
