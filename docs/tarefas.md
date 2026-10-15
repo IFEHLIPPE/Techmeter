@@ -5,7 +5,7 @@ Legenda: 🔲 a fazer · 🔄 em andamento · ✅ concluída
 ## Em andamento
 - 🔄 **GEO Ciclo 1 — Eletromagnético: scripts para vídeos** (e-mail da Mariana, 02/10/2026; detalhes em [`projetos/geo/ciclo1-eletromagnetico/`](../projetos/geo/ciclo1-eletromagnetico/README.md))
   - ✅ Trazer o documento para o repositório e montar a planilha de trabalho (`teste-prompts-ciclo1.xlsx`)
-  - 🔲 Felippe + Mariana: testar os 20 prompts × 4 plataformas (aba "Teste D0")
+  - 🔄 Felippe + Mariana: testar os 20 prompts × 4 plataformas (aba "Teste D0"), iniciado em 15/10
   - 🔲 Victor: priorizar as perguntas para os vídeos (aba "Prioridade Victor")
   - 🔲 Felippe: volume dos termos no Planejador de Palavras-chave
   - 🔲 Felippe: exportar as consultas do Search Console (16 meses)

@@ -83,7 +83,7 @@ Exemplo: 6 aparições em 50 prompts = 12%. Métrica interna de acompanhamento, 
 
 ### Dias 1–15 — Diagnóstico
 - [ ] Construir os 50 prompts *(20 de Eletromagnético definidos pela Mariana; 30 em rascunho em `baseline/prompts.csv`)*
-- [ ] Rodar baseline
+- [ ] Rodar baseline *(em andamento: Ciclo 1, 20 prompts de Eletromagnético, iniciado em 15/10)*
 - [ ] Executar auditoria técnica
 - [ ] Criar mapa de autoridade
 - [ ] Escolher lacunas prioritárias do piloto
