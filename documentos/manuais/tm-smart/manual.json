@@ -4,5 +4,5 @@
   "tipo": "MANUAL",
   "imagem_capa": "imagens/tm-smart-produto.png",
   "arquivo": "manual-tm-smart",
-  "arquivos": []
+  "arquivos": ["imagens/tm-smart-painel.png"]
 }

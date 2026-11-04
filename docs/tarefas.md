@@ -23,7 +23,7 @@ Legenda: 🔲 a fazer · 🔄 em andamento · ✅ concluída
 - 🔄 Completar `docs/empresa.md` (missão, clientes, contatos)
 
 ## A fazer
-- 🔲 **Manual TM-Smart:** resolver as pendências marcadas como VALIDAR (corrente dos alarmes, teclas e LED da membrana, logomarca e dados no firmware, nome do aplicativo). A membrana impressa ainda diz LATM: precisa da versão TM-Smart
+- 🔲 **Manual TM-Smart:** resolver as pendências marcadas como VALIDAR (corrente dos alarmes, logomarca e dados no firmware, nome do aplicativo). Definir a grafia do nome: a membrana diz "TM SMART" e o manual usa "TM-Smart". Trocar a montagem da capa por uma foto real quando houver unidade montada
 - 🔲 Conseguir o logo Techmeter em vetor (.svg/.ai/.pdf) para trocar no modelo de manual
 - 🔲 Projeto GEO: dias 16–45, construção do cluster de Eletromagnético
 
