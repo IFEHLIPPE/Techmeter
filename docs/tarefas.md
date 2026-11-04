@@ -23,9 +23,12 @@ Legenda: 🔲 a fazer · 🔄 em andamento · ✅ concluída
 - 🔄 Completar `docs/empresa.md` (missão, clientes, contatos)
 
 ## A fazer
+- 🔲 **Manual LATM (caixa de campo):** resolver as pendências marcadas como VALIDAR (corrente dos alarmes, teclas e LED da membrana, logomarca e dados no firmware, nome do aplicativo) e confirmar o nome comercial do modelo
+- 🔲 Conseguir o logo Techmeter em vetor (.svg/.ai/.pdf) para trocar no modelo de manual
 - 🔲 Projeto GEO: dias 16–45, construção do cluster de Eletromagnético
 
 ## Concluídas
+- ✅ Modelo de manual técnico Techmeter (`modelos/manual-tecnico/`) e primeiro manual: LATM caixa de campo
 - ✅ Estruturar o Projeto GEO no repositório: plano, rascunho dos 50 prompts, planilha de registro, checklist de auditoria, modelo da página e scripts
 - ✅ Levantar informações públicas da empresa (site, LinkedIn, AECweb)
 - ✅ Estruturar o repositório (README, docs, fluxo de Git)

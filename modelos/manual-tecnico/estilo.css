@@ -1,0 +1,102 @@
+/* Modelo de manual técnico Techmeter — identidade baseada no manual LATM 2025 */
+@font-face { font-family: Lato; font-weight: 300; src: url(assets/fontes/Lato-Light.ttf); }
+@font-face { font-family: Lato; font-weight: 400; src: url(assets/fontes/Lato-Regular.ttf); }
+@font-face { font-family: Lato; font-weight: 700; src: url(assets/fontes/Lato-Bold.ttf); }
+@font-face { font-family: Lato; font-style: italic; src: url(assets/fontes/Lato-Italic.ttf); }
+@font-face { font-family: Montserrat; font-weight: 100 900; src: url(assets/fontes/Montserrat[wght].ttf); }
+
+:root {
+  --azul-escuro: #1d2b4f;   /* títulos e linhas */
+  --azul: #1f6fc2;          /* destaques */
+  --azul-faixa: #c9def2;    /* faixa dos títulos de seção */
+  --vermelho: #d7261e;      /* alertas */
+  --texto: #4a4f57;
+  --cinza-linha: #d5dde6;
+}
+
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+html, body { margin: 0; }
+body { font-family: Lato, sans-serif; font-size: 9.6pt; line-height: 1.6; color: var(--texto); letter-spacing: .15pt; }
+
+/* ---------- capa ---------- */
+.capa { position: relative; width: 210mm; height: 297mm; overflow: hidden; page-break-after: always;
+  background: linear-gradient(160deg, #d6eaf8 0%, #b4d6ef 45%, #9cc8e8 100%); }
+.capa .ondas { position: absolute; left: -10mm; right: -10mm; bottom: 18mm; width: 230mm; opacity: .9; }
+.capa .produto { position: absolute; left: 50%; top: 32mm; transform: translateX(-50%); width: 120mm; max-height: 120mm; object-fit: contain;
+  filter: drop-shadow(0 4mm 5mm rgba(20, 40, 70, .25)); }
+.capa .bloco { position: absolute; left: 22mm; right: 22mm; top: 175mm; }
+.capa .tipo { font-family: Lato; font-weight: 300; font-size: 26pt; color: var(--azul-escuro); letter-spacing: 1pt; margin: 0 0 5mm 2mm; }
+.capa hr { border: 0; border-top: 1.2mm solid var(--azul-escuro); margin: 0 0 6mm; width: 150mm; }
+.capa h1 { font-family: Montserrat; font-weight: 800; font-size: 19pt; line-height: 1.3; color: var(--azul-escuro); margin: 0; }
+.capa .modelo { font-family: Montserrat; font-weight: 400; font-size: 19pt; color: var(--azul-escuro); margin-top: 1mm; }
+.capa .rodape-capa { position: absolute; left: 22mm; right: 22mm; bottom: 12mm; }
+
+/* ---------- rodapé fixo das páginas internas ---------- */
+.rodape { position: fixed; left: 0; right: 0; bottom: 0; height: 40mm; overflow: hidden; z-index: -1;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, #d9ebf8 25%, #a9d0ee 100%); }
+.rodape .ondas { position: absolute; left: -15mm; width: 240mm; bottom: -12mm; opacity: .75; }
+.empresa { position: absolute; left: 22mm; bottom: 9mm; font-size: 6.6pt; line-height: 1.55; color: #4c5866; text-transform: uppercase; }
+.empresa .razao { font-size: 10.5pt; letter-spacing: .6pt; color: #4c5866; margin-bottom: .8mm; }
+.empresa .linha { display: flex; gap: 5mm; align-items: center; text-transform: none; font-size: 7pt; }
+.empresa svg { width: 2.8mm; height: 2.8mm; vertical-align: -0.5mm; margin-right: .8mm; }
+.marca { position: absolute; right: 22mm; bottom: 12mm; text-align: center; }
+.marca img { width: 42mm; display: block; }
+.marca span { font-family: Montserrat; font-size: 6.4pt; letter-spacing: 1.2pt; color: #4c5866; }
+.capa .empresa { left: 0; bottom: 0; }
+.capa .marca { right: 0; bottom: 3mm; }
+
+/* ---------- páginas internas ---------- */
+table.pagina { width: 100%; border-collapse: collapse; }
+table.pagina > thead td, table.pagina > tfoot td { padding: 0; }
+.espaco-topo { height: 20mm; }
+.espaco-base { height: 46mm; }
+.conteudo { padding: 0 22mm; }
+
+h2 { font-family: Lato; font-weight: 700; font-size: 13pt; text-transform: uppercase; color: var(--azul-escuro); text-align: center;
+  background: var(--azul-faixa); padding: 1.2mm 4mm; margin: 0 0 7mm; letter-spacing: .5pt; break-after: avoid; }
+h2.capitulo { margin-top: 10mm; }
+h2.capitulo.nova-pagina { break-before: page; margin-top: 0; }
+h3 { font-family: Lato; font-weight: 400; font-size: 11pt; text-transform: uppercase; color: var(--azul-escuro); letter-spacing: .4pt;
+  background: linear-gradient(90deg, var(--azul-faixa) 0%, var(--azul-faixa) 70%, rgba(201,222,242,0) 100%);
+  padding: 1mm 4mm; margin: 8mm 0 4mm; break-after: avoid; }
+h4 { font-size: 9.6pt; font-weight: 700; text-transform: uppercase; color: #3b4450; margin: 5mm 0 2mm; break-after: avoid; }
+p { margin: 0 0 3mm; text-align: justify; orphans: 3; widows: 3; }
+ul { margin: 0 0 3mm; padding-left: 5mm; }
+li { margin-bottom: 1.2mm; text-align: justify; orphans: 3; widows: 3; }
+strong { color: #3b4450; }
+
+table.dados { width: 100%; border-collapse: collapse; margin: 2mm 0 5mm; font-size: 8.8pt; break-inside: auto; }
+table.dados th { background: var(--azul-faixa); color: var(--azul-escuro); text-align: left; font-weight: 700; padding: 1.4mm 2.5mm; }
+table.dados td { padding: 1.3mm 2.5mm; border-bottom: .3mm solid var(--cinza-linha); vertical-align: top; }
+table.dados tr { break-inside: avoid; }
+table.dados td.cod { font-family: Montserrat; font-weight: 600; color: var(--azul-escuro); white-space: nowrap; }
+
+.figura { text-align: center; margin: 3mm 0 6mm; break-inside: avoid; }
+.figura svg, .figura img { max-width: 100%; }
+.legenda { font-style: italic; font-size: 8.4pt; color: #6a7380; margin-top: 1.5mm; }
+
+.aviso { border-left: 1.2mm solid var(--vermelho); background: #fdf0ef; padding: 2.5mm 4mm; margin: 3mm 0 5mm; break-inside: avoid; }
+.aviso strong { color: var(--vermelho); }
+.nota { border-left: 1.2mm solid var(--azul); background: #eef5fc; padding: 2.5mm 4mm; margin: 3mm 0 5mm; break-inside: avoid; }
+.validar { background: #fff3b0; padding: 0 1mm; font-style: italic; color: #6b5800; }
+
+.tecla { display: inline-flex; align-items: center; justify-content: center; width: 7mm; height: 7mm; border: .35mm solid #8a96a5;
+  border-radius: 1.2mm; background: #f4f6f8; font-weight: 700; color: var(--azul-escuro); font-size: 10pt; }
+
+/* sumário */
+.sumario { list-style: none; padding: 0; margin: 0; }
+.sumario li { display: flex; align-items: baseline; margin: 0 0 1.6mm; text-align: left; }
+.sumario li.n2 { padding-left: 5mm; font-weight: 400; }
+.sumario li.n1 { font-weight: 700; color: #3b4450; margin-top: 2.5mm; }
+.sumario .pontos { flex: 1; border-bottom: .3mm dotted #9aa4b0; margin: 0 1.5mm; transform: translateY(-1mm); }
+
+/* contracapa */
+.contracapa { break-before: page; position: relative; width: 210mm; height: 297mm; overflow: hidden;
+  background: linear-gradient(160deg, #d6eaf8 0%, #9cc8e8 100%); }
+.contracapa .ondas { position: absolute; left: -10mm; width: 230mm; bottom: 30mm; opacity: .9; }
+.contracapa .caixa { position: absolute; left: 22mm; right: 22mm; top: 40mm; }
+.contracapa h2 { background: none; text-align: left; font-family: Montserrat; font-weight: 300; font-size: 30pt; text-transform: none; padding: 0; color: var(--azul-escuro); }
+.contracapa .item { margin-bottom: 6mm; font-size: 12pt; color: var(--azul-escuro); }
+.contracapa .item b { display: block; font-family: Montserrat; font-weight: 700; font-size: 9pt; letter-spacing: 1pt; color: #3b5b85; }
+.contracapa .marca { right: 22mm; bottom: 14mm; }

@@ -5,7 +5,8 @@
 
 ## Visão geral
 - **Nome:** Techmeter — Medição e Controle de Vazão
-- **Razão social (assinatura de e-mail):** K&K do Brasil Ltda — Techmeter Division
+- **Razão social:** K&K do Brasil Ltda. — Techmeter Division
+- **CNPJ:** 65.636.888/0001-07
 - **Segmento:** Instrumentação e controle de processos industriais
 - **Fundação:** 1991 (mais de 30 anos de mercado)
 - **Perfil:** Empresa familiar, com relações baseadas em igualdade, lealdade e crescimento mútuo
@@ -50,7 +51,8 @@ Embarcações fluviais · Irrigação · Saneamento · entre outros.
 ## Localização e contato
 - **Endereço:** Rua Pedrália, 70 — Vila Gumercindo — CEP 04130-080 — São Paulo/SP
 - **Telefone:** (11) 5071-1630
-- **E-mail / WhatsApp:** _a definir_
+- **WhatsApp:** +55 (11) 97643-5939
+- **E-mail comercial:** vendas@techmeter.com.br
 
 ## Equipe
 | Nome | Função | Contato |
@@ -63,6 +65,9 @@ Embarcações fluviais · Irrigação · Saneamento · entre outros.
 Medição de Vazão · Medição de Nível · Hidrômetros · Serviços técnicos · Aplicações industriais.
 Detalhes em [`projetos/geo/README.md`](../projetos/geo/README.md).
 
+## Fornecedores
+- **Indflow:** fornece equipamentos vendidos com a marca Techmeter (ex.: LATM em caixa de campo, base BLIT-Pocket).
+
 ## Ferramentas e tecnologia internas
 _a definir_
 
@@ -71,3 +76,4 @@ _a definir_
 - https://www.aecweb.com.br/empresa/techmeter/23588/sobre
 - https://br.linkedin.com/company/techmeter-measurement-and-control
 - Página do Notion "Projeto GEO — Otimização para Mecanismos Generativos" (enviada pela gestão)
+- Manual LATM 2025 (Canva): CNPJ, WhatsApp e e-mail comercial

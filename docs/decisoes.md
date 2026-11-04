@@ -8,3 +8,5 @@
 | 2026-09-25 | Baseline GEO em CSV versionado no Git (`projetos/geo/baseline/`) | Histórico D0/D30/D60/D90 comparável e cálculo automático do AI Citation Share |
 | 2026-10-06 | Ciclo 1 usa os 20 prompts da Mariana e 4 plataformas (ChatGPT, Google AI, Gemini, Copilot) | Definido no documento "GEO Ciclo1-Eletromagnetico - Scripts p videos" |
 | 2026-10-06 | Planilha de teste em .xlsx (não CSV) | CSV com vírgula abre numa coluna só no Excel em português |
+| 2026-11-04 | Manuais e catálogos gerados pelo modelo `modelos/manual-tecnico/` (HTML → PDF), no visual do manual LATM 2025 | Padronizar e agilizar os próximos materiais |
+| 2026-11-04 | Manuais de produtos de fornecedor (white label) são reescritos com texto próprio, usando só os dados técnicos | Evitar cópia de material de terceiros e manter a voz da Techmeter |

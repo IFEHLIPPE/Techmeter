@@ -22,6 +22,10 @@ Ver [`docs/empresa.md`](docs/empresa.md).
 │   ├── empresa.md            # Quem somos, produtos, clientes, equipe
 │   ├── tarefas.md            # Backlog e status das tarefas
 │   └── decisoes.md           # Registro de decisões importantes
+├── modelos/
+│   └── manual-tecnico/       # Modelo de manual/catálogo Techmeter (gera PDF)
+├── documentos/
+│   └── manuais/              # Manuais gerados com o modelo
 ├── midia/                    # Fotos de produtos (originais e tratadas) e simulações internas
 ├── projetos/
 │   └── geo/                  # Projeto GEO — Otimização para Mecanismos Generativos

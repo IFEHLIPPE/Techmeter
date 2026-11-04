@@ -14,6 +14,8 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 - `midia/fotos-produtos/`: 3 fotos do medidor com mostrador, recortadas (PNG sem fundo e JPG fundo branco).
 - `midia/fotos-produtos/2026-11-03-conversor-compacto-ip67/`: imagem do conversor compacto com as cotas do desenho técnico (Ø116, 200, Ø80, Ø64, 8 furos Ø7 mm).
 - `midia/simulacoes-internas/`: simulação interna da membrana LATM numa caixa de painel (não publicar).
+- `modelos/manual-tecnico/`: modelo de manual técnico Techmeter (capa, índice automático, rodapé, contracapa) e gerador de PDF.
+- `documentos/manuais/latm-caixa-campo/`: manual do LATM em caixa de campo (rascunho, com pendências marcadas como VALIDAR).
 
 ### Alterado
 - `EM-01` a `EM-20` em `baseline/prompts.csv` substituídos pelos 20 prompts oficiais do Ciclo 1. Intenções alinhadas ao documento (informacional, seleção, comparação, aplicação, comercial, troubleshooting).

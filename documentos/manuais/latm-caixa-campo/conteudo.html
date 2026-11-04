@@ -1,0 +1,426 @@
+<!-- Manual LATM (caixa de campo) — texto original Techmeter.
+     Dados técnicos conferidos com a documentação do fornecedor (firmware 2.00).
+     Trechos com a classe "validar" precisam de confirmação antes da versão final. -->
+
+<h2 class="capitulo nova-pagina">Apresentação</h2>
+
+<h3>O que é o LATM</h3>
+<p>O <strong>LATM</strong> recebe o sinal de 4-20 mA de um transmissor de campo (nível, vazão, pressão ou temperatura), converte esse sinal para a unidade de engenharia do processo e disponibiliza a medição de quatro formas ao mesmo tempo: no display, numa saída 4-20 mA de retransmissão, em duas saídas de alarme e por comunicação Modbus RTU (RS485 e Bluetooth).</p>
+<p>Além de indicar, o equipamento totaliza vazão e pode calcular a vazão em canais abertos ou o volume em tanques a partir de um sensor de nível que não faz esse cálculo sozinho.</p>
+
+<h3>Recursos principais</h3>
+<ul>
+  <li><strong>Entrada 4-20 mA</strong> com calibração em 3 pontos e escolha da unidade: %, L/s, L/min, L/h, m³/h, bar, mca, m, °C ou mm.</li>
+  <li><strong>Aplicações hidráulicas:</strong> calha Parshall, calha Palmer-Bowlus, vertedouros trapezoidal, triangular e Thomson, e 4 formatos de tanque.</li>
+  <li><strong>Dois totalizadores:</strong> um parcial, que pode ser zerado, e um permanente. Os dois ficam guardados em memória FRAM, sem bateria.</li>
+  <li><strong>Retransmissão 4-20 mA</strong> com faixa própria ou cópia da corrente de entrada, comportamento em falha configurável e função de teste.</li>
+  <li><strong>Dois alarmes</strong> em estado sólido, com limite alto, limite baixo ou comando remoto via Modbus.</li>
+  <li><strong>Modbus RTU escravo</strong> pela RS485 e por Bluetooth (BLE), com o mesmo mapa de registradores nas duas portas.</li>
+  <li><strong>Display gráfico</strong> de 128×64 pontos, 4 teclas frontais e LED de status bicolor.</li>
+</ul>
+<div class="nota">Este manual se refere ao <strong>firmware 2.00</strong>. Para conferir a versão do seu equipamento, use o aplicativo configurador ou leia o registrador Modbus 49.</div>
+
+<h2 class="capitulo">Instalação</h2>
+
+<h3>Fixação</h3>
+<p>O invólucro tem duas opções de fixação:</p>
+<ul>
+  <li><strong>Em parede ou placa:</strong> usando as abas laterais e dois parafusos.</li>
+  <li><strong>Em tubo:</strong> usando o suporte de tubulação na base do invólucro.</li>
+</ul>
+<p>Escolha um local protegido de sol direto e de respingos constantes, com acesso fácil ao display e às teclas. Deixe o prensa-cabo voltado para baixo.</p>
+
+<div class="figura">
+  <svg viewBox="0 0 520 250" width="150mm" font-family="Lato" font-size="12" fill="none" stroke="#1d2b4f">
+    <!-- vista frontal -->
+    <rect x="70" y="40" width="202" height="156" rx="16" stroke-width="2.2" fill="#f2f6fa"/>
+    <rect x="96" y="58" width="150" height="70" rx="4" stroke-width="1.2" fill="#dbe9f6"/>
+    <g stroke-width="1.2"><rect x="112" y="150" width="18" height="18" rx="3"/><rect x="142" y="150" width="18" height="18" rx="3"/><rect x="172" y="150" width="18" height="18" rx="3"/><rect x="202" y="150" width="18" height="18" rx="3"/></g>
+    <path d="M70 92 h-26 a6 6 0 0 0 -6 6 v40 a6 6 0 0 0 6 6 h26 M272 92 h26 a6 6 0 0 1 6 6 v40 a6 6 0 0 1 -6 6 h-26" stroke-width="1.6" fill="#f2f6fa"/>
+    <circle cx="52" cy="118" r="6"/><circle cx="290" cy="118" r="6"/>
+    <rect x="156" y="196" width="30" height="20" rx="3" fill="#cfd8e2" stroke-width="1.2"/>
+    <!-- cotas -->
+    <g stroke="#d7261e" stroke-width="1.2"><line x1="70" y1="22" x2="272" y2="22"/><line x1="70" y1="16" x2="70" y2="36"/><line x1="272" y1="16" x2="272" y2="36"/>
+      <line x1="320" y1="40" x2="320" y2="196"/><line x1="314" y1="40" x2="334" y2="40"/><line x1="314" y1="196" x2="334" y2="196"/></g>
+    <g fill="#d7261e" stroke="none"><path d="M70 22l9-4v8z"/><path d="M272 22l-9-4v8z"/><path d="M320 40l-4 9h8z"/><path d="M320 196l-4-9h8z"/></g>
+    <g fill="#1d2b4f" stroke="none" font-weight="700"><text x="171" y="16" text-anchor="middle">101 mm</text><text x="328" y="122">78 mm</text></g>
+    <!-- vista lateral -->
+    <rect x="400" y="40" width="58" height="156" rx="8" stroke-width="2.2" fill="#f2f6fa"/>
+    <line x1="410" y1="40" x2="410" y2="196" stroke-width="1"/>
+    <g stroke="#d7261e" stroke-width="1.2"><line x1="400" y1="22" x2="458" y2="22"/><line x1="400" y1="16" x2="400" y2="36"/><line x1="458" y1="16" x2="458" y2="36"/></g>
+    <g fill="#d7261e" stroke="none"><path d="M400 22l9-4v8z"/><path d="M458 22l-9-4v8z"/></g>
+    <g fill="#1d2b4f" stroke="none"><text x="429" y="16" text-anchor="middle" font-weight="700">45 mm</text>
+      <text x="171" y="240" text-anchor="middle">Vista frontal</text><text x="429" y="240" text-anchor="middle">Vista lateral</text></g>
+  </svg>
+  <div class="legenda">Figura 1: Dimensões externas do invólucro (101 × 78 × 45 mm).</div>
+</div>
+<p>O invólucro tem grau de proteção <strong>IP67</strong> e o equipamento trabalha com temperatura ambiente de até <strong>60 °C</strong>.</p>
+
+<h2 class="capitulo">Ligações elétricas</h2>
+
+<h3>Bornes</h3>
+<p>Os cabos entram pelo prensa-cabo, na parte de baixo do invólucro, e são ligados na régua de bornes interna:</p>
+<table class="dados">
+  <tr><th>Borne</th><th>Ligação</th></tr>
+  <tr><td class="cod">1 · 2</td><td>Alimentação 12 a 36 Vcc: (1) positivo, (2) negativo</td></tr>
+  <tr><td class="cod">3</td><td>Sem ligação</td></tr>
+  <tr><td class="cod">4 · 5</td><td>RS485: (4) linha A, (5) linha B</td></tr>
+  <tr><td class="cod">6</td><td>Entrada de sinal 4-20 mA</td></tr>
+  <tr><td class="cod">7 · 8</td><td>Saída de retransmissão 4-20 mA: (7) positivo, (8) negativo</td></tr>
+  <tr><td class="cod">9 · 10</td><td>Alarme 1: (9) contato NA, (10) comum</td></tr>
+  <tr><td class="cod">11 · 12</td><td>Alarme 2: (11) contato NA, (12) comum</td></tr>
+</table>
+
+<div class="figura">
+  <svg viewBox="0 0 560 170" width="160mm" font-family="Lato" font-size="11" stroke="#1d2b4f">
+    <rect x="10" y="40" width="540" height="56" rx="6" fill="#f2f6fa" stroke-width="1.6"/>
+    <g font-weight="700" fill="#1d2b4f" stroke="none" text-anchor="middle" font-size="13">
+      <text x="40" y="74">1</text><text x="85" y="74">2</text><text x="130" y="74">3</text><text x="175" y="74">4</text><text x="220" y="74">5</text><text x="265" y="74">6</text>
+      <text x="310" y="74">7</text><text x="355" y="74">8</text><text x="400" y="74">9</text><text x="445" y="74">10</text><text x="490" y="74">11</text><text x="535" y="74">12</text>
+    </g>
+    <g fill="none" stroke-width="1"><rect x="24" y="54" width="32" height="30" rx="3"/><rect x="69" y="54" width="32" height="30" rx="3"/><rect x="114" y="54" width="32" height="30" rx="3"/><rect x="159" y="54" width="32" height="30" rx="3"/><rect x="204" y="54" width="32" height="30" rx="3"/><rect x="249" y="54" width="32" height="30" rx="3"/><rect x="294" y="54" width="32" height="30" rx="3"/><rect x="339" y="54" width="32" height="30" rx="3"/><rect x="384" y="54" width="32" height="30" rx="3"/><rect x="429" y="54" width="32" height="30" rx="3"/><rect x="474" y="54" width="32" height="30" rx="3"/><rect x="519" y="54" width="32" height="30" rx="3"/></g>
+    <g fill="#1d2b4f" stroke="none" text-anchor="middle" font-size="10">
+      <text x="40" y="34">+</text><text x="85" y="34">−</text><text x="130" y="34">NC</text><text x="175" y="34">A</text><text x="220" y="34">B</text><text x="265" y="34">mA</text>
+      <text x="310" y="34">+</text><text x="355" y="34">−</text><text x="400" y="34">NA</text><text x="445" y="34">C</text><text x="490" y="34">NA</text><text x="535" y="34">C</text>
+    </g>
+    <g stroke="#d7261e" stroke-width="1.4" fill="none"><path d="M28 108v8h68v-8"/><path d="M163 108v8h68v-8"/><path d="M298 108v8h68v-8"/><path d="M388 108v8h68v-8"/><path d="M478 108v8h68v-8"/><path d="M265 108v8"/></g>
+    <g fill="#1d2b4f" stroke="none" text-anchor="middle" font-size="10.5">
+      <text x="62" y="134">ALIMENTAÇÃO</text><text x="62" y="148">12-36 Vcc</text>
+      <text x="197" y="134">RS485</text><text x="197" y="148">Modbus RTU</text>
+      <text x="265" y="134">ENTRADA</text><text x="265" y="148">4-20 mA</text>
+      <text x="332" y="134">SAÍDA</text><text x="332" y="148">4-20 mA passiva</text>
+      <text x="422" y="134">ALARME 1</text><text x="512" y="134">ALARME 2</text>
+    </g>
+  </svg>
+  <div class="legenda">Figura 2: Régua de bornes do LATM.</div>
+</div>
+
+<div class="aviso"><strong>Atenção:</strong> faça todas as ligações com o equipamento <strong>desligado</strong>. Use terminais adequados (ilhós) e mantenha os cabos de sinal longe de cabos de potência. A instalação deve estar aterrada.</div>
+
+<h3>Alimentação</h3>
+<p>Ligue uma fonte de <strong>12 a 36 Vcc</strong> nos bornes 1 (positivo) e 2 (negativo). Coloque uma proteção contra sobrecorrente, como fusível ou disjuntor, entre a fonte e o equipamento.</p>
+
+<h3>Entrada 4-20 mA</h3>
+<p>O sinal do transmissor entra no borne 6. A corrente é medida sobre um resistor de precisão, e o conversor A/D tem compensação de referência.</p>
+<ul>
+  <li>Corrente abaixo da faixa: o display mostra <strong>MALHA ABERTA</strong>. Corrente acima da faixa: mostra <strong>SINAL ALTO</strong>.</li>
+  <li>Os valores de engenharia que correspondem a 4 mA e a 20 mA são definidos em <strong>VAL 4MA</strong> e <strong>VAL 20MA</strong>, na unidade escolhida em <strong>UNID MEDIDA</strong>.</li>
+</ul>
+
+<h3>Saída de retransmissão 4-20 mA</h3>
+<p>A saída dos bornes 7 e 8 é <strong>passiva</strong>: quem alimenta o laço de corrente é o equipamento receptor (CLP, registrador ou supervisório). Não é preciso ligar fonte em série do lado do LATM.</p>
+<ul>
+  <li>A saída pode seguir uma faixa de engenharia própria ou repetir a corrente de entrada (item <strong>FONTE</strong>).</li>
+  <li>Se a entrada falhar, a saída vai para 3,8 mA (padrão) ou continua seguindo o valor, limitado entre 4 e 20 mA.</li>
+</ul>
+
+<h3>Saídas de alarme</h3>
+<p>Os dois alarmes são contatos de <strong>estado sólido (photoMOS)</strong>, normalmente abertos, isolados e sem polaridade: alarme 1 nos bornes 9 e 10, alarme 2 nos bornes 11 e 12.</p>
+<ul>
+  <li>Corrente e tensão máximas de comutação: <span class="validar">VALIDAR com a engenharia antes da versão final</span>.</li>
+  <li>Para acionar cargas maiores ou indutivas (contatores, solenoides), use um relé auxiliar como interface.</li>
+</ul>
+
+<h3>Comunicação RS485</h3>
+<p>O LATM funciona como <strong>escravo Modbus RTU</strong> nos bornes 4 (A) e 5 (B).</p>
+<ul>
+  <li>Use cabo de par trançado, de preferência blindado, com resistores de terminação de 120 Ω nas duas pontas do barramento.</li>
+  <li>Endereço e velocidade são ajustados no menu <strong>COMUNICACAO</strong>. O formato do quadro é fixo: 8 bits de dados, sem paridade, 1 stop bit (8N1).</li>
+</ul>
+
+<h3>Bluetooth (BLE)</h3>
+<p>O módulo Bluetooth de baixa energia já vem integrado e funciona como uma segunda porta Modbus, usada pelo aplicativo configurador. Não há ligação elétrica a fazer. Para o aplicativo conectar bem, evite peças metálicas encostadas no topo do invólucro, onde fica a antena.</p>
+
+<h2 class="capitulo">Operação</h2>
+
+<h3>Ao ligar</h3>
+<p>Na energização, o display mostra a tela de abertura <span class="validar">(VALIDAR: logomarca exibida no firmware Techmeter)</span> e, em seguida, a tela de medição. Se a memória estiver vazia, ou se uma atualização de firmware tiver mudado a estrutura da configuração, o equipamento carrega e grava os padrões de fábrica sozinho.</p>
+
+<h3>Teclas</h3>
+<table class="dados">
+  <tr><th>Tecla</th><th>Na tela de medição</th><th>Dentro dos menus</th></tr>
+  <tr><td><span class="tecla">✓</span> Confirmar</td><td>Abre o menu de configuração</td><td>Entra no item ou confirma o valor</td></tr>
+  <tr><td><span class="tecla">↑</span> Incrementar</td><td>—</td><td>Sobe na lista ou aumenta o valor</td></tr>
+  <tr><td><span class="tecla">↓</span> Decrementar</td><td>—</td><td>Desce na lista ou diminui o valor</td></tr>
+  <tr><td><span class="tecla">→</span> Avançar</td><td>Troca a tela principal</td><td>Volta ou cancela a edição</td></tr>
+</table>
+<p class="validar">VALIDAR: correspondência entre estas funções e os símbolos impressos na membrana LATM.</p>
+<div class="nota">Nesta versão de firmware o menu de configuração <strong>não tem senha</strong>.</div>
+
+<h3>Telas principais</h3>
+<p>A tecla <span class="tecla">→</span> alterna entre as quatro telas abaixo. A tela escolhida fica gravada e também pode ser definida em <strong>SISTEMA › TELA PRINCIPAL</strong>.</p>
+<table class="dados">
+  <tr><th>Tela</th><th>O que mostra</th></tr>
+  <tr><td class="cod">TELA MEDIDA</td><td>Status da entrada, valor de processo com unidade, barra de porcentagem da faixa e corrente de entrada</td></tr>
+  <tr><td class="cod">TELA TOTAL</td><td>Totalizador parcial e totalizador permanente</td></tr>
+  <tr><td class="cod">TELA CORRENTE</td><td>Corrente de entrada, em mA</td></tr>
+  <tr><td class="cod">TELA GERAL</td><td>Resumo: valor de processo, total e corrente</td></tr>
+</table>
+<p>O <strong>valor de processo</strong> é a medição em unidade de engenharia. Quando uma aplicação hidráulica está ativa, ele passa a ser a vazão ou o volume calculado.</p>
+
+<h3>LED de status</h3>
+<ul>
+  <li><strong>Verde:</strong> funcionamento normal.</li>
+  <li><strong>Vermelho:</strong> alarme ativo, ou entrada fora da faixa (falha de malha).</li>
+</ul>
+<p class="validar">VALIDAR: posição e visibilidade do LED na membrana LATM.</p>
+
+<h2 class="capitulo">Configuração</h2>
+
+<h3>Como navegar e editar</h3>
+<p>Na tela de medição, pressione <span class="tecla">✓</span> para abrir o menu principal:</p>
+<table class="dados">
+  <tr><th>Menu</th><th>Para que serve</th></tr>
+  <tr><td class="cod">STATUS AI0</td><td>Diagnóstico da entrada: status, valor bruto do A/D, corrente e valor de engenharia</td></tr>
+  <tr><td class="cod">ENTRADA ANALOGICA</td><td>Unidade, faixa, casas decimais, filtro, calibração e totalizador</td></tr>
+  <tr><td class="cod">APLICACAO</td><td>Aplicações hidráulicas (calhas, vertedouros e tanques)</td></tr>
+  <tr><td class="cod">SAIDA 4-20MA</td><td>Retransmissão: fonte, faixa, falha, calibração e teste</td></tr>
+  <tr><td class="cod">ALARMES</td><td>Modo, setpoint e histerese dos alarmes AL0 e AL1</td></tr>
+  <tr><td class="cod">COMUNICACAO</td><td>Endereço Modbus e velocidade da RS485</td></tr>
+  <tr><td class="cod">SISTEMA</td><td>Tela principal, contraste, informações e reset</td></tr>
+</table>
+<ul>
+  <li><strong>Números</strong> são editados um dígito por vez: a seta marca o dígito, <span class="tecla">↑</span>/<span class="tecla">↓</span> mudam o valor e <span class="tecla">✓</span> passa para o próximo. Ao confirmar o último dígito, o valor é gravado.</li>
+  <li><strong>Listas</strong> (unidades, modos) são percorridas com <span class="tecla">↑</span>/<span class="tecla">↓</span> e confirmadas com <span class="tecla">✓</span>.</li>
+  <li><span class="tecla">→</span> sai sem gravar.</li>
+</ul>
+<p>Todo valor confirmado é gravado na hora, na memória FRAM.</p>
+
+<h3>Menu Entrada analógica</h3>
+<table class="dados">
+  <tr><th>Item</th><th>Função</th><th>Faixa</th><th>Padrão</th></tr>
+  <tr><td class="cod">UNID MEDIDA</td><td>Unidade da medição: %, L/S, L/MIN, L/H, M3/H, BAR, MCA, M, °C, MM</td><td>—</td><td>%</td></tr>
+  <tr><td class="cod">VAL 4MA</td><td>Valor de engenharia em 4 mA</td><td>—</td><td>0,0</td></tr>
+  <tr><td class="cod">VAL 20MA</td><td>Valor de engenharia em 20 mA</td><td>—</td><td>100,0</td></tr>
+  <tr><td class="cod">RESOLUCAO</td><td>Casas decimais da medição</td><td>0 a 3</td><td>1</td></tr>
+  <tr><td class="cod">DUMP</td><td>Filtro: número de amostras da média móvel</td><td>1 a 32</td><td>8</td></tr>
+  <tr><td class="cod">CAL 4/12/20MA</td><td>Calibração da entrada em 3 pontos</td><td>—</td><td>de fábrica</td></tr>
+  <tr><td class="cod">TOTALIZADOR</td><td>Liga ou desliga a totalização</td><td>LIGADO / DESLIGADO</td><td>LIGADO</td></tr>
+  <tr><td class="cod">RES TOTAL</td><td>Casas decimais dos totalizadores</td><td>0 a 3</td><td>2</td></tr>
+  <tr><td class="cod">ZERAR TOTAL</td><td>Zera o totalizador parcial (pede confirmação)</td><td>—</td><td>—</td></tr>
+</table>
+<div class="nota">A totalização só acontece quando a unidade é de vazão (L/S, L/MIN, L/H, M3/H) ou quando há uma aplicação hidráulica de vazão ativa.</div>
+
+<h4>Calibração da entrada (3 pontos)</h4>
+<p>Ligue um calibrador de corrente na entrada. Em <strong>CAL 4MA</strong>, injete exatamente 4,00 mA. A tela mostra o valor bruto do A/D em tempo real; pressione <span class="tecla">✓</span> para registrar o ponto. Repita com 12,00 mA em <strong>CAL 12MA</strong> e com 20,00 mA em <strong>CAL 20MA</strong>.</p>
+
+<h3>Menu Saída 4-20 mA</h3>
+<table class="dados">
+  <tr><th>Item</th><th>Função</th><th>Faixa</th><th>Padrão</th></tr>
+  <tr><td class="cod">FONTE</td><td>DESLIGADA, FAIXA ENG (faixa própria) ou ESPELHO MA (repete a corrente de entrada)</td><td>—</td><td>FAIXA ENG</td></tr>
+  <tr><td class="cod">VAL 4MA</td><td>Valor de engenharia que corresponde a 4 mA na saída</td><td>—</td><td>0,0</td></tr>
+  <tr><td class="cod">VAL 20MA</td><td>Valor de engenharia que corresponde a 20 mA na saída</td><td>—</td><td>100,0</td></tr>
+  <tr><td class="cod">MODO FALHA</td><td>O que a saída faz se a entrada falhar: vai a 3,8 mA ou segue o valor limitado em 4-20 mA</td><td>—</td><td>3,8 MA</td></tr>
+  <tr><td class="cod">CAL 4MA / CAL 20MA</td><td>Calibração da saída em 2 pontos</td><td>0 a 4095</td><td>de fábrica</td></tr>
+  <tr><td class="cod">TESTE SAIDA</td><td>Força um valor fixo de corrente para testar a malha</td><td>3,80 a 21,00 mA</td><td>—</td></tr>
+</table>
+
+<h4>Calibração da saída (2 pontos)</h4>
+<p>Coloque um miliamperímetro no laço da retransmissão. Em <strong>CAL 4MA</strong>, ajuste com <span class="tecla">↑</span>/<span class="tecla">↓</span> até o instrumento marcar 4,00 mA e confirme com <span class="tecla">✓</span>. Faça o mesmo em <strong>CAL 20MA</strong> para 20,00 mA. Durante o ajuste, a saída acompanha o valor em tempo real.</p>
+<div class="nota">O <strong>TESTE SAIDA</strong> não fica gravado. Ao sair da tela, ou ao desligar o equipamento, a saída volta a seguir a fonte configurada.</div>
+
+<h3>Menu Alarmes</h3>
+<p>Os dois alarmes (AL0 e AL1) têm os mesmos três ajustes:</p>
+<table class="dados">
+  <tr><th>Item</th><th>Função</th><th>Faixa</th><th>Padrão</th></tr>
+  <tr><td class="cod">MODO</td><td>DESLIGADO, ALTO (atua acima do setpoint), BAIXO (atua abaixo do setpoint) ou MODBUS (comandado pelo mestre)</td><td>—</td><td>DESLIGADO</td></tr>
+  <tr><td class="cod">SETPOINT</td><td>Valor de atuação, na unidade do valor de processo</td><td>—</td><td>100,0</td></tr>
+  <tr><td class="cod">HISTERESE</td><td>Faixa de retorno, para o alarme não ficar ligando e desligando</td><td>≥ 0</td><td>1,0</td></tr>
+</table>
+<ul>
+  <li><strong>Modo ALTO:</strong> o alarme liga quando o valor passa do setpoint e só desliga quando cai abaixo de setpoint − histerese. O modo BAIXO funciona do jeito inverso.</li>
+  <li><strong>Modo MODBUS:</strong> a saída obedece ao coil correspondente (ver capítulo Modbus).</li>
+  <li>Com qualquer alarme ativo, o LED de status fica vermelho.</li>
+</ul>
+
+<h3>Menu Comunicação</h3>
+<table class="dados">
+  <tr><th>Item</th><th>Função</th><th>Faixa</th><th>Padrão</th></tr>
+  <tr><td class="cod">MODBUS ID</td><td>Endereço do equipamento na RS485</td><td>1 a 247</td><td>1</td></tr>
+  <tr><td class="cod">BAUDRATE</td><td>Velocidade: 9600, 19200, 38400, 57600 ou 115200 bps</td><td>—</td><td>9600</td></tr>
+</table>
+<p>Esses ajustes valem só para a RS485. A porta Bluetooth tem configuração fixa e responde a qualquer endereço.</p>
+
+<h3>Menu Sistema</h3>
+<table class="dados">
+  <tr><th>Item</th><th>Função</th></tr>
+  <tr><td class="cod">TELA PRINCIPAL</td><td>Define a tela de medição: MEDIDA, TOTAL, CORRENTE ou GERAL</td></tr>
+  <tr><td class="cod">CONTRASTE</td><td>Contraste do display (0 a 63), aplicado na hora</td></tr>
+  <tr><td class="cod">INFO FABRICANTE</td><td>Contato do fabricante <span class="validar">(VALIDAR: dados Techmeter no firmware)</span></td></tr>
+  <tr><td class="cod">INFO SISTEMA</td><td>Endereço Modbus, velocidade e diagnóstico interno</td></tr>
+  <tr><td class="cod">RESET CONFIG</td><td>Volta a configuração de fábrica (pede confirmação)</td></tr>
+</table>
+<div class="aviso"><strong>Atenção:</strong> o <strong>RESET CONFIG</strong> apaga tudo o que foi ajustado: faixa, calibrações feitas em campo, endereço e velocidade.</div>
+
+<h2 class="capitulo">Aplicações hidráulicas</h2>
+
+<h3>Como funciona</h3>
+<p>Com uma aplicação hidráulica ativa, o LATM vira um <strong>conversor de vazão para canal aberto</strong>, ou de volume para tanques. Ele faz o cálculo a partir do nível medido por um sensor simples, como um radar 4-20 mA sem display.</p>
+<ul>
+  <li>A entrada passa a representar a <strong>altura da lâmina de líquido, em mm</strong>. Configure UNID MEDIDA = MM e ajuste VAL 4MA e VAL 20MA conforme a faixa do sensor (exemplo: 4 mA = 0 mm e 20 mA = 600 mm).</li>
+  <li>O valor de processo passa a ser a <strong>vazão</strong> (calhas e vertedouros) ou o <strong>volume</strong> (tanques). É esse valor que aparece no display, aciona os alarmes e sai na retransmissão 4-20 mA.</li>
+  <li>Nas aplicações de vazão, o totalizador soma a vazão calculada.</li>
+</ul>
+
+<h3>Menu Aplicação</h3>
+<table class="dados">
+  <tr><th>Item</th><th>Função</th></tr>
+  <tr><td class="cod">TIPO APLICACAO</td><td>DESLIGADA (medição direta) ou uma das 9 aplicações da tabela abaixo</td></tr>
+  <tr><td class="cod">PARAMETRO 0 a 5</td><td>Medidas da aplicação escolhida. A unidade aparece na tela, e os parâmetros que a aplicação não usa mostram NAO USADO.</td></tr>
+  <tr><td class="cod">UNID VAZAO</td><td>L/s, L/min, L/h, m³/s, m³/min, m³/h, gal/s, gpm, gph</td></tr>
+  <tr><td class="cod">UNID VOLUME</td><td>L, m³, gal</td></tr>
+</table>
+
+<h4>Aplicações disponíveis</h4>
+<table class="dados">
+  <tr><th>Aplicação</th><th>Calcula</th><th>Parâmetros</th></tr>
+  <tr><td class="cod">TAN CIL FUN RETO</td><td>Volume</td><td>P0 = diâmetro do tanque (mm, mínimo 300)</td></tr>
+  <tr><td class="cod">TAN CIL FUN CON.</td><td>Volume (cilindro + cone no fundo)</td><td>P0 = diâmetro do cilindro · P2 = altura do cone · P3 = diâmetro do fundo (mm)</td></tr>
+  <tr><td class="cod">TAN RET VER RETO</td><td>Volume</td><td>P0 = largura · P1 = comprimento (mm)</td></tr>
+  <tr><td class="cod">TAN RET VERT CA.</td><td>Volume (retângulo + calha trapezoidal)</td><td>P0 = largura · P1 = comprimento · P2 = profundidade da calha · P3/P4 = fundo da calha (mm)</td></tr>
+  <tr><td class="cod">CALHA PARSHALL</td><td>Vazão (Q = K·hᵘ)</td><td>P1 = garganta (lista: 1, 2, 3, 6, 9, 12, 18, 24, 36, 48, 60, 72, 84, 96, 120 pol) · P5 = zero hidrométrico (0 a 10000 mm)</td></tr>
+  <tr><td class="cod">VERT TRAPEZOIDAL</td><td>Vazão (Cipolletti generalizado)</td><td>P0 = ângulo das laterais (10 a 100°) · P1 = largura da soleira (500 a 15000 mm) · P5 = zero hidrométrico (mm)</td></tr>
+  <tr><td class="cod">VERT TRIANGULAR</td><td>Vazão</td><td>P1 = ângulo do entalhe (20 a 100°) · P5 = zero hidrométrico (mm)</td></tr>
+  <tr><td class="cod">VERT. THOMSON</td><td>Vazão (entalhe fixo de 90°)</td><td>P5 = zero hidrométrico (mm)</td></tr>
+  <tr><td class="cod">CALHA PALMER</td><td>Vazão</td><td>P1 = diâmetro (lista: 4, 6, 8, 10, 12, 18 pol) · P5 = zero hidrométrico (0 a 5000 mm)</td></tr>
+</table>
+<ul>
+  <li>Nas calhas <strong>Parshall</strong> e <strong>Palmer</strong>, o tamanho é escolhido numa lista em polegadas.</li>
+  <li>O <strong>zero hidrométrico (P5)</strong> é o nível a partir do qual existe vazão. Abaixo dele, a vazão é zero. Use quando o zero do sensor não coincide com o fundo útil da calha, por exemplo quando fica água parada no fundo.</li>
+  <li>Se um valor digitado estiver fora da faixa, o equipamento ajusta para o limite mais próximo.</li>
+  <li>Cada aplicação guarda os próprios parâmetros. Trocar de aplicação não apaga o que já foi configurado.</li>
+</ul>
+<div class="aviso"><strong>Atenção:</strong> ao mudar o <strong>tipo de grandeza</strong> (medição direta, vazão ou volume), o equipamento <strong>zera a faixa da retransmissão (0 a 100) e desliga os alarmes</strong>, porque uma grandeza não se converte na outra. Depois da troca, configure de novo a faixa e os alarmes na nova unidade.</div>
+
+<h3>Totalização e retransmissão</h3>
+<p>O totalizador sempre soma a <strong>vazão real calculada</strong>. A faixa definida na saída 4-20 mA limita só o sinal retransmitido, não a totalização:</p>
+<ul>
+  <li>Vazão acima do valor de 20 mA: a saída fica em 20 mA, mas o totalizador soma a vazão real.</li>
+  <li>Vazão abaixo do valor de 4 mA também é somada.</li>
+</ul>
+<div class="nota">Água parada acima do fundo da calha também é totalizada. Para evitar isso, ajuste o <strong>zero hidrométrico (P5)</strong> no nível em que a vazão realmente é zero.</div>
+
+<h3>Totalizadores</h3>
+<ul>
+  <li><strong>Total parcial:</strong> usado no dia a dia. Pode ser zerado em ENTRADA ANALOGICA › ZERAR TOTAL (com confirmação) ou por comando Modbus.</li>
+  <li><strong>Total permanente:</strong> acumula toda a vida do ponto de medição. Não é zerado na operação normal, só pelo comando Modbus de zerar totais ou pelo reset de fábrica via Modbus.</li>
+</ul>
+<p>Os totais são gravados na memória FRAM alternando entre duas posições. Se faltar energia bem na hora da gravação, o equipamento recupera o último valor válido quando religar.</p>
+
+<h2 class="capitulo">Comunicação Modbus RTU</h2>
+
+<h3>Portas e protocolo</h3>
+<p>O LATM responde como escravo Modbus RTU em duas portas, com <strong>o mesmo mapa de registradores</strong>:</p>
+<ul>
+  <li><strong>RS485:</strong> 8N1, velocidade de 9600 a 115200 bps e endereço de 1 a 247, ajustáveis.</li>
+  <li><strong>Bluetooth (BLE):</strong> módulo em modo transparente, usado pelo aplicativo configurador. Aceita qualquer endereço de 1 a 247 e responde com o mesmo endereço da pergunta. Se a mensagem chegar dividida em pacotes, o equipamento junta tudo depois de 50 ms sem dados.</li>
+</ul>
+<p><strong>Funções aceitas:</strong> 01 (ler coils), 03 (ler holding registers), 05 (escrever coil), 06 (escrever um registrador) e 16 (escrever vários registradores). Mensagens para o endereço 0 (broadcast) executam escritas sem resposta, nas duas portas.</p>
+
+<h4>Formatos</h4>
+<ul>
+  <li><strong>Valores com casas decimais</strong> ocupam dois registradores, como inteiro de 32 bits multiplicado por 1000, com a palavra alta primeiro.</li>
+  <li><strong>Totais</strong> são inteiros sem sinal de 32 bits multiplicados por 100, em litros.</li>
+  <li>Escrita em registrador só de leitura é aceita e ignorada. Valor fora da faixa é ajustado para o limite.</li>
+</ul>
+
+<h3>Mapa de registradores</h3>
+<table class="dados">
+  <tr><th>Reg.</th><th>Conteúdo</th><th>Acesso</th><th>Formato / faixa</th></tr>
+  <tr><td class="cod">0–1</td><td>Valor de processo (engenharia, ou vazão/volume com aplicação ativa)</td><td>L</td><td>int32 ×1000</td></tr>
+  <tr><td class="cod">2–3</td><td>Corrente de entrada</td><td>L</td><td>int32 ×1000 (mA)</td></tr>
+  <tr><td class="cod">4</td><td>Valor bruto do A/D, filtrado</td><td>L</td><td>uint16</td></tr>
+  <tr><td class="cod">5</td><td>Status da entrada</td><td>L</td><td>0 = OK · 1 = desativada · 2 = abaixo da faixa · 3 = acima da faixa · 4 = erro do A/D</td></tr>
+  <tr><td class="cod">6–7</td><td>Total parcial</td><td>L</td><td>uint32 ×100 (L)</td></tr>
+  <tr><td class="cod">8–9</td><td>Total permanente</td><td>L</td><td>uint32 ×100 (L)</td></tr>
+  <tr><td class="cod">10</td><td>Unidade de engenharia</td><td>L/E</td><td>0 = % · 1 = L/s · 2 = L/min · 3 = L/h · 4 = m³/h · 5 = bar · 6 = mca · 7 = m · 8 = °C · 9 = mm</td></tr>
+  <tr><td class="cod">11</td><td>Casas decimais da medição</td><td>L/E</td><td>0 a 3</td></tr>
+  <tr><td class="cod">12</td><td>Filtro (amostras da média)</td><td>L/E</td><td>1 a 32</td></tr>
+  <tr><td class="cod">13</td><td>Identificação da família</td><td>L</td><td>0x504B</td></tr>
+  <tr><td class="cod">14</td><td>Versão do mapa Modbus</td><td>L</td><td>1</td></tr>
+  <tr><td class="cod">15</td><td>Reservado</td><td>L</td><td>lido como 0</td></tr>
+  <tr><td class="cod">16–17</td><td>Engenharia em 4 mA (entrada)</td><td>L/E</td><td>int32 ×1000</td></tr>
+  <tr><td class="cod">18–19</td><td>Engenharia em 20 mA (entrada)</td><td>L/E</td><td>int32 ×1000</td></tr>
+  <tr><td class="cod">20 · 21 · 22</td><td>Calibração da entrada: valor bruto em 4, 12 e 20 mA</td><td>L/E</td><td>uint16</td></tr>
+  <tr><td class="cod">23</td><td>Fonte da retransmissão</td><td>L/E</td><td>0 = desligada · 1 = faixa de engenharia · 2 = espelho da corrente</td></tr>
+  <tr><td class="cod">24–25</td><td>Retransmissão: engenharia em 4 mA</td><td>L/E</td><td>int32 ×1000</td></tr>
+  <tr><td class="cod">26–27</td><td>Retransmissão: engenharia em 20 mA</td><td>L/E</td><td>int32 ×1000</td></tr>
+  <tr><td class="cod">28</td><td>Modo de falha da entrada</td><td>L/E</td><td>0 = segue limitado · 1 = vai a 3,8 mA</td></tr>
+  <tr><td class="cod">29</td><td>Teste de saída habilitado</td><td>L/E</td><td>0/1 (não fica gravado)</td></tr>
+  <tr><td class="cod">30</td><td>Valor do teste de saída</td><td>L/E</td><td>µA, 3800 a 21000</td></tr>
+  <tr><td class="cod">31</td><td>Corrente atual da saída</td><td>L</td><td>µA</td></tr>
+  <tr><td class="cod">32 · 33</td><td>Calibração da saída: código do DAC em 4 e 20 mA</td><td>L/E</td><td>0 a 4095</td></tr>
+  <tr><td class="cod">34</td><td>Modo do alarme AL0</td><td>L/E</td><td>0 = desligado · 1 = alto · 2 = baixo · 3 = Modbus</td></tr>
+  <tr><td class="cod">35–36</td><td>Setpoint de AL0</td><td>L/E</td><td>int32 ×1000</td></tr>
+  <tr><td class="cod">37–38</td><td>Histerese de AL0</td><td>L/E</td><td>int32 ×1000, ≥ 0</td></tr>
+  <tr><td class="cod">39</td><td>Modo do alarme AL1</td><td>L/E</td><td>igual ao AL0</td></tr>
+  <tr><td class="cod">40–41</td><td>Setpoint de AL1</td><td>L/E</td><td>int32 ×1000</td></tr>
+  <tr><td class="cod">42–43</td><td>Histerese de AL1</td><td>L/E</td><td>int32 ×1000</td></tr>
+  <tr><td class="cod">44</td><td>Estado dos alarmes</td><td>L</td><td>bit 0 = AL0 · bit 1 = AL1</td></tr>
+  <tr><td class="cod">45</td><td>Totalizador habilitado</td><td>L/E</td><td>0/1</td></tr>
+  <tr><td class="cod">46</td><td>Casas decimais do total</td><td>L/E</td><td>0 a 3</td></tr>
+  <tr><td class="cod">47</td><td>Endereço Modbus (RS485)</td><td>L/E</td><td>1 a 247</td></tr>
+  <tr><td class="cod">48</td><td>Velocidade da RS485</td><td>L/E</td><td>0 = 9600 · 1 = 19200 · 2 = 38400 · 3 = 57600 · 4 = 115200</td></tr>
+  <tr><td class="cod">49</td><td>Versão do firmware</td><td>L</td><td>BCD (0x0200 = 2.00)</td></tr>
+  <tr><td class="cod">50</td><td>Comando</td><td>E</td><td>1 = zera total parcial · 2 = zera os dois totais · 3 = reset de fábrica</td></tr>
+  <tr><td class="cod">51</td><td>Contraste do display</td><td>L/E</td><td>0 a 63</td></tr>
+  <tr><td class="cod">52</td><td>Tela principal</td><td>L/E</td><td>0 = medida · 1 = total · 2 = corrente · 3 = geral</td></tr>
+  <tr><td class="cod">53–54</td><td>Diagnóstico da porta Bluetooth</td><td>L</td><td>contadores internos</td></tr>
+  <tr><td class="cod">55</td><td>Aplicação hidráulica habilitada</td><td>L/E</td><td>0 = medição direta · 1 = ativa</td></tr>
+  <tr><td class="cod">56</td><td>Aplicação ativa (índice)</td><td>L/E</td><td>0, 1, 2, 3, 9, 12, 14, 15, 17 (outros são recusados)</td></tr>
+  <tr><td class="cod">57–62</td><td>Parâmetros P0 a P5 da aplicação ativa</td><td>L/E</td><td>dentro dos limites da aplicação</td></tr>
+  <tr><td class="cod">63</td><td>Unidade de vazão</td><td>L/E</td><td>0 = L/s · 1 = L/min · 2 = L/h · 3 = m³/s · 4 = m³/min · 5 = m³/h · 6 = gal/s · 7 = gpm · 8 = gph</td></tr>
+  <tr><td class="cod">64</td><td>Unidade de volume</td><td>L/E</td><td>0 = L · 1 = m³ · 2 = gal</td></tr>
+  <tr><td class="cod">65–66</td><td>Altura da lâmina de líquido</td><td>L</td><td>int32 ×1000 (mm)</td></tr>
+  <tr><td class="cod">67–68</td><td>Vazão real (sem o limite da retransmissão)</td><td>L</td><td>int32 ×1000 (L/s)</td></tr>
+  <tr><td class="cod">69–70</td><td>Volume</td><td>L</td><td>int32 ×100 (L)</td></tr>
+</table>
+<p>L = leitura · E = escrita · L/E = leitura e escrita.</p>
+
+<h4>Coils (funções 01 e 05)</h4>
+<table class="dados">
+  <tr><th>Coil</th><th>Conteúdo</th></tr>
+  <tr><td class="cod">0</td><td>Comando do alarme AL0 (vale com o alarme em modo Modbus)</td></tr>
+  <tr><td class="cod">1</td><td>Comando do alarme AL1 (idem)</td></tr>
+</table>
+
+<h4>Observações</h4>
+<ul>
+  <li>Ao mudar a velocidade (registrador 48), a resposta ainda sai na velocidade antiga. A nova vale a partir da mensagem seguinte.</li>
+  <li>O reset de fábrica (comando 3) zera também os totais e pode voltar o endereço e a velocidade para o padrão.</li>
+  <li>Numa escrita múltipla dos registradores 56 a 62, a aplicação nova é aplicada primeiro, e os parâmetros são conferidos nos limites dela.</li>
+  <li>Se o mestre receber uma exceção ao ler o registrador 55, o equipamento tem um firmware anterior, sem aplicações hidráulicas.</li>
+</ul>
+
+<h2 class="capitulo">Aplicativo configurador</h2>
+<p>Pelo aplicativo para Android <span class="validar">(VALIDAR: nome do aplicativo e onde o cliente Techmeter baixa)</span>, é possível ver a medição e ajustar todos os parâmetros por Bluetooth, sem abrir o invólucro: entrada, retransmissão, alarmes, comunicação e aplicações hidráulicas.</p>
+<ul>
+  <li>Com o equipamento ligado, procure o LATM na tela de conexão do aplicativo.</li>
+  <li>O Bluetooth não atrapalha a RS485: as duas portas funcionam ao mesmo tempo.</li>
+</ul>
+
+<h2 class="capitulo">Especificações técnicas</h2>
+<table class="dados">
+  <tr><th>Característica</th><th>Especificação</th></tr>
+  <tr><td>Display</td><td>LCD gráfico 128×64, contraste ajustável</td></tr>
+  <tr><td>Teclado</td><td>4 teclas frontais</td></tr>
+  <tr><td>Sinalização</td><td>LED bicolor (verde = normal, vermelho = alarme ou falha) e LEDs de comunicação TX/RX</td></tr>
+  <tr><td>Entrada</td><td>4-20 mA, calibração em 3 pontos</td></tr>
+  <tr><td>Retransmissão</td><td>4-20 mA passiva (alimentada pelo laço), calibração em 2 pontos</td></tr>
+  <tr><td>Alarmes</td><td>2 saídas em estado sólido (photoMOS), NA</td></tr>
+  <tr><td>Comunicação</td><td>Modbus RTU escravo: RS485 (9600 a 115200 bps, 8N1) e Bluetooth BLE</td></tr>
+  <tr><td>Memória</td><td>FRAM, sem bateria; totais protegidos contra queda de energia</td></tr>
+  <tr><td>Alimentação</td><td>12 a 36 Vcc</td></tr>
+  <tr><td>Temperatura de operação</td><td>até 60 °C</td></tr>
+  <tr><td>Dimensões</td><td>101 × 78 × 45 mm; fixação em parede ou tubo</td></tr>
+  <tr><td>Grau de proteção</td><td>IP67</td></tr>
+  <tr><td>Versão deste manual</td><td>Firmware 2.00</td></tr>
+</table>
+
+<h2 class="capitulo">Manutenção e assistência técnica</h2>
+<ul>
+  <li>O LATM não precisa de manutenção periódica. Mantenha o prensa-cabo bem apertado e o invólucro limpo e seco.</li>
+  <li><strong>Antes de atualizar o firmware</strong>, anote a configuração: faixa, calibrações e endereço. Se a atualização mudar a estrutura interna da configuração, os parâmetros voltam ao padrão de fábrica na primeira vez que o equipamento for ligado.</li>
+  <li>Se o equipamento não ligar, ou o display ficar sem informação, procure a <strong>assistência técnica Techmeter</strong>. Os contatos estão na última página.</li>
+</ul>
+<div class="nota">A Techmeter oferece <strong>calibração em laboratório próprio</strong>, start-up e suporte técnico em todo o Brasil.</div>
