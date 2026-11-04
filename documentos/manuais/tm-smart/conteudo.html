@@ -1,11 +1,11 @@
-<!-- Manual LATM (caixa de campo) — texto original Techmeter.
+<!-- Manual TM-Smart — texto original Techmeter.
      Dados técnicos conferidos com a documentação do fornecedor (firmware 2.00).
      Trechos com a classe "validar" precisam de confirmação antes da versão final. -->
 
 <h2 class="capitulo nova-pagina">Apresentação</h2>
 
-<h3>O que é o LATM</h3>
-<p>O <strong>LATM</strong> recebe o sinal de 4-20 mA de um transmissor de campo (nível, vazão, pressão ou temperatura), converte esse sinal para a unidade de engenharia do processo e disponibiliza a medição de quatro formas ao mesmo tempo: no display, numa saída 4-20 mA de retransmissão, em duas saídas de alarme e por comunicação Modbus RTU (RS485 e Bluetooth).</p>
+<h3>O que é o TM-Smart</h3>
+<p>O <strong>TM-Smart</strong> recebe o sinal de 4-20 mA de um transmissor de campo (nível, vazão, pressão ou temperatura), converte esse sinal para a unidade de engenharia do processo e disponibiliza a medição de quatro formas ao mesmo tempo: no display, numa saída 4-20 mA de retransmissão, em duas saídas de alarme e por comunicação Modbus RTU (RS485 e Bluetooth).</p>
 <p>Além de indicar, o equipamento totaliza vazão e pode calcular a vazão em canais abertos ou o volume em tanques a partir de um sensor de nível que não faz esse cálculo sozinho.</p>
 
 <h3>Recursos principais</h3>
@@ -92,7 +92,7 @@
       <text x="422" y="134">ALARME 1</text><text x="512" y="134">ALARME 2</text>
     </g>
   </svg>
-  <div class="legenda">Figura 2: Régua de bornes do LATM.</div>
+  <div class="legenda">Figura 2: Régua de bornes do TM-Smart.</div>
 </div>
 
 <div class="aviso"><strong>Atenção:</strong> faça todas as ligações com o equipamento <strong>desligado</strong>. Use terminais adequados (ilhós) e mantenha os cabos de sinal longe de cabos de potência. A instalação deve estar aterrada.</div>
@@ -108,7 +108,7 @@
 </ul>
 
 <h3>Saída de retransmissão 4-20 mA</h3>
-<p>A saída dos bornes 7 e 8 é <strong>passiva</strong>: quem alimenta o laço de corrente é o equipamento receptor (CLP, registrador ou supervisório). Não é preciso ligar fonte em série do lado do LATM.</p>
+<p>A saída dos bornes 7 e 8 é <strong>passiva</strong>: quem alimenta o laço de corrente é o equipamento receptor (CLP, registrador ou supervisório). Não é preciso ligar fonte em série do lado do TM-Smart.</p>
 <ul>
   <li>A saída pode seguir uma faixa de engenharia própria ou repetir a corrente de entrada (item <strong>FONTE</strong>).</li>
   <li>Se a entrada falhar, a saída vai para 3,8 mA (padrão) ou continua seguindo o valor, limitado entre 4 e 20 mA.</li>
@@ -122,7 +122,7 @@
 </ul>
 
 <h3>Comunicação RS485</h3>
-<p>O LATM funciona como <strong>escravo Modbus RTU</strong> nos bornes 4 (A) e 5 (B).</p>
+<p>O TM-Smart funciona como <strong>escravo Modbus RTU</strong> nos bornes 4 (A) e 5 (B).</p>
 <ul>
   <li>Use cabo de par trançado, de preferência blindado, com resistores de terminação de 120 Ω nas duas pontas do barramento.</li>
   <li>Endereço e velocidade são ajustados no menu <strong>COMUNICACAO</strong>. O formato do quadro é fixo: 8 bits de dados, sem paridade, 1 stop bit (8N1).</li>
@@ -144,7 +144,7 @@
   <tr><td><span class="tecla">↓</span> Decrementar</td><td>—</td><td>Desce na lista ou diminui o valor</td></tr>
   <tr><td><span class="tecla">→</span> Avançar</td><td>Troca a tela principal</td><td>Volta ou cancela a edição</td></tr>
 </table>
-<p class="validar">VALIDAR: correspondência entre estas funções e os símbolos impressos na membrana LATM.</p>
+<p class="validar">VALIDAR: correspondência entre estas funções e os símbolos impressos na membrana TM-Smart.</p>
 <div class="nota">Nesta versão de firmware o menu de configuração <strong>não tem senha</strong>.</div>
 
 <h3>Telas principais</h3>
@@ -163,7 +163,7 @@
   <li><strong>Verde:</strong> funcionamento normal.</li>
   <li><strong>Vermelho:</strong> alarme ativo, ou entrada fora da faixa (falha de malha).</li>
 </ul>
-<p class="validar">VALIDAR: posição e visibilidade do LED na membrana LATM.</p>
+<p class="validar">VALIDAR: posição e visibilidade do LED na membrana TM-Smart.</p>
 
 <h2 class="capitulo">Configuração</h2>
 
@@ -255,7 +255,7 @@
 <h2 class="capitulo">Aplicações hidráulicas</h2>
 
 <h3>Como funciona</h3>
-<p>Com uma aplicação hidráulica ativa, o LATM vira um <strong>conversor de vazão para canal aberto</strong>, ou de volume para tanques. Ele faz o cálculo a partir do nível medido por um sensor simples, como um radar 4-20 mA sem display.</p>
+<p>Com uma aplicação hidráulica ativa, o TM-Smart vira um <strong>conversor de vazão para canal aberto</strong>, ou de volume para tanques. Ele faz o cálculo a partir do nível medido por um sensor simples, como um radar 4-20 mA sem display.</p>
 <ul>
   <li>A entrada passa a representar a <strong>altura da lâmina de líquido, em mm</strong>. Configure UNID MEDIDA = MM e ajuste VAL 4MA e VAL 20MA conforme a faixa do sensor (exemplo: 4 mA = 0 mm e 20 mA = 600 mm).</li>
   <li>O valor de processo passa a ser a <strong>vazão</strong> (calhas e vertedouros) ou o <strong>volume</strong> (tanques). É esse valor que aparece no display, aciona os alarmes e sai na retransmissão 4-20 mA.</li>
@@ -310,7 +310,7 @@
 <h2 class="capitulo">Comunicação Modbus RTU</h2>
 
 <h3>Portas e protocolo</h3>
-<p>O LATM responde como escravo Modbus RTU em duas portas, com <strong>o mesmo mapa de registradores</strong>:</p>
+<p>O TM-Smart responde como escravo Modbus RTU em duas portas, com <strong>o mesmo mapa de registradores</strong>:</p>
 <ul>
   <li><strong>RS485:</strong> 8N1, velocidade de 9600 a 115200 bps e endereço de 1 a 247, ajustáveis.</li>
   <li><strong>Bluetooth (BLE):</strong> módulo em modo transparente, usado pelo aplicativo configurador. Aceita qualquer endereço de 1 a 247 e responde com o mesmo endereço da pergunta. Se a mensagem chegar dividida em pacotes, o equipamento junta tudo depois de 50 ms sem dados.</li>
@@ -395,7 +395,7 @@
 <h2 class="capitulo">Aplicativo configurador</h2>
 <p>Pelo aplicativo para Android <span class="validar">(VALIDAR: nome do aplicativo e onde o cliente Techmeter baixa)</span>, é possível ver a medição e ajustar todos os parâmetros por Bluetooth, sem abrir o invólucro: entrada, retransmissão, alarmes, comunicação e aplicações hidráulicas.</p>
 <ul>
-  <li>Com o equipamento ligado, procure o LATM na tela de conexão do aplicativo.</li>
+  <li>Com o equipamento ligado, procure o TM-Smart na tela de conexão do aplicativo.</li>
   <li>O Bluetooth não atrapalha a RS485: as duas portas funcionam ao mesmo tempo.</li>
 </ul>
 
@@ -419,7 +419,7 @@
 
 <h2 class="capitulo">Manutenção e assistência técnica</h2>
 <ul>
-  <li>O LATM não precisa de manutenção periódica. Mantenha o prensa-cabo bem apertado e o invólucro limpo e seco.</li>
+  <li>O TM-Smart não precisa de manutenção periódica. Mantenha o prensa-cabo bem apertado e o invólucro limpo e seco.</li>
   <li><strong>Antes de atualizar o firmware</strong>, anote a configuração: faixa, calibrações e endereço. Se a atualização mudar a estrutura interna da configuração, os parâmetros voltam ao padrão de fábrica na primeira vez que o equipamento for ligado.</li>
   <li>Se o equipamento não ligar, ou o display ficar sem informação, procure a <strong>assistência técnica Techmeter</strong>. Os contatos estão na última página.</li>
 </ul>

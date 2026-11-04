@@ -66,7 +66,7 @@ Medição de Vazão · Medição de Nível · Hidrômetros · Serviços técnico
 Detalhes em [`projetos/geo/README.md`](../projetos/geo/README.md).
 
 ## Fornecedores
-- **Indflow:** fornece equipamentos vendidos com a marca Techmeter (ex.: LATM em caixa de campo, base BLIT-Pocket).
+- **Indflow:** fornece equipamentos vendidos com a marca Techmeter (ex.: TM-Smart, base BLIT-Pocket).
 
 ## Ferramentas e tecnologia internas
 _a definir_

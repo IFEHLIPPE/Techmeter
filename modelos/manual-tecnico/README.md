@@ -47,7 +47,8 @@ Requisitos: Python 3, Chromium/Chrome e `pdftotext` (poppler-utils).
 | `estilo.css` | Visual: cores, fontes, capa, rodapé, tabelas |
 | `gerar.py` | Monta capa, índice, conteúdo e contracapa e imprime o PDF |
 | `assets/logo-techmeter.png` | Logo extraído do manual LATM 2025 (baixa resolução). **Trocar pelo vetor oficial quando houver.** |
-| `assets/ondas.png` | Ondas da identidade visual (manual LATM 2025) |
+| `assets/ondas.png` | Ondas da identidade visual (manual LATM 2025), usadas no rodapé |
+| `assets/capa-fundo.jpg` | Fundo da capa e da contracapa: degradê + ondas, sem emendas |
 | `assets/fontes/` | Lato e Montserrat (licença SIL Open Font) |
 
 Os dados da empresa (razão social, CNPJ, endereço, telefones e e-mail) ficam em `EMPRESA`, no início de `gerar.py`.
@@ -56,4 +57,4 @@ Os dados da empresa (razão social, CNPJ, endereço, telefones e e-mail) ficam e
 
 | Manual | Pasta |
 |---|---|
-| LATM — caixa de campo (firmware 2.00) | `documentos/manuais/latm-caixa-campo/` |
+| TM-Smart — indicador, totalizador e retransmissor 4-20 mA (firmware 2.00) | `documentos/manuais/tm-smart/` |

@@ -51,7 +51,7 @@ def bloco_empresa():
   <div class="linha"><span>{ICONE_TEL}{e['telefone']}</span><span>{ICONE_ZAP}{e['whatsapp']}</span></div>
   <div class="linha"><span>{ICONE_MAIL}{e['email']}</span></div>
 </div>
-<div class="marca"><img src="assets/logo-techmeter.png" alt="Techmeter"></div>"""
+<div class="marca"><img src="assets/logo-techmeter.png" alt="Techmeter"><span>MEASUREMENT &amp; CONTROL</span></div>"""
 
 
 def titulos(conteudo):
@@ -80,14 +80,11 @@ def montar(meta, conteudo, paginas=None):
 <link rel="stylesheet" href="estilo.css"></head><body>
 
 <section class="capa">
-  <img class="ondas" src="assets/ondas.png" alt="">
   <img class="produto" src="{meta['imagem_capa']}" alt="">
-  <div class="bloco">
-    <div class="tipo">{html.escape(meta.get('tipo', 'MANUAL'))}</div>
-    <hr>
-    <h1>{meta['titulo']}</h1>
-    <div class="modelo">MODELO: {html.escape(meta['modelo'])}</div>
-  </div>
+  <div class="tipo">{html.escape(meta.get('tipo', 'MANUAL'))}</div>
+  <hr>
+  <h1>{meta['titulo']}</h1>
+  <div class="modelo" style="top: {201 + 10.2 * (meta['titulo'].count('<br>') + 1):.1f}mm">MODELO: {html.escape(meta['modelo'])}</div>
   <div class="rodape-capa">{bloco_empresa()}</div>
 </section>
 
@@ -102,9 +99,8 @@ def montar(meta, conteudo, paginas=None):
 </table>
 
 <section class="contracapa">
-  <img class="ondas" src="assets/ondas.png" alt="">
   <div class="caixa"><h2>Contato</h2>{contato}</div>
-  <div class="marca"><img src="assets/logo-techmeter.png" alt="Techmeter"></div>
+  <div class="marca"><img src="assets/logo-techmeter.png" alt="Techmeter"><span>MEASUREMENT &amp; CONTROL</span></div>
 </section>
 </body></html>"""
 
