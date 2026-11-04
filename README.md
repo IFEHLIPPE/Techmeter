@@ -22,7 +22,7 @@ Ver [`docs/empresa.md`](docs/empresa.md).
 │   ├── empresa.md            # Quem somos, produtos, clientes, equipe
 │   ├── tarefas.md            # Backlog e status das tarefas
 │   └── decisoes.md           # Registro de decisões importantes
-├── midia/                    # Fotos de produtos (originais e tratadas)
+├── midia/                    # Fotos de produtos (originais e tratadas) e simulações internas
 ├── projetos/
 │   └── geo/                  # Projeto GEO — Otimização para Mecanismos Generativos
 │       ├── README.md         # Plano, frentes, KPIs e cronograma de 90 dias
