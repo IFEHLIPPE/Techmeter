@@ -400,24 +400,40 @@ button, input { font: inherit; color: inherit; }
 
   /* frontal do conversor atrás do vidro */
   var texFrontal = textura(768, 768, function (g, w, h) {
-    g.fillStyle = '#34373e'; g.fillRect(0, 0, w, h);
-    logo(g, 214, 108, 340, 84);
-    g.fillStyle = '#1d4fb3'; g.fillRect(150, 236, 468, 250);
-    g.fillStyle = '#a9b8a4'; g.fillRect(170, 256, 428, 210);
-    g.fillStyle = '#26302a'; g.textBaseline = 'middle'; g.textAlign = 'right';
-    g.font = '700 92px "Courier New", Courier, monospace'; g.fillText('12.50', 500, 330);
-    g.font = '700 34px "Courier New", Courier, monospace'; g.textAlign = 'left'; g.fillText('m³/h', 510, 346);
-    g.font = '700 32px "Courier New", Courier, monospace'; g.fillText('Σ 000184.6 m³', 190, 420);
-    g.fillStyle = '#b3251f'; g.fillRect(150, 500, 468, 8);
-    var gl = ['▲▼', '◥', '◢', '↵'];
+    /* frontal conforme a foto: logo no alto, LCD largo com moldura azul e faixas raiadas, 4 teclas pequenas */
+    g.fillStyle = '#2b2826'; g.fillRect(0, 0, w, h);
+    logo(g, 194, 84, 380, 104);
+    /* faixas raiadas nas laterais do LCD */
+    g.fillStyle = '#39507e'; for (var y = 232; y < 528; y += 12) g.fillRect(0, y, w, 5);
+    /* moldura azul: barras grossas em cima e embaixo, finas nos lados */
+    g.fillStyle = '#2459c9'; g.fillRect(0, 211, w, 20); g.fillRect(0, 526, w, 20);
+    g.fillRect(84, 211, 12, 335); g.fillRect(672, 211, 12, 335);
+    var lcd = g.createLinearGradient(96, 231, 672, 526);
+    lcd.addColorStop(0, '#a3ad96'); lcd.addColorStop(0.55, '#98a48c'); lcd.addColorStop(1, '#8b9880');
+    g.fillStyle = lcd; g.fillRect(96, 231, 576, 295);
+    g.fillStyle = 'rgba(34,44,34,.9)'; g.textBaseline = 'middle'; g.textAlign = 'right';
+    g.font = '700 124px "Courier New", Courier, monospace'; g.fillText('12.50', 540, 340);
+    g.textAlign = 'left'; g.font = '700 40px "Courier New", Courier, monospace'; g.fillText('m³/h', 552, 362);
+    g.font = '700 38px "Courier New", Courier, monospace'; g.fillText('Σ 000184.6 m³', 120, 462);
+    g.fillStyle = 'rgba(34,44,34,.55)'; g.fillRect(120, 418, 528, 3);
+    /* linha de texto vermelho sob o LCD */
+    g.fillStyle = '#b3251f'; for (var x = 286; x < 482; x += 14) g.fillRect(x, 566, 9, 5);
+    /* teclas */
     for (var i = 0; i < 4; i++) {
-      var x = 262 + i * 66; g.fillStyle = '#f1f2f4'; g.fillRect(x, 548, 50, 50);
-      g.fillStyle = '#15171b'; g.textAlign = 'center'; g.font = '700 ' + (i ? 30 : 20) + 'px Arial, sans-serif'; g.fillText(gl[i], x + 25, 574);
+      var bx = 235 + i * 78, by = 614, s = 64;
+      g.fillStyle = '#eceef0'; g.fillRect(bx, by, s, s);
+      g.fillStyle = '#16181c'; g.beginPath();
+      if (i === 0) { g.moveTo(bx + 32, by + 9); g.lineTo(bx + 52, by + 29); g.lineTo(bx + 12, by + 29); g.closePath(); g.moveTo(bx + 12, by + 35); g.lineTo(bx + 52, by + 35); g.lineTo(bx + 32, by + 55); g.closePath(); }
+      else if (i === 1) { g.moveTo(bx + 12, by + 12); g.lineTo(bx + 52, by + 12); g.lineTo(bx + 52, by + 52); g.closePath(); }
+      else if (i === 2) { g.moveTo(bx + 52, by + 12); g.lineTo(bx + 52, by + 52); g.lineTo(bx + 12, by + 52); g.closePath(); }
+      else { g.moveTo(bx + 48, by + 14); g.lineTo(bx + 48, by + 40); g.lineTo(bx + 28, by + 40); g.lineTo(bx + 28, by + 50); g.lineTo(bx + 12, by + 36); g.lineTo(bx + 28, by + 22); g.lineTo(bx + 28, by + 32); g.lineTo(bx + 40, by + 32); g.lineTo(bx + 40, by + 14); g.closePath(); }
+      g.fill();
+      if (i === 1 || i === 2) { g.fillStyle = '#eceef0'; for (var k = 0; k < 3; k++) g.fillRect(bx + 10, by + 20 + k * 10, 44, 3); }
     }
   });
   add(new T.CircleGeometry(47.5, 64), new T.MeshStandardMaterial({ map: texFrontal, roughness: 0.55 }), 0, CY, 89);
   add(new T.CylinderGeometry(47.4, 47.4, 12, 64, 1, true), new T.MeshStandardMaterial({ color: 0x0e0f12, roughness: 0.7, side: T.BackSide }), 0, CY, 94, H, 0, 0);
-  add(new T.CircleGeometry(48, 64), new T.MeshPhysicalMaterial({ color: 0xffffff, transparent: true, opacity: 0.16, roughness: 0.02, metalness: 0, clearcoat: 1, envMapIntensity: 1.6 }), 0, CY, 98.2);
+  add(new T.CircleGeometry(48, 64), new T.MeshPhysicalMaterial({ color: 0xffffff, transparent: true, opacity: 0.08, roughness: 0.02, metalness: 0, clearcoat: 1, envMapIntensity: 1.6 }), 0, CY, 98.2);
 
   /* sombra de contato */
   var sombra = add(new T.PlaneGeometry(460, 380), new T.MeshBasicMaterial({
