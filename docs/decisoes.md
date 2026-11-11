@@ -10,3 +10,4 @@
 | 2026-10-06 | Planilha de teste em .xlsx (não CSV) | CSV com vírgula abre numa coluna só no Excel em português |
 | 2026-11-04 | Manuais e catálogos gerados pelo modelo `modelos/manual-tecnico/` (HTML → PDF), no visual do manual LATM 2025 | Padronizar e agilizar os próximos materiais |
 | 2026-11-04 | Manuais de produtos de fornecedor (white label) são reescritos com texto próprio, usando só os dados técnicos | Evitar cópia de material de terceiros e manter a voz da Techmeter |
+| 2026-11-11 | Cloudflare Pages publica só a pasta `site/` | O repositório tem documentos internos que não devem ir para a internet |
