@@ -28,6 +28,7 @@ Legenda: 🔲 a fazer · 🔄 em andamento · ✅ concluída
 - 🔲 Projeto GEO: dias 16–45, construção do cluster de Eletromagnético
 
 ## Concluídas
+- ✅ Configurador 3D do medidor eletromagnético TM-EL (`modelos-3d/`)
 - ✅ Modelo de manual técnico Techmeter (`modelos/manual-tecnico/`) e primeiro manual: TM-Smart
 - ✅ Estruturar o Projeto GEO no repositório: plano, rascunho dos 50 prompts, planilha de registro, checklist de auditoria, modelo da página e scripts
 - ✅ Levantar informações públicas da empresa (site, LinkedIn, AECweb)

@@ -26,6 +26,7 @@ Ver [`docs/empresa.md`](docs/empresa.md).
 │   └── manual-tecnico/       # Modelo de manual/catálogo Techmeter (gera PDF)
 ├── documentos/
 │   └── manuais/              # Manuais gerados com o modelo
+├── modelos-3d/               # Modelos 3D interativos de produtos (configurador de cores)
 ├── midia/                    # Fotos de produtos (originais e tratadas) e simulações internas
 ├── projetos/
 │   └── geo/                  # Projeto GEO — Otimização para Mecanismos Generativos
