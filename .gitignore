@@ -20,4 +20,4 @@ __pycache__/
 !.env.example
 
 # Saída intermediária dos manuais
-documentos/manuais/*/build/
+documentos/*/*/build/

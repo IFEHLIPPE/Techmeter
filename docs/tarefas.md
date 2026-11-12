@@ -23,11 +23,13 @@ Legenda: 🔲 a fazer · 🔄 em andamento · ✅ concluída
 - 🔄 Completar `docs/empresa.md` (missão, clientes, contatos)
 
 ## A fazer
+- 🔲 **Catálogo válvula G80:** confirmar operador (G75 x G80) e as medidas A (3/4" e 1") e largura (1-1/2" e 2"), marcadas como VALIDAR
 - 🔲 **Manual TM-Smart:** resolver as pendências marcadas como VALIDAR (corrente dos alarmes, logomarca e dados no firmware, nome do aplicativo). Definir a grafia do nome: a membrana diz "TM SMART" e o manual usa "TM-Smart". Trocar a montagem da capa por uma foto real quando houver unidade montada
 - 🔲 Conseguir o logo Techmeter em vetor (.svg/.ai/.pdf) para trocar no modelo de manual
 - 🔲 Projeto GEO: dias 16–45, construção do cluster de Eletromagnético
 
 ## Concluídas
+- ✅ Catálogo da válvula solenoide G80 refeito no modelo Techmeter, com os dados da ficha do fornecedor
 - ✅ Configurador 3D do medidor eletromagnético TM-EL (`modelos-3d/`)
 - ✅ Modelo de manual técnico Techmeter (`modelos/manual-tecnico/`) e primeiro manual: TM-Smart
 - ✅ Estruturar o Projeto GEO no repositório: plano, rascunho dos 50 prompts, planilha de registro, checklist de auditoria, modelo da página e scripts

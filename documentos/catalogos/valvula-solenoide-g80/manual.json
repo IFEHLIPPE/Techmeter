@@ -1,0 +1,14 @@
+{
+  "titulo": "VÁLVULA SOLENOIDE<br>TERMOPLÁSTICA PILOTADA",
+  "modelo": "G80 · 3/4\" a 2\"",
+  "tipo": "CATÁLOGO",
+  "imagem_capa": "imagens/valvula-g80.png",
+  "arquivo": "catalogo-valvula-solenoide-g80",
+  "arquivos": [
+    "imagens/cortes.png",
+    "imagens/dimensoes-com-controle.png",
+    "imagens/dimensoes-sem-controle.png",
+    "imagens/bobina-g80.png",
+    "imagens/dimensoes-bobina.png"
+  ]
+}
