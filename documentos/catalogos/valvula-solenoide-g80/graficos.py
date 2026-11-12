@@ -71,12 +71,46 @@ def svg(linhas):
     return "".join(s)
 
 
+# Curva do 3": gráfico log-log real, medido na ficha do fornecedor (perda em m.c.a.,
+# convertida para kgf/cm² dividindo por 10). Reta de (15,6 m³/h; 0,01) a (87 m³/h; 1,0).
+def svg_3pol():
+    x0, x1, y0, y1 = 10, 200, 0.01, 1.0
+    def X(q): return W * (math.log10(q) - math.log10(x0)) / (math.log10(x1) - math.log10(x0))
+    def Y(h): return H * (math.log10(y1) - math.log10(h)) / (math.log10(y1) - math.log10(y0))
+    s = ['<svg viewBox="-34 -10 292 196" width="100%" font-family="Lato, Arial, sans-serif" role="img">']
+    for d in (10, 100):
+        for m in range(1, 10):
+            q = d * m
+            if x0 <= q <= x1:
+                s.append(f'<line x1="{X(q):.1f}" y1="0" x2="{X(q):.1f}" y2="{H}" stroke="{GRADE}" stroke-width=".6"/>')
+    for d in (0.01, 0.1):
+        for m in range(1, 10):
+            h = d * m
+            if y0 <= h <= y1:
+                s.append(f'<line x1="0" y1="{Y(h):.1f}" x2="{W}" y2="{Y(h):.1f}" stroke="{GRADE}" stroke-width=".6"/>')
+    s.append(f'<rect x="0" y="0" width="{W}" height="{H}" fill="none" stroke="#9aa6b5" stroke-width=".8"/>')
+    for q in (10, 20, 30, 40, 50, 100, 200):
+        s.append(f'<text x="{X(q):.1f}" y="{H+9}" font-size="6.4" fill="{TEXTO}" text-anchor="middle">{q}</text>')
+    for h, t in ((1, "1"), (0.4, ",4"), (0.2, ",2"), (0.1, ",1"), (0.04, ",04"), (0.02, ",02"), (0.01, ",01")):
+        s.append(f'<text x="-3" y="{Y(h)+2.2:.1f}" font-size="6.4" fill="{TEXTO}" text-anchor="end">{t}</text>')
+    s.append(f'<text x="{W/2}" y="{H+20}" font-size="7.2" fill="{AZUL}" text-anchor="middle" font-weight="700">Q (m³/h)</text>')
+    s.append(f'<text transform="translate(-24 {H/2}) rotate(-90)" font-size="7.2" fill="{AZUL}" text-anchor="middle" font-weight="700">ΔH (kgf/cm²)</text>')
+    a, b = (X(15.6), Y(0.01)), (X(87), Y(1.0))
+    s.append(f'<line x1="{a[0]:.1f}" y1="{a[1]:.1f}" x2="{b[0]:.1f}" y2="{b[1]:.1f}" stroke="#d7261e" stroke-width="1.6" stroke-linecap="round"/>')
+    ang = math.degrees(math.atan2(b[1] - a[1], b[0] - a[0]))
+    mx, my = a[0] + (b[0] - a[0]) * 0.55 - 7, a[1] + (b[1] - a[1]) * 0.55 - 4
+    s.append(f'<text transform="translate({mx:.1f} {my:.1f}) rotate({ang:.1f})" font-size="7" fill="{AZUL}" font-weight="700" text-anchor="middle">3"</text>')
+    s.append("</svg>")
+    return "".join(s)
+
+
 def main():
     arq = PASTA / "conteudo.html"
     txt = arq.read_text(encoding="utf-8")
     for chave, linhas in GRAFICOS.items():
         txt = re.sub(rf"<!--grafico:{chave}-->.*?<!--/grafico-->",
                      f"<!--grafico:{chave}-->{svg(linhas)}<!--/grafico-->", txt, flags=re.S)
+    txt = re.sub(r"<!--grafico:3pol-->.*?<!--/grafico-->", f"<!--grafico:3pol-->{svg_3pol()}<!--/grafico-->", txt, flags=re.S)
     arq.write_text(txt, encoding="utf-8")
     print("Gráficos atualizados em", arq)
 
