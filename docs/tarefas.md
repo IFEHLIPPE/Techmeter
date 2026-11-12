@@ -23,7 +23,7 @@ Legenda: 🔲 a fazer · 🔄 em andamento · ✅ concluída
 - 🔄 Completar `docs/empresa.md` (missão, clientes, contatos)
 
 ## A fazer
-- 🔲 **Catálogo válvula G80:** confirmar dados do tamanho 3" (Kv, dimensões, código) e as medidas A (3/4" e 1") e largura (1-1/2" e 2"), marcadas como VALIDAR
+- 🔲 **Catálogo válvula G80:** passar os dados do tamanho 3" (pressão, Kv, curva, dimensões, peso e código de pedido), hoje "sob consulta" e as medidas A (3/4" e 1") e largura (1-1/2" e 2"), marcadas como VALIDAR
 - 🔲 **Manual TM-Smart:** resolver as pendências marcadas como VALIDAR (corrente dos alarmes, logomarca e dados no firmware, nome do aplicativo). Definir a grafia do nome: a membrana diz "TM SMART" e o manual usa "TM-Smart". Trocar a montagem da capa por uma foto real quando houver unidade montada
 - 🔲 Conseguir o logo Techmeter em vetor (.svg/.ai/.pdf) para trocar no modelo de manual
 - 🔲 Projeto GEO: dias 16–45, construção do cluster de Eletromagnético
