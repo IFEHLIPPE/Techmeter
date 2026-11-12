@@ -76,7 +76,7 @@ def montar(meta, conteudo, paginas=None):
             ("E-MAIL", EMPRESA["email"]), ("SITE", EMPRESA["site"].upper()),
             ("ENDEREÇO", html.escape(EMPRESA["endereco"]))])
     return f"""<!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><title>{html.escape(meta['titulo'])}</title>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>{html.escape(re.sub(r'<[^>]+>', ' ', meta['titulo']))}</title>
 <link rel="stylesheet" href="estilo.css"></head><body>
 
 <section class="capa">
