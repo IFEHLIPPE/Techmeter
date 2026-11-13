@@ -20,6 +20,7 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 - `modelos-3d/medidor-eletromagnetico/`: configurador 3D do medidor eletromagnético TM-EL, com troca de cor do cabeçote, das tampas e da base.
 - `site/`: versão pública do configurador 3D para o Cloudflare Pages, gerada por `modelos-3d/gerar_site.py`.
 - `documentos/catalogos/valvula-solenoide-g80/`: catálogo da válvula solenoide G80 no modelo Techmeter, em português, com especificações, materiais, gráficos de perda de carga redesenhados, dimensões com peso, códigos de pedido e bobina.
+- `documentos/manuais/radar-80g/`: manual do radar 80G refeito em português no modelo Techmeter, com o protocolo RS485 Modbus incorporado.
 
 ### Alterado
 - `EM-01` a `EM-20` em `baseline/prompts.csv` substituídos pelos 20 prompts oficiais do Ciclo 1. Intenções alinhadas ao documento (informacional, seleção, comparação, aplicação, comercial, troubleshooting).

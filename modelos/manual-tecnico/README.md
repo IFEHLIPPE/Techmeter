@@ -59,3 +59,4 @@ Os dados da empresa (razão social, CNPJ, endereço, telefones e e-mail) ficam e
 |---|---|
 | TM-Smart — indicador, totalizador e retransmissor 4-20 mA (firmware 2.00) | `documentos/manuais/tm-smart/` |
 | Catálogo válvula solenoide termoplástica G80 (3/4" a 2") | `documentos/catalogos/valvula-solenoide-g80/` |
+| Transmissor de nível radar 80G (com protocolo RS485 Modbus) | `documentos/manuais/radar-80g/` |

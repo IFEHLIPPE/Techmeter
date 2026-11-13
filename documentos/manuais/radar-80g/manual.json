@@ -1,0 +1,22 @@
+{
+  "titulo": "TRANSMISSOR DE NÍVEL<br>RADAR 80 GHz",
+  "modelo": "80G",
+  "tipo": "MANUAL",
+  "imagem_capa": "imagens/radar-80g.png",
+  "arquivo": "manual-radar-80g",
+  "arquivos": [
+    "imagens/desenho-dimensoes.png",
+    "imagens/desenho-suporte.png",
+    "imagens/instalacao-perpendicular.png",
+    "imagens/instalacao-obstaculos.png",
+    "imagens/instalacao-parede.png",
+    "imagens/cabo.png",
+    "imagens/conexao-pc.png",
+    "imagens/qr-android.png",
+    "imagens/software-configuracao.png",
+    "imagens/software-eco.png",
+    "imagens/ajustes.png",
+    "imagens/offset.png",
+    "imagens/angulo-feixe.png"
+  ]
+}

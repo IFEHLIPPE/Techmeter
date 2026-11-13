@@ -1,0 +1,280 @@
+<!-- Manual do transmissor de nível radar 80G — texto Techmeter em pt-BR.
+     Fontes: "Manual Radar Tech" (Canva, em inglês) e "Protocolo de comunicação 485" (tradução PT-BR).
+     Os CRCs dos exemplos Modbus foram conferidos (CRC16 Modbus). -->
+<style>
+  table.dados{break-inside:avoid} .nota,.aviso{break-inside:avoid} h3{break-after:avoid}
+  .quadro{width:100%; border-collapse:collapse; font-size:8.4pt; margin:2mm 0 5mm; break-inside:avoid}
+  .quadro td{border:.3mm solid #b7c9de; padding:1.6mm 2mm; text-align:center; vertical-align:middle}
+  .quadro tr:first-child td{background:#c9def2; color:#1d2b4f; font-weight:700}
+  .quadro tr:nth-child(2) td{font-family:Montserrat; font-weight:600; color:#1d2b4f}
+  .hex{font-family:Montserrat; font-weight:600; color:#1d2b4f; white-space:nowrap}
+  .bloco{break-inside:avoid}
+  .par{display:grid; grid-template-columns:1fr 1fr; gap:6mm; align-items:start}
+</style>
+
+<h2 class="capitulo nova-pagina">Apresentação</h2>
+
+<h3>O equipamento</h3>
+<p>O transmissor de nível <strong>radar 80G</strong> mede nível sem contato, por radar de onda contínua modulada em frequência (FMCW), na faixa de <strong>76 a 81 GHz</strong>. Ele alcança até <strong>65 m</strong>, com zona morta de apenas <strong>10 cm</strong>. A frequência alta e a banda larga garantem medição precisa, e a instalação é simples, com suporte ou rosca.</p>
+
+<h3>Vantagens</h3>
+<ul>
+  <li><strong>Chip de RF em ondas milimétricas:</strong> eletrônica compacta, melhor relação sinal-ruído e zona morta menor.</li>
+  <li><strong>Banda de 5 GHz:</strong> mais resolução e mais precisão na medição.</li>
+  <li><strong>Feixe estreito de 6°:</strong> sofre menos interferência do ambiente e facilita a instalação.</li>
+  <li><strong>Antena com lente integrada</strong> e corpo compacto.</li>
+  <li><strong>Display separado do sensor</strong>, que pode ser personalizado.</li>
+  <li><strong>Baixo consumo</strong> e vida útil acima de 3 anos.</li>
+  <li><strong>Configuração por Bluetooth</strong> pelo celular, facilitando a manutenção em campo (opcional).</li>
+</ul>
+
+<h2 class="capitulo">Especificações técnicas</h2>
+<table class="dados">
+  <tr><th style="width:40%">Característica</th><th>Especificação</th></tr>
+  <tr><td>Faixa de medição</td><td>0,1 a 65 m</td></tr>
+  <tr><td>Precisão</td><td>±1 mm</td></tr>
+  <tr><td>Ângulo do feixe</td><td>6°</td></tr>
+  <tr><td>Frequência</td><td>76 a 81 GHz (FMCW)</td></tr>
+  <tr><td>Alimentação</td><td>14 a 28 Vcc</td></tr>
+  <tr><td>Saída / comunicação</td><td>4-20 mA com HART<br>RS485 Modbus RTU (capítulo "Comunicação RS485 Modbus") <span class="validar">VALIDAR: conforme versão</span></td></tr>
+  <tr><td>Temperatura de operação</td><td>-30 a 75 °C</td></tr>
+  <tr><td>Material do corpo</td><td>Aço inox ou PP</td></tr>
+  <tr><td>Antena</td><td>Lente</td></tr>
+  <tr><td>Cabo recomendado</td><td>0,5 mm²</td></tr>
+  <tr><td>Grau de proteção</td><td>IP67</td></tr>
+  <tr><td>Montagem</td><td>Suporte ou rosca</td></tr>
+  <tr><td>Entrada do cabo</td><td>PG9</td></tr>
+</table>
+
+<h2 class="capitulo nova-pagina">Dimensões</h2>
+<div class="figura">
+  <img src="imagens/desenho-dimensoes.png" style="width:150mm" alt="Dimensões do sensor">
+  <div class="legenda">Figura 1: Dimensões do sensor, em mm. À esquerda, corpo liso; à direita, corpo com anéis.</div>
+</div>
+<div class="figura">
+  <img src="imagens/desenho-suporte.png" style="width:105mm" alt="Dimensões do suporte">
+  <div class="legenda">Figura 2: Suporte de fixação, em mm.</div>
+</div>
+
+<h2 class="capitulo nova-pagina">Instalação</h2>
+<p>Na instalação, garanta dois pontos: o sensor <strong>perpendicular à superfície</strong> do líquido e o feixe <strong>livre de obstáculos</strong> que gerem ecos falsos.</p>
+
+<div class="par">
+  <div>
+    <h4>Sensor perpendicular</h4>
+    <p>Com o sensor inclinado, o sinal de retorno fica fraco e a medição falha.</p>
+    <div class="figura"><img src="imagens/instalacao-perpendicular.png" style="width:72mm" alt="Sensor perpendicular"><div class="legenda">Figura 3: Correto (○) e errado (×).</div></div>
+  </div>
+  <div>
+    <h4>Feixe livre</h4>
+    <p>Não deixe objetos dentro do feixe, como as margens de um canal.</p>
+    <div class="figura"><img src="imagens/instalacao-obstaculos.png" style="width:72mm" alt="Feixe livre de obstáculos"><div class="legenda">Figura 4: Correto (○) e errado (×).</div></div>
+  </div>
+</div>
+
+<h4>Distância da parede</h4>
+<p>Instale o sensor a <strong>pelo menos 20 cm da parede</strong>. Em poços, posicione-o o mais perto possível do centro; a parede próxima gera ecos de interferência que atrapalham a medição.</p>
+<div class="figura"><img src="imagens/instalacao-parede.png" style="width:70mm" alt="Distância da parede"><div class="legenda">Figura 5: Distância mínima de 20 cm da parede.</div></div>
+
+<h2 class="capitulo nova-pagina">Ligações elétricas</h2>
+<div class="figura"><img src="imagens/cabo.png" style="width:115mm" alt="Cabo do sensor"><div class="legenda">Figura 6: Cabo de ligação.</div></div>
+<table class="dados">
+  <tr><th style="width:14%">Fio</th><th style="width:26%">Cor</th><th>Ligação</th></tr>
+  <tr><td class="cod">1</td><td>Vermelho</td><td>Alimentação (+)</td></tr>
+  <tr><td class="cod">2</td><td>Azul</td><td>Alimentação (−)</td></tr>
+  <tr><td class="cod">3</td><td>Amarelo</td><td>Aterramento</td></tr>
+</table>
+<p class="validar">VALIDAR: cores dos fios A e B na versão RS485 Modbus.</p>
+<div class="aviso"><strong>Atenção:</strong> faça as ligações com a alimentação desligada e confira a polaridade antes de energizar.</div>
+
+<h2 class="capitulo">Configuração pelo computador</h2>
+
+<h3>Conexão</h3>
+<div class="figura"><img src="imagens/conexao-pc.png" style="width:110mm" alt="Conexão ao computador"><div class="legenda">Figura 7: Sensor ligado ao computador pela linha de comunicação.</div></div>
+<ol>
+  <li>Ligue o equipamento conforme o capítulo "Ligações elétricas".</li>
+  <li>Conecte o sensor ao computador com um <strong>conversor HART-USB</strong>.</li>
+  <li>Ligue a alimentação de <strong>24 Vcc</strong>, abra o software no computador e faça a configuração.</li>
+</ol>
+<p class="validar">VALIDAR: o manual anterior citava alimentação de 18 a 28 V nesta etapa; a especificação diz 14 a 28 Vcc.</p>
+
+<h3>Software</h3>
+<div class="figura"><img src="imagens/software-configuracao.png" style="width:118mm" alt="Tela de configuração"><div class="legenda">Figura 8: Tela de configuração do software.</div></div>
+<p>Configure a porta serial na ordem indicada na tela, com <strong>velocidade de 1200 bps</strong> e sinal HART. Depois de conectar, clique em <strong>Read Config</strong> para ler e alterar os parâmetros.</p>
+
+<h3>Perfil de eco</h3>
+<div class="figura"><img src="imagens/software-eco.png" style="width:108mm" alt="Perfil de eco"><div class="legenda">Figura 9: Aba de diagnóstico com o perfil de eco em tempo real.</div></div>
+<p>A aba <strong>Debug</strong> mostra a altura vazia, o nível e a corrente, além da curva de eco, útil para identificar ecos falsos.</p>
+
+<h2 class="capitulo nova-pagina">Configuração por Bluetooth (opcional)</h2>
+<div class="par">
+  <div>
+    <h3 style="margin-top:0">Aplicativo</h3>
+    <ul>
+      <li><strong>Android:</strong> leia o QR code ao lado.</li>
+      <li><strong>iOS:</strong> baixe na App Store. <span class="validar">VALIDAR: nome do aplicativo</span></li>
+    </ul>
+    <p>O aplicativo fica em inglês no celular.</p>
+  </div>
+  <div class="figura" style="margin:0"><img src="imagens/qr-android.png" style="width:38mm" alt="QR code do aplicativo Android"><div class="legenda">Aplicativo para Android</div></div>
+</div>
+
+<h3>Conexão</h3>
+<p>Ao abrir o aplicativo pela primeira vez, toque no ícone no canto superior direito. A tela lista os equipamentos disponíveis; toque no nome do sensor para conectar e ver ou alterar os parâmetros. O nome Bluetooth do sensor aparece como <strong>RFstar-xxxx</strong>.</p>
+
+<h2 class="capitulo">Parâmetros</h2>
+<p>Os parâmetros abaixo são os mesmos no software, no aplicativo e na comunicação Modbus. O registrador de cada um está no capítulo "Comunicação RS485 Modbus".</p>
+
+<div class="figura"><img src="imagens/ajustes.png" style="width:100mm" alt="Ajuste alto e ajuste baixo"><div class="legenda">Figura 10: Referências de medição: ajuste alto (100%), ajuste baixo (0%), altura vazia, nível e distância.</div></div>
+
+<h3>Ajuste baixo</h3>
+<p>Distância da frente do sensor até o fundo (ponto de 0%). Deve ser menor que a faixa de medição.</p>
+<table class="dados">
+  <tr><th style="width:34%">Item</th><th>Valor</th></tr>
+  <tr><td>Faixa</td><td>0,1 m até a faixa configurada</td></tr>
+  <tr><td>Padrão</td><td>65 m</td></tr>
+  <tr><td>Regra</td><td>Se o ajuste baixo for menor que o ajuste alto + 0,1 m, o equipamento usa ajuste alto + 0,1 m.</td></tr>
+  <tr><td>Observação</td><td>Não altera a faixa; afeta só o cálculo do nível.</td></tr>
+</table>
+
+<h3>Ajuste alto</h3>
+<p>Distância da frente do sensor até o ponto de 100%.</p>
+<table class="dados">
+  <tr><th style="width:34%">Item</th><th>Valor</th></tr>
+  <tr><td>Faixa</td><td>0 até (ajuste baixo − 0,1 m)</td></tr>
+  <tr><td>Padrão</td><td>0 m</td></tr>
+  <tr><td>Regra</td><td>Se o ajuste alto for maior que o ajuste baixo − 0,1 m, o equipamento usa ajuste baixo − 0,1 m.</td></tr>
+  <tr><td>Observação</td><td>Não altera a zona morta; afeta só o cálculo da altura.</td></tr>
+</table>
+
+<h3>Faixa de medição</h3>
+<p>Ecos além da faixa são ignorados pelo algoritmo. Uma faixa bem ajustada evita reflexões múltiplas e interferências fora da área útil.</p>
+<table class="dados">
+  <tr><th style="width:34%">Item</th><th>Valor</th></tr>
+  <tr><td>Faixa</td><td>1 a 65 m</td></tr>
+  <tr><td>Padrão</td><td>65 m</td></tr>
+  <tr><td>Regra</td><td>Se a faixa for menor que a zona morta + 0,1 m, o equipamento usa zona morta + 0,1 m.</td></tr>
+  <tr><td>Observação</td><td>Limita apenas a área do algoritmo. O alcance máximo do equipamento está nas especificações técnicas.</td></tr>
+</table>
+
+<h3>Zona morta</h3>
+<p>Ecos dentro da zona morta são ignorados. Use para eliminar interferências perto do sensor.</p>
+<table class="dados">
+  <tr><th style="width:34%">Item</th><th>Valor</th></tr>
+  <tr><td>Faixa</td><td>0 até (faixa − 0,1 m)</td></tr>
+  <tr><td>Padrão</td><td>0 m</td></tr>
+  <tr><td>Regra</td><td>Se a zona morta for maior que a faixa − 0,1 m, o equipamento usa faixa − 0,1 m.</td></tr>
+  <tr><td>Observação</td><td>Limita apenas a área do algoritmo, não a distância mínima de medição.</td></tr>
+</table>
+<div class="nota">A <strong>zona morta</strong> e a <strong>faixa</strong> definem juntas a janela de busca do eco. Ajustadas ao processo, elas evitam ecos falsos e deixam a medição rápida e estável.</div>
+
+<h3>Deslocamento de distância</h3>
+<div class="par">
+  <p>Corrige o ponto de referência do sensor. De fábrica, a referência é o ponto <strong>a</strong>. Para mover a referência para baixo, até o ponto <strong>b</strong>, informe <strong>h1</strong>; para mover para cima, até o ponto <strong>c</strong>, informe <strong>h2</strong> com sinal negativo. <span class="validar">VALIDAR: sinal do deslocamento para cima</span></p>
+  <div class="figura" style="margin:0"><img src="imagens/offset.png" style="width:32mm" alt="Deslocamento de distância"><div class="legenda">Figura 11: Pontos de referência.</div></div>
+</div>
+
+<h3>Outros parâmetros</h3>
+<table class="dados">
+  <tr><th style="width:34%">Parâmetro</th><th>Função</th></tr>
+  <tr><td>Tempo de amortecimento</td><td>Filtra a medição. Valores maiores deixam a leitura mais estável (0 a 100).</td></tr>
+  <tr><td>Tipo de meio</td><td>Líquido ou sólido, com algoritmos próprios para cada caso.</td></tr>
+  <tr><td>Tipo de reservatório</td><td>Grande, pequeno, rápido ou teste, conforme a velocidade de enchimento e esvaziamento.</td></tr>
+  <tr><td>Início e fim de eco falso</td><td>Faixa de distância em que um eco falso conhecido é ignorado.</td></tr>
+  <tr><td>Modo de medição</td><td>Nível do material ou altura vazia.</td></tr>
+  <tr><td>Unidade de distância</td><td>m, cm ou mm.</td></tr>
+  <tr><td>Saída de corrente</td><td>4-20 mA ou 20-4 mA; simulação e corrente de falha (22 mA ou 3,6 mA).</td></tr>
+</table>
+
+
+<h2 class="capitulo">Comunicação RS485 Modbus</h2>
+<p>O protocolo é o mesmo nos modelos 80G novos e antigos, para medidores de nível de líquidos e de sólidos. O registrador de leitura da medição não mudou; apenas alguns endereços de configuração foram alterados.</p>
+
+<h3>Parâmetros da porta serial</h3>
+<table class="dados">
+  <tr><th>Interface</th><th>Velocidade</th><th>Paridade</th><th>Bits de dados</th><th>Stop bit</th></tr>
+  <tr><td>RS485</td><td>9600 bps</td><td>Nenhuma</td><td>8</td><td>1</td></tr>
+</table>
+<ul>
+  <li>Protocolo <strong>Modbus RTU</strong>. Endereço de fábrica: <strong>1</strong>.</li>
+  <li>Intervalo mínimo entre quadros: <strong>50 ms</strong>.</li>
+  <li>Verificação por <strong>CRC16</strong>, enviando primeiro o byte menos significativo.</li>
+</ul>
+
+<h3>Leitura de parâmetros (função 0x03)</h3>
+<table class="quadro">
+  <tr><td>Endereço</td><td>Função</td><td>Registrador inicial</td><td>Nº de registradores</td><td>CRC</td></tr>
+  <tr><td>1 byte</td><td>0x03</td><td>2 bytes</td><td>2 bytes</td><td>2 bytes</td></tr>
+</table>
+<p>Resposta: endereço (1 byte), função (1 byte), nº de bytes (1 byte), valores (2 × N bytes) e CRC (2 bytes). N é o número de registradores.</p>
+
+<h3>Escrita de parâmetros (função 0x10)</h3>
+<table class="quadro">
+  <tr><td>Endereço</td><td>Função</td><td>Registrador inicial</td><td>Nº de registradores</td><td>Nº de bytes</td><td>Valores</td><td>CRC</td></tr>
+  <tr><td>1 byte</td><td>0x10</td><td>2 bytes</td><td>2 bytes (N)</td><td>1 byte</td><td>2 × N bytes</td><td>2 bytes</td></tr>
+</table>
+<p>Resposta: endereço, função, registrador inicial, nº de registradores e CRC.</p>
+
+<h3>Mapa de registradores de configuração</h3>
+<table class="dados">
+  <tr><th>Parâmetro</th><th>Endereço</th><th>Regs.</th><th>Valores</th></tr>
+  <tr><td>Ajuste baixo</td><td class="hex">8192 · 0x2000</td><td>2</td><td>0–35000, 0–85000 ou 0–120000</td></tr>
+  <tr><td>Ajuste alto</td><td class="hex">8194 · 0x2002</td><td>2</td><td>0–35000, 0–85000 ou 0–120000</td></tr>
+  <tr><td>Faixa de medição</td><td class="hex">8196 · 0x2004</td><td>2</td><td>0–35000, 0–85000 ou 0–120000</td></tr>
+  <tr><td>Zona morta</td><td class="hex">8198 · 0x2006</td><td>2</td><td>0–35000, 0–85000 ou 0–120000</td></tr>
+  <tr><td>Tempo de amortecimento</td><td class="hex">8200 · 0x2008</td><td>1</td><td>0–100</td></tr>
+  <tr><td>Tipo de meio</td><td class="hex">8201 · 0x2009</td><td>1</td><td>0 = líquido · 1 = sólido</td></tr>
+  <tr><td>Tipo de reservatório</td><td class="hex">8202 · 0x200A</td><td>1</td><td>0 = grande · 1 = pequeno · 2 = rápido · 3 = teste</td></tr>
+  <tr><td>Início de eco falso</td><td class="hex">8203 · 0x200B</td><td>2</td><td>0–35000, 0–85000 ou 0–120000</td></tr>
+  <tr><td>Fim de eco falso</td><td class="hex">8205 · 0x200D</td><td>2</td><td>0–35000, 0–85000 ou 0–120000</td></tr>
+  <tr><td>Deslocamento de distância</td><td class="hex">8209 · 0x2011</td><td>1</td><td>−10000 a 10000</td></tr>
+  <tr><td>Endereço Modbus</td><td class="hex">8210 · 0x2012</td><td>1</td><td>1–127</td></tr>
+  <tr><td>Sentido da saída</td><td class="hex">8211 · 0x2013</td><td>1</td><td>0 = 4-20 mA · 1 = 20-4 mA</td></tr>
+  <tr><td>Simulação de corrente</td><td class="hex">8212 · 0x2014</td><td>1</td><td>—</td></tr>
+  <tr><td>Corrente de falha</td><td class="hex">8213 · 0x2015</td><td>1</td><td>0 = sem alteração · 1 = 22 mA · 2 = 3,6 mA</td></tr>
+  <tr><td>Modo de medição</td><td class="hex">8224 · 0x2020</td><td>1</td><td>0 = nível · 1 = altura vazia</td></tr>
+  <tr><td>Unidade de distância</td><td class="hex">8225 · 0x2021</td><td>1</td><td>0 = m · 1 = cm · 2 = mm</td></tr>
+  <tr><td>Idioma</td><td class="hex">8226 · 0x2022</td><td>1</td><td>0 = chinês · 1 = inglês</td></tr>
+  <tr><td>Contraste do display</td><td class="hex">8227 · 0x2023</td><td>1</td><td>0–100</td></tr>
+</table>
+<ul>
+  <li>Valores em formato <strong>U16 ou I16</strong> por registrador.</li>
+  <li>Os parâmetros de distância têm <strong>2 registradores</strong>. Para faixas de até 65 m, basta ler ou escrever 1; acima de 65 m, use os 2 (palavra mais significativa primeiro).</li>
+  <li>A faixa de valores depende do alcance do modelo. <span class="validar">VALIDAR: unidade dos valores de distância (provavelmente mm)</span></li>
+</ul>
+
+<div class="bloco">
+<h3>Exemplo: ajuste baixo</h3>
+<p>Leitura do ajuste baixo no equipamento de endereço 1:</p>
+<table class="quadro">
+  <tr><td>Endereço</td><td>Função</td><td>Registrador inicial</td><td>Nº de registradores</td><td>CRC</td></tr>
+  <tr><td>0x01</td><td>0x03</td><td>0x2000</td><td>0x0001</td><td>0x8F 0xCA</td></tr>
+</table>
+<p>Escrita do ajuste baixo: endereço <span class="hex">0x01</span>, função <span class="hex">0x10</span>, registrador <span class="hex">0x2000</span>, 1 registrador, 2 bytes de dados, o valor (2 bytes) e o CRC.</p>
+</div>
+
+<h3>Leitura da medição</h3>
+<p>O mestre envia um dos comandos abaixo (todos com endereço 1 e função 0x03):</p>
+<table class="dados">
+  <tr><th>Registrador</th><th>Nº de regs.</th><th>CRC</th><th>Lê</th></tr>
+  <tr><td class="hex">0x0000</td><td>1</td><td class="hex">84 0A</td><td>Altura vazia, em cm</td></tr>
+  <tr><td class="hex">0x0001</td><td>1</td><td class="hex">D5 CA</td><td>Altura vazia, em mm</td></tr>
+  <tr><td class="hex">0x0002</td><td>1</td><td class="hex">25 CA</td><td>Nível, em cm</td></tr>
+  <tr><td class="hex">0x0003</td><td>1</td><td class="hex">74 0A</td><td>Nível, em mm</td></tr>
+</table>
+<p>Para faixas <strong>acima de 65 m</strong>, leia 2 registradores e monte o valor do byte mais significativo para o menos significativo:</p>
+<table class="dados">
+  <tr><th>Registrador</th><th>Nº de regs.</th><th>CRC</th><th>Lê</th></tr>
+  <tr><td class="hex">0x0000</td><td>2</td><td class="hex">C4 0B</td><td>Altura vazia, em mm</td></tr>
+  <tr><td class="hex">0x0002</td><td>2</td><td class="hex">65 CB</td><td>Nível, em mm</td></tr>
+</table>
+<div class="nota">Exemplo de comando completo: <span class="hex">01 03 00 03 00 01 74 0A</span> lê o nível em mm.</div>
+
+<h2 class="capitulo nova-pagina">Ângulo do feixe</h2>
+<div class="par">
+  <div>
+    <p>O ângulo do feixe é a largura em que o sinal cai até 3 dB abaixo do máximo. Na série 80G, ele é de <strong>6°</strong>.</p>
+    <p>Leve o cone do feixe em conta na instalação: quanto maior a distância, maior a área iluminada. Mantenha essa área livre de paredes, escadas e estruturas.</p>
+  </div>
+  <div class="figura" style="margin:0"><img src="imagens/angulo-feixe.png" style="width:70mm" alt="Ângulo do feixe"><div class="legenda">Figura 12: Abertura do feixe até 30 m.</div></div>
+</div>
