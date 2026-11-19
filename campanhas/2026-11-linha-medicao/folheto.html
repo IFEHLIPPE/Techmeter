@@ -4,98 +4,70 @@
 @font-face{font-family:Lato;font-weight:400;src:url(../../modelos/manual-tecnico/assets/fontes/Lato-Regular.ttf)}
 @font-face{font-family:Lato;font-weight:700;src:url(../../modelos/manual-tecnico/assets/fontes/Lato-Bold.ttf)}
 @font-face{font-family:Montserrat;font-weight:100 900;src:url("../../modelos/manual-tecnico/assets/fontes/Montserrat[wght].ttf")}
-:root{--navy:#1d2645;--azul:#1f4fa8;--azul2:#2d6fd0;--verm:#d7261e;--txt:#3a4558}
-*{box-sizing:border-box;margin:0}
-body{background:#888}
-.arte{position:relative;overflow:hidden;background:#b5d8ef url(assets/capa-fundo.jpg) center/cover no-repeat;font-family:Lato,sans-serif;color:var(--navy)}
-.feed{width:1080px;height:1350px}
-.story{width:1080px;height:1920px}
-.logo{height:62px}
-.eyebrow{font:700 22px Montserrat;letter-spacing:5px;color:var(--verm);text-transform:uppercase}
-h1{font:800 78px/1.02 Montserrat;letter-spacing:-1.5px;color:var(--navy)}
-h1 em{font-style:normal;color:var(--azul)}
-.sub{font:400 30px/1.35 Lato;color:var(--txt)}
-.itens{display:flex;flex-direction:column;gap:18px}
-.item{position:relative;z-index:2;display:flex;gap:22px;align-items:center;background:rgba(255,255,255,.86);border-radius:20px;padding:18px 26px;box-shadow:0 8px 24px rgba(29,38,69,.10)}
-.item svg{flex:none;width:86px;height:86px}
-.item b{display:block;font:800 29px/1.1 Montserrat;color:var(--navy)}
-.item span{display:block;font:400 22px/1.3 Lato;color:var(--txt);margin-top:5px}
-.hero{position:absolute;filter:drop-shadow(0 30px 40px rgba(20,35,70,.35))}
-.selos{display:flex;gap:14px;flex-wrap:wrap}
-.selo{font:700 21px Lato;color:var(--navy);background:#fff;border:2px solid #c6d6ea;border-radius:999px;padding:10px 20px}
-.cta{position:absolute;left:0;right:0;bottom:0;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:30px}
-.cta .t{font:800 40px/1.1 Montserrat}
-.cta .t small{display:block;font:400 24px Lato;color:#b9c7e0;margin-top:8px}
-.cta .contato{text-align:right;font:700 30px Lato;line-height:1.5}
-.cta .contato span{display:block;font:400 24px Lato;color:#b9c7e0}
-.zap{display:inline-flex;align-items:center;gap:12px}
-.zap i{width:34px;height:34px;border-radius:50%;background:#25d366;display:inline-grid;place-items:center}
-.faixa{position:absolute;left:0;right:0;height:8px;background:linear-gradient(90deg,var(--verm) 0 38%,var(--azul) 38% 100%)}
+:root{--navy:#14204a;--azul:#1b46a0;--verm:#d01f1f;--txt:#2b3446;--cinza:#eef1f5}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#999}
+.arte{position:relative;overflow:hidden;background:#fff;font-family:Lato,sans-serif;color:var(--navy)}
+.feed{width:1080px;height:1350px}.story{width:1080px;height:1920px}
+.topo{display:flex;justify-content:space-between;align-items:center}
+.topo img{height:58px}
+.topo span{font:700 20px Montserrat;letter-spacing:3px;color:#7a8499}
+h1{font:800 82px/1 Montserrat;letter-spacing:-2px;text-transform:uppercase;color:var(--navy)}
+h1 span{color:var(--verm)}
+.sub{font:400 32px/1.3 Lato;color:var(--txt)}
+.lista{list-style:none}
+.lista li{font:700 33px/1.2 Montserrat;color:var(--navy);padding:19px 0;border-bottom:2px solid #dde3ec;display:flex;gap:22px;align-items:baseline}
+.lista li:first-child{border-top:2px solid #dde3ec}
+.lista li::before{content:"";flex:none;width:16px;height:16px;background:var(--verm);transform:translateY(-4px)}
+.lista li small{display:block;font:400 24px Lato;color:#5b6577;margin-top:6px}
+.foto{position:absolute}
+.piso{position:absolute;height:40px;border-radius:50%;background:radial-gradient(closest-side,rgba(20,32,74,.28),rgba(20,32,74,0))}
+.barra{position:absolute;left:0;right:0;background:var(--cinza);display:flex;justify-content:center;gap:46px;font:700 24px Lato;color:var(--navy)}
+.barra b{color:var(--verm)}
+.rodape{position:absolute;left:0;right:0;bottom:0;background:var(--navy);color:#fff}
+.rodape .chamada{font:800 46px/1 Montserrat;text-transform:uppercase}
+.rodape .zap{white-space:nowrap;font:800 54px/1 Montserrat;color:#fff;display:flex;align-items:center;gap:16px}
+.rodape .zap i{width:52px;height:52px;border-radius:50%;background:#25d366;display:grid;place-items:center}
+.rodape .site{font:400 26px Lato;color:#c3cde0}
+.corte{position:absolute;top:0;bottom:0;width:14px;background:var(--verm)}
 </style></head><body>
 
-<!-- ícones de linha -->
-<svg width="0" height="0" style="position:absolute">
- <defs>
-  <symbol id="i-em" viewBox="0 0 86 86"><g fill="none" stroke="#1f4fa8" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round">
-   <rect x="8" y="40" width="10" height="34" rx="2"/><rect x="68" y="40" width="10" height="34" rx="2"/><rect x="18" y="46" width="50" height="22" rx="10"/>
-   <path d="M38 46v-8h10v8"/><rect x="28" y="10" width="30" height="28" rx="14"/><circle cx="43" cy="24" r="7"/></g>
-   <path d="M30 57h26" stroke="#d7261e" stroke-width="3.4" stroke-dasharray="4 4"/></symbol>
-  <symbol id="i-us" viewBox="0 0 86 86"><g fill="none" stroke="#1f4fa8" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
-   <path d="M6 44h74M6 66h74"/><rect x="22" y="30" width="12" height="14" rx="2"/><rect x="52" y="66" width="12" height="14" rx="2"/></g>
-   <path d="M30 47l28 17" stroke="#d7261e" stroke-width="3.4" stroke-linecap="round" stroke-dasharray="5 4"/>
-   <g fill="none" stroke="#1f4fa8" stroke-width="3" stroke-linecap="round"><path d="M22 20a14 14 0 0 1 12 0M18 13a22 22 0 0 1 20 0"/></g></symbol>
-  <symbol id="i-wo" viewBox="0 0 86 86"><g fill="none" stroke="#1f4fa8" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round">
-   <rect x="6" y="44" width="9" height="30" rx="2"/><rect x="71" y="44" width="9" height="30" rx="2"/><path d="M15 50h56v18H15z"/>
-   <path d="M24 50V38h38v12"/><circle cx="43" cy="24" r="14"/></g>
-   <path d="M43 24l7-6" stroke="#d7261e" stroke-width="3.4" stroke-linecap="round"/><circle cx="43" cy="24" r="2.5" fill="#d7261e"/></symbol>
-  <symbol id="i-hd" viewBox="0 0 86 86"><g fill="none" stroke="#1f4fa8" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round">
-   <path d="M6 58h14M66 58h14"/><path d="M20 50h46v16H20z"/><circle cx="43" cy="32" r="20"/><path d="M33 30h20"/><path d="M33 36h10"/></g>
-   <circle cx="56" cy="40" r="3" fill="#d7261e"/></symbol>
- </defs>
-</svg>
-
-<!-- POST DO FEED 1080x1350 -->
 <section class="arte feed" id="feed">
- <div class="faixa" style="top:0"></div>
- <img class="logo" src="assets/logo-techmeter.png" style="position:absolute;left:70px;top:62px" alt="TechMeter">
- <div style="position:absolute;left:70px;top:168px;width:640px">
-  <div class="eyebrow">Linha de medição</div>
-  <h1 style="margin-top:16px;font-size:70px">A medição <em>certa</em><br>para cada<br>aplicação</h1>
-  <p class="sub" style="margin-top:20px;width:520px;font-size:28px">Vazão e consumo de água com precisão, do saneamento à indústria.</p>
- </div>
- <img class="hero" src="assets/eletromagnetico.png" style="right:44px;top:140px;height:470px" alt="">
- <div class="itens" style="position:absolute;left:70px;right:70px;top:628px;gap:16px">
-  <div class="item"><svg><use href="#i-em"/></svg><div><b>Medidor eletromagnético</b><span>Sem partes móveis. Água, efluentes e líquidos condutivos.</span></div></div>
-  <div class="item"><svg><use href="#i-us"/></svg><div><b>Medidor ultrassônico</b><span>Medição por ultrassom para água e saneamento.</span></div></div>
-  <div class="item"><svg><use href="#i-wo"/></svg><div><b>Hidrômetros Woltmann WPH e WPI</b><span>Grandes vazões em redes de água, irrigação e indústria.</span></div></div>
-  <div class="item"><svg><use href="#i-hd"/></svg><div><b>Hidrômetros em geral</b><span>Multijato, unijato e tangencial.</span></div></div>
- </div>
- <div class="cta" style="height:176px;padding:0 70px">
-  <div class="t">Solicite seu orçamento<small>Calibração em laboratório próprio · Suporte em todo o Brasil</small></div>
-  <div class="contato"><span class="zap"><i><svg width="20" height="20" viewBox="0 0 24 24"><path fill="#fff" d="M7 6c.5-.5 1.2-.5 1.6.1l1 2c.2.5.1 1-.3 1.4l-.6.6c.7 1.6 2 2.9 3.6 3.6l.6-.6c.4-.4.9-.5 1.4-.3l2 1c.6.4.6 1.1.1 1.6l-.9.9c-.8.8-1.9 1-2.9.5A12 12 0 0 1 6.6 10c-.5-1-.3-2.1.5-2.9z"/></svg></i>(11) 97643-5939</span><span>www.techmeter.com.br</span></div>
+ <div class="topo" style="position:absolute;left:64px;right:64px;top:54px"><img src="assets/logo-techmeter.png" alt="TechMeter"><span>DESDE 1991</span></div>
+ <h1 style="position:absolute;left:64px;top:175px;width:620px;font-size:72px">Medidores<br>de vazão e<br><span>hidrômetros</span></h1>
+ <p class="sub" style="position:absolute;left:64px;top:425px;width:560px">Para saneamento, irrigação e indústria.</p>
+ <div class="piso" style="right:40px;width:400px;top:722px"></div>
+ <img class="foto" src="assets/eletromagnetico-foto.png" style="right:50px;top:160px;height:580px" alt="Medidor de vazão eletromagnético Techmeter">
+ <ul class="lista" style="position:absolute;left:64px;right:64px;top:780px">
+  <li>Medidor eletromagnético</li>
+  <li>Medidor ultrassônico</li>
+  <li>Hidrômetro Woltmann WPH e WPI</li>
+  <li>Hidrômetros multijato, unijato e tangencial</li>
+ </ul>
+ <div class="rodape" style="height:210px;padding:0 64px;display:flex;align-items:center;justify-content:space-between">
+  <div><div class="chamada">Peça seu orçamento</div><div class="site" style="margin-top:14px">www.techmeter.com.br</div></div>
+  <div class="zap"><i><svg width="30" height="30" viewBox="0 0 24 24"><path fill="#fff" d="M7 6c.5-.5 1.2-.5 1.6.1l1 2c.2.5.1 1-.3 1.4l-.6.6c.7 1.6 2 2.9 3.6 3.6l.6-.6c.4-.4.9-.5 1.4-.3l2 1c.6.4.6 1.1.1 1.6l-.9.9c-.8.8-1.9 1-2.9.5A12 12 0 0 1 6.6 10c-.5-1-.3-2.1.5-2.9z"/></svg></i><span style="font-size:42px">(11) 97643-5939</span></div>
  </div>
 </section>
 
 <div style="height:40px"></div>
 
-<!-- STORIES 1080x1920 -->
 <section class="arte story" id="story">
- <div class="faixa" style="top:0"></div>
- <img class="logo" src="assets/logo-techmeter.png" style="position:absolute;left:50%;transform:translateX(-50%);top:150px;height:72px" alt="TechMeter">
- <div style="position:absolute;left:80px;right:80px;top:280px;text-align:center">
-  <div class="eyebrow">Linha de medição</div>
-  <h1 style="margin-top:18px;font-size:84px">A medição <em>certa</em><br>para cada aplicação</h1>
- </div>
- <img class="hero" src="assets/eletromagnetico.png" style="left:50%;transform:translateX(-50%);top:560px;height:560px" alt="">
- <div style="position:absolute;left:70px;right:70px;top:1150px;display:grid;grid-template-columns:1fr 1fr;gap:18px">
-  <div class="item" style="flex-direction:column;align-items:flex-start;gap:12px"><svg style="width:70px;height:70px"><use href="#i-em"/></svg><div><b>Eletromagnético</b><span>Sem partes móveis, para líquidos condutivos.</span></div></div>
-  <div class="item" style="flex-direction:column;align-items:flex-start;gap:12px"><svg style="width:70px;height:70px"><use href="#i-us"/></svg><div><b>Ultrassônico</b><span>Medição por ultrassom para água e saneamento.</span></div></div>
-  <div class="item" style="flex-direction:column;align-items:flex-start;gap:12px"><svg style="width:70px;height:70px"><use href="#i-wo"/></svg><div><b>Woltmann WPH e WPI</b><span>Grandes vazões em redes e irrigação.</span></div></div>
-  <div class="item" style="flex-direction:column;align-items:flex-start;gap:12px"><svg style="width:70px;height:70px"><use href="#i-hd"/></svg><div><b>Hidrômetros</b><span>Multijato, unijato e tangencial.</span></div></div>
- </div>
- <div class="cta" style="height:290px;padding:0 80px 60px;flex-direction:column;justify-content:center;text-align:center;gap:18px">
-  <div class="t" style="font-size:46px">Solicite seu orçamento<small>Calibração em laboratório próprio · Suporte em todo o Brasil</small></div>
-  <div class="contato" style="text-align:center"><span class="zap" style="justify-content:center"><i><svg width="20" height="20" viewBox="0 0 24 24"><path fill="#fff" d="M7 6c.5-.5 1.2-.5 1.6.1l1 2c.2.5.1 1-.3 1.4l-.6.6c.7 1.6 2 2.9 3.6 3.6l.6-.6c.4-.4.9-.5 1.4-.3l2 1c.6.4.6 1.1.1 1.6l-.9.9c-.8.8-1.9 1-2.9.5A12 12 0 0 1 6.6 10c-.5-1-.3-2.1.5-2.9z"/></svg></i>(11) 97643-5939</span><span style="display:inline">www.techmeter.com.br</span></div>
+ <div class="topo" style="position:absolute;left:70px;right:70px;top:150px"><img src="assets/logo-techmeter.png" alt="TechMeter" style="height:66px"><span>DESDE 1991</span></div>
+ <h1 style="position:absolute;left:70px;top:290px;font-size:96px">Medidores<br>de vazão e<br><span>hidrômetros</span></h1>
+ <p class="sub" style="position:absolute;left:70px;top:610px;font-size:36px">Para saneamento, irrigação e indústria.</p>
+ <div class="piso" style="left:50%;transform:translateX(-50%);width:520px;top:1185px"></div>
+ <img class="foto" src="assets/eletromagnetico-foto.png" style="left:50%;transform:translateX(-50%);top:700px;height:500px" alt="Medidor de vazão eletromagnético Techmeter">
+ <ul class="lista" style="position:absolute;left:70px;right:70px;top:1250px">
+  <li>Medidor eletromagnético</li>
+  <li>Medidor ultrassônico</li>
+  <li>Hidrômetro Woltmann WPH e WPI</li>
+  <li>Hidrômetros multijato, unijato e tangencial</li>
+ </ul>
+ <div class="rodape" style="height:300px;padding:40px 70px 70px;display:flex;flex-direction:column;justify-content:center;gap:22px">
+  <div class="chamada">Peça seu orçamento</div>
+  <div class="zap"><i><svg width="30" height="30" viewBox="0 0 24 24"><path fill="#fff" d="M7 6c.5-.5 1.2-.5 1.6.1l1 2c.2.5.1 1-.3 1.4l-.6.6c.7 1.6 2 2.9 3.6 3.6l.6-.6c.4-.4.9-.5 1.4-.3l2 1c.6.4.6 1.1.1 1.6l-.9.9c-.8.8-1.9 1-2.9.5A12 12 0 0 1 6.6 10c-.5-1-.3-2.1.5-2.9z"/></svg></i>(11) 97643-5939</div>
+  <div class="site">Calibração em laboratório próprio · www.techmeter.com.br</div>
  </div>
 </section>
 </body></html>

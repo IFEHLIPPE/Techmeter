@@ -8,6 +8,6 @@ Peças para redes sociais com eletromagnético, ultrassônico, Woltmann WPH/WPI 
 | `linha-medicao-story.png` | Stories e status do WhatsApp, 1080 × 1920 |
 | `folheto.html` | Fonte editável das duas peças (abrir no Chrome) |
 
-- A foto do eletromagnético é a renderização do modelo 3D (`modelos-3d/`), não uma foto real.
-- Ultrassônico, Woltmann e hidrômetros usam ícones desenhados, porque ainda não há fotos desses produtos.
+- Versão 2 (estilo comercial, fundo branco): foto real do medidor eletromagnético, recortada.
+- Ultrassônico, Woltmann e hidrômetros aparecem só na lista, porque ainda não há fotos desses produtos.
 - Para gerar as imagens de novo: script `folheto.js` (Playwright) usado na sessão; ou abrir o HTML e capturar cada bloco.
