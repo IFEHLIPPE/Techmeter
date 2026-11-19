@@ -13,3 +13,4 @@
 | 2026-11-11 | Cloudflare Pages publica só a pasta `site/` | O repositório tem documentos internos que não devem ir para a internet |
 | 2026-11-19 | Peças de redes sociais em estilo comercial, com fotos reais dos produtos | A versão com renderização 3D e ícones foi considerada "com cara de IA" |
 | 2026-11-19 | Manual online com um QR code por modelo; senhas do conversor não ficam públicas | Cliente acessa só o manual do seu modelo; senha é passada pelo suporte |
+| 2026-11-19 | A `main` é atualizada junto com a branch de trabalho sempre que o site (`site/`) muda | O Cloudflare Pages publica a `main`; autorizado pelo Felippe |
