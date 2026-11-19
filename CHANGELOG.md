@@ -22,6 +22,7 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 - `documentos/catalogos/valvula-solenoide-g80/`: catálogo da válvula solenoide G80 no modelo Techmeter, em português, com especificações, materiais, gráficos de perda de carga redesenhados, dimensões com peso, códigos de pedido e bobina.
 - `documentos/manuais/radar-80g/`: manual do radar 80G refeito em português no modelo Techmeter, com o protocolo RS485 Modbus incorporado.
 - `documentos/manuais/radar-tmrc/`: manual do radar TMRC com a seção 7.5 Comunicação RS485 Modbus inserida no padrão visual do próprio manual.
+- `campanhas/2026-11-linha-medicao/`: post do feed e stories da campanha da linha de medição (eletromagnético, ultrassônico, Woltmann WPH/WPI e hidrômetros).
 
 ### Alterado
 - `EM-01` a `EM-20` em `baseline/prompts.csv` substituídos pelos 20 prompts oficiais do Ciclo 1. Intenções alinhadas ao documento (informacional, seleção, comparação, aplicação, comercial, troubleshooting).
