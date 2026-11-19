@@ -3,6 +3,7 @@
 Legenda: 🔲 a fazer · 🔄 em andamento · ✅ concluída
 
 ## Em andamento
+- 🔄 **Manual online do medidor eletromagnético (QR code na etiqueta):** página web publicada no Cloudflare Pages (pasta `site/`), aberta pelo QR code colado no equipamento. Aguardando fotos, catálogo e dados técnicos do Felippe.
 - 🔄 **GEO Ciclo 1 — Eletromagnético: scripts para vídeos** (e-mail da Mariana, 02/10/2026; detalhes em [`projetos/geo/ciclo1-eletromagnetico/`](../projetos/geo/ciclo1-eletromagnetico/README.md))
   - ✅ Trazer o documento para o repositório e montar a planilha de trabalho (`teste-prompts-ciclo1.xlsx`)
   - 🔄 Felippe + Mariana: testar os 20 prompts × 4 plataformas (aba "Teste D0"), iniciado em 15/10
@@ -30,6 +31,7 @@ Legenda: 🔲 a fazer · 🔄 em andamento · ✅ concluída
 - 🔲 Projeto GEO: dias 16–45, construção do cluster de Eletromagnético
 
 ## Concluídas
+- ✅ Campanha linha de medição: post do feed e stories em estilo comercial (`campanhas/2026-11-linha-medicao/`)
 - ✅ Manual do radar 80G no modelo Techmeter, com protocolo Modbus
 - ✅ Catálogo da válvula solenoide G80 refeito no modelo Techmeter, com os dados da ficha do fornecedor
 - ✅ Configurador 3D do medidor eletromagnético TM-EL (`modelos-3d/`)
