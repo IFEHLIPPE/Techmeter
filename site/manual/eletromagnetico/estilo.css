@@ -9,12 +9,6 @@
   --aviso-bg: #fdf1f0; --nota-bg: #eef4fc; --mark: #ffe58a;
   color-scheme: light;
 }
-@media (prefers-color-scheme: dark) {
-  :root { --bg: #0f1424; --card: #171e33; --ink: #e8edf7; --txt: #c9d1e2; --soft: #9aa5bd;
-    --line: #2a3452; --faixa: #1d2640; --azul: #7ea6ff; --verm: #ff6b61; --aviso-bg: #2a1a22; --nota-bg: #172443;
-    --mark: #6b5a12; color-scheme: dark; }
-  .fig img, .foto img { background: #fff; border-radius: 8px; }
-}
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 76px; }

@@ -340,6 +340,7 @@ def pagina(m, base_url):
 <meta name="description" content="Manual do medidor de vazão eletromagnético {html.escape(m['nome'])}: instalação, ligações e configuração.">
 <link rel="canonical" href="{url}">
 <meta name="theme-color" content="#14204a">
+<meta name="color-scheme" content="light">
 <link rel="stylesheet" href="../estilo.css">
 </head><body>
 <header class="topo"><img src="../img/logo-techmeter.png" alt="TechMeter"><div class="t">Manual do produto<small>{html.escape(m['curto'])}</small></div><button type="button" id="ir-indice">Índice</button></header>
@@ -371,6 +372,7 @@ def pagina_inicial(base_url):
     return f"""<!doctype html>
 <html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Manuais · Medidor eletromagnético · Techmeter</title><meta name="theme-color" content="#14204a">
+<meta name="color-scheme" content="light">
 <link rel="stylesheet" href="estilo.css">
 <style>@font-face{{font-family:Lato;src:url(fontes/Lato-Regular.ttf)}}@font-face{{font-family:Lato;font-weight:700;src:url(fontes/Lato-Bold.ttf)}}@font-face{{font-family:Montserrat;font-weight:100 900;src:url("fontes/Montserrat[wght].ttf")}}</style>
 </head><body>
