@@ -1,0 +1,50 @@
+{
+  "url_base": "https://techmeter-3d.pages.dev",
+  "caminho": "manual/eletromagnetico",
+  "modelos": [
+    {
+      "slug": "tm-el-integrado",
+      "nome": "TM-EL Flangeado · Conversor integrado",
+      "curto": "TM-EL Integrado",
+      "resumo": "Sensor flangeado com o conversor montado sobre o tubo. Display e teclas no próprio equipamento.",
+      "foto": "integrado-recorte.png",
+      "galeria": ["foto-frente.jpg", "foto-lateral.jpg", "foto-flange.jpg"],
+      "conversor": "redondo",
+      "dimensoes": "flangeado",
+      "modelo_3d": true
+    },
+    {
+      "slug": "tm-el-remoto",
+      "nome": "TM-EL Flangeado · Conversor remoto",
+      "curto": "TM-EL Remoto",
+      "resumo": "Sensor flangeado com o conversor separado, ligado por cabo. Indicado para locais de difícil acesso ou alagáveis.",
+      "foto": "tipos-integrado-remoto.png",
+      "galeria": [],
+      "conversor": "quadrado",
+      "dimensoes": "flangeado",
+      "modelo_3d": false
+    },
+    {
+      "slug": "tmtc-sanitario",
+      "nome": "TMTC Tri-Clamp · Sanitário",
+      "curto": "TMTC Tri-Clamp",
+      "resumo": "Conexão tri-clamp para as indústrias de alimentos, bebidas e farmacêutica.",
+      "foto": "foto-triclamp.png",
+      "galeria": [],
+      "conversor": "redondo",
+      "dimensoes": "triclamp",
+      "modelo_3d": false
+    },
+    {
+      "slug": "tmwf-wafer",
+      "nome": "TMWF Wafer",
+      "curto": "TMWF Wafer",
+      "resumo": "Corpo wafer, montado entre flanges da tubulação. Compacto e leve.",
+      "foto": null,
+      "galeria": [],
+      "conversor": "redondo",
+      "dimensoes": "wafer",
+      "modelo_3d": false
+    }
+  ]
+}

@@ -27,6 +27,7 @@ Ver [`docs/empresa.md`](docs/empresa.md).
 ├── documentos/
 │   └── manuais/              # Manuais gerados com o modelo
 ├── site/                     # Página pública (Cloudflare Pages), gerada por modelos-3d/gerar_site.py
+├── manuais-online/           # Manuais online por QR code (gera páginas em site/manual/)
 ├── modelos-3d/               # Modelos 3D interativos de produtos (configurador de cores)
 ├── campanhas/                # Peças de campanha para redes sociais
 ├── midia/                    # Fotos de produtos (originais e tratadas) e simulações internas

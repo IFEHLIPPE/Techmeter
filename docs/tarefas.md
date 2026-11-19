@@ -3,7 +3,7 @@
 Legenda: 🔲 a fazer · 🔄 em andamento · ✅ concluída
 
 ## Em andamento
-- 🔄 **Manual online do medidor eletromagnético (QR code na etiqueta):** página web publicada no Cloudflare Pages (pasta `site/`), aberta pelo QR code colado no equipamento. Aguardando fotos, catálogo e dados técnicos do Felippe.
+- 🔄 **Manual online do medidor eletromagnético:** primeira versão pronta (`manuais-online/eletromagnetico/`). Falta: confirmar nomes e modelos vendidos, conversor do TMTC/TMWF, foto e dimensões do wafer, alimentação padrão, garantia, domínio definitivo do QR e publicar na `main`.
 - 🔄 **GEO Ciclo 1 — Eletromagnético: scripts para vídeos** (e-mail da Mariana, 02/10/2026; detalhes em [`projetos/geo/ciclo1-eletromagnetico/`](../projetos/geo/ciclo1-eletromagnetico/README.md))
   - ✅ Trazer o documento para o repositório e montar a planilha de trabalho (`teste-prompts-ciclo1.xlsx`)
   - 🔄 Felippe + Mariana: testar os 20 prompts × 4 plataformas (aba "Teste D0"), iniciado em 15/10

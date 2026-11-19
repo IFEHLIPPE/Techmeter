@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Manual TM-EL Integrado · Techmeter</title>
+<meta name="description" content="Manual do medidor de vazão eletromagnético TM-EL Flangeado · Conversor integrado: instalação, ligações e configuração.">
+<link rel="canonical" href="https://techmeter-3d.pages.dev/manual/eletromagnetico/tm-el-integrado/">
+<meta name="theme-color" content="#14204a">
+<link rel="stylesheet" href="../estilo.css">
+</head><body>
+<header class="topo"><img src="../img/logo-techmeter.png" alt="TechMeter"><div class="t">Manual do produto<small>TM-EL Integrado</small></div><button type="button" id="ir-indice">Índice</button></header>
+<main class="pagina">
+  <div class="capa">
+    <div><div class="eyebrow">Medidor de vazão eletromagnético</div><h1>TM-EL Flangeado · Conversor integrado</h1><p>Sensor flangeado com o conversor montado sobre o tubo. Display e teclas no próprio equipamento.</p></div>
+    <div class="foto"><img src="../img/integrado-recorte.png" alt="TM-EL Flangeado · Conversor integrado"></div>
+  </div>
+  <nav class="acoes">
+    <a class="zap" href="https://wa.me/5511976435939?text=Olá!%20Preciso%20de%20suporte%20com%20o%20medidor%20eletromagnético%20TM-EL%20Integrado." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.6-.1 1.1z"/></svg>Suporte no WhatsApp</a>
+    <a href="tel:+551150711630"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>(11) 5071-1630</a>
+    <a href="manual-tm-el-integrado.pdf" download><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9zM14 3v6h6M12 12v6m-3-3 3 3 3-3"/></svg>Baixar PDF</a>
+    <a href="../../../index.html"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="m12 2 9 5v10l-9 5-9-5V7zM12 22V12m9-5-9 5-9-5"/></svg>Ver em 3D</a>
+  </nav>
+  <div class="busca"><label for="busca" class="so-tela" style="position:absolute;left:-9999px">Buscar no manual</label><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20-4-4" stroke="currentColor" stroke-width="2"/></svg><input id="busca" type="search" placeholder="Buscar no manual (ex.: aterramento, senha, 4-20 mA)" autocomplete="off"><p class="vazio" id="busca-vazio" hidden>Nada encontrado. Tente outra palavra ou fale com o suporte.</p></div>
+  <nav class="indice" aria-label="Índice"><a href="#conheca"><b>1</b>Conheça o equipamento</a><a href="#recebimento"><b>2</b>Recebimento e armazenamento</a><a href="#instalacao"><b>3</b>Instalação</a><a href="#ligacoes"><b>4</b>Ligações elétricas</a><a href="#display"><b>5</b>Display e teclas</a><a href="#configuracao"><b>6</b>Configuração</a><a href="#problemas"><b>7</b>Alarmes e solução de problemas</a><a href="#especificacoes"><b>8</b>Especificações</a><a href="#suporte"><b>9</b>Suporte técnico</a></nav>
+  <section class="cap" id="conheca"><h2><b>1</b>Conheça o equipamento</h2><div class="corpo">
+<p>O medidor eletromagnético mede a <b>vazão de líquidos condutivos</b> (água, efluentes, polpas, químicos) com base na lei de Faraday. Ele <b>não tem partes móveis</b> e não restringe a passagem do fluido, por isso quase não causa perda de carga e exige pouca manutenção.</p>
+<p>Este modelo é do tipo <b>integrado (conversor montado sobre o sensor)</b>.</p>
+<div class="galeria"><img src="../img/foto-frente.jpg" alt="Foto do equipamento" loading="lazy"><img src="../img/foto-lateral.jpg" alt="Foto do equipamento" loading="lazy"><img src="../img/foto-flange.jpg" alt="Foto do equipamento" loading="lazy"></div>
+<ul>
+  <li><b>Condutividade mínima do líquido:</b> 5 µS/cm. Abaixo disso o medidor não funciona (ex.: água destilada, óleos, gases).</li>
+  <li><b>Mede nos dois sentidos</b> e totaliza vazão direta, inversa e a diferença.</li>
+  <li><b>Saídas:</b> corrente (4-20 mA), pulso ou frequência, alarmes e comunicação RS485 / Modbus.</li>
+</ul></div></section><section class="cap" id="recebimento"><h2><b>2</b>Recebimento e armazenamento</h2><div class="corpo">
+<ul>
+  <li>Transporte e guarde o medidor <b>na embalagem original</b> até o local da instalação. Não levante o equipamento pelo conversor nem pelos cabos.</li>
+  <li>Armazene em local coberto, seco e sem vibração: temperatura de <b>-20 a 60 °C</b> e umidade até 80%.</li>
+  <li>Confira na plaqueta: modelo, diâmetro (DN), número de série e <b>fator de calibração</b>. Guarde o certificado de calibração.</li>
+</ul></div></section><section class="cap" id="instalacao"><h2><b>3</b>Instalação</h2><div class="corpo">
+<h3>Escolha do local</h3>
+<ul>
+  <li>Prefira local coberto. Ao ar livre, proteja do sol direto, da chuva e de alagamentos.</li>
+  <li>Evite locais com vibração forte, campos magnéticos intensos (motores, inversores, transformadores) e atmosfera corrosiva.</li>
+  <li>Deixe espaço livre em volta para manutenção e leitura do display.</li>
+</ul>
+
+<h3>Tubo sempre cheio</h3>
+<p>O medidor só mede corretamente com o tubo <b>totalmente cheio de líquido</b>. Por isso:</p>
+<ul>
+  <li>Instale em trecho <b>ascendente</b> ou no <b>ponto mais baixo</b> da tubulação. Nunca no ponto mais alto, onde se acumula ar.</li>
+  <li>Em descarga livre, instale o medidor antes de um trecho que mantenha o tubo cheio (ex.: sifão ou trecho que sobe).</li>
+  <li>Instale o medidor <b>antes da bomba</b> (sucção) e as válvulas de controle e de bloqueio <b>depois</b> do medidor.</li>
+  <li>Para líquidos com sólidos, a melhor posição é na <b>vertical, com o fluxo de baixo para cima</b>.</li>
+</ul>
+<figure class="fig"><img src="../img/instalacao-posicao.png" alt="Medidor no ponto mais baixo (esquerda) e em trecho levemente ascendente (direita)." loading="lazy"><figcaption>Medidor no ponto mais baixo (esquerda) e em trecho levemente ascendente (direita).</figcaption></figure>
+<figure class="fig"><img src="../img/instalacao-tubulacao.png" alt="Posições corretas e incorretas: válvulas depois do medidor, medidor antes da bomba e cuidado com pontos altos." loading="lazy"><figcaption>Posições corretas e incorretas: válvulas depois do medidor, medidor antes da bomba e cuidado com pontos altos.</figcaption></figure>
+
+<h3>Trechos retos</h3>
+<p>Para a medição ser precisa, mantenha trechos retos de tubulação antes e depois do medidor. <b>D</b> é o diâmetro da tubulação.</p>
+<div class="tabela"><table><tr><th>Situação antes do medidor</th><th>Trecho reto antes</th><th>Trecho reto depois</th></tr><tr><td>Tubulação reta</td><td class=c>5 D</td><td class=c>3 D</td></tr><tr><td>Curva</td><td class=c>10 D</td><td class=c>5 D</td></tr><tr><td>Expansão</td><td class=c>10 D</td><td class=c>5 D</td></tr><tr><td>Válvula antes do medidor</td><td class=c>10 D</td><td class=c>5 D</td></tr><tr><td>Redução</td><td class=c>5 D</td><td class=c>2 D</td></tr><tr><td>Bomba ou manômetro antes do medidor</td><td class=c>15 D</td><td class=c>5 D</td></tr><tr><td>Mistura de líquidos</td><td class=c>30 D</td><td class=c>3 D</td></tr></table></div>
+<details class="so-tela"><summary>Ver figuras dos trechos retos</summary><div><figure class="fig"><img src="../img/trechos-retos.png" alt="Trechos retos mínimos para cada situação." loading="lazy"><figcaption>Trechos retos mínimos para cada situação.</figcaption></figure></div></details>
+
+<h3>Montagem</h3>
+<ul>
+  <li>Respeite a <b>seta de sentido do fluxo</b> gravada no medidor.</li>
+  <li>O diâmetro da tubulação deve ser igual ao do medidor e os dois devem ficar <b>alinhados</b> (centro com centro).</li>
+  <li>Os eletrodos devem ficar na <b>horizontal</b> (o conversor fica para cima ou para o lado, nunca com os eletrodos em cima e embaixo).</li>
+  <li>Os flanges devem estar paralelos. Use juntas que não invadam o diâmetro interno.</li>
+  <li><b>Não faça solda elétrica</b> perto do medidor instalado: o calor e a corrente danificam o revestimento e os eletrodos.</li>
+  <li>Acima de DN200, use uma junta flexível para facilitar a montagem e evitar esforço no medidor.</li>
+  <li>Recomenda-se um <b>by-pass</b> com válvulas para retirar o medidor sem parar o processo.</li>
+</ul>
+
+<h3>Aterramento</h3>
+<p>O aterramento é essencial: sem ele a leitura oscila ou fica errada. A resistência de aterramento deve ser <b>menor que 10 Ω</b>.</p>
+<ul>
+  <li><b>Tubulação metálica sem revestimento:</b> ligue os flanges do medidor aos flanges da tubulação com cabo de cobre de 6 mm² e ao terra.</li>
+  <li><b>Tubulação plástica (PVC, PEAD) ou com revestimento interno:</b> instale <b>anéis de aterramento</b> nos dois lados do medidor, ligados ao terra. Se o medidor já tiver eletrodo de aterramento, os anéis não são necessários.</li>
+</ul>
+<figure class="fig"><img src="../img/aterramento-metalico.png" alt="Aterramento em tubulação metálica sem revestimento." loading="lazy" style="width:420px"><figcaption>Aterramento em tubulação metálica sem revestimento.</figcaption></figure>
+<figure class="fig"><img src="../img/aterramento-plastico.png" alt="Aterramento em tubulação plástica ou revestida, com anéis de aterramento." loading="lazy"><figcaption>Aterramento em tubulação plástica ou revestida, com anéis de aterramento.</figcaption></figure>
+<div class="nota">Em tubulações com <b>proteção catódica</b>, os anéis de aterramento devem ser isolados dos flanges da tubulação. Fale com o suporte Techmeter antes de instalar.</div></div></section><section class="cap" id="ligacoes"><h2><b>4</b>Ligações elétricas</h2><div class="corpo">
+<div class="aviso"><b>Atenção:</b> faça as ligações com a alimentação <b>desligada</b>. Confira na plaqueta se o equipamento é 220 Vca (85 a 265 Vca) ou 24 Vcc antes de energizar.</div>
+
+<p>Os bornes ficam sob a <b>tampa traseira</b> do conversor. Os cabos entram pelos prensa-cabos laterais.</p>
+<figure class="fig"><img src="../img/bornes-redondo.png" alt="Régua de bornes do conversor redondo." loading="lazy" style="width:300px"><figcaption>Régua de bornes do conversor redondo.</figcaption></figure>
+<div class="tabela"><table><tr><th>Borne</th><th>Ligação</th></tr><tr><td class=cod>LN+ / LN−</td><td>Alimentação 220 Vca (ou 24 Vcc, conforme o modelo)</td></tr><tr><td class=cod>IOUT / COMM</td><td>Saída de corrente 4-20 mA (IOUT = sinal, COMM = comum)</td></tr><tr><td class=cod>IVIN</td><td>Alimentação 24 Vcc para a saída de corrente a 2 fios</td></tr><tr><td class=cod>POUT / COMM</td><td>Saída de pulso ou frequência (coletor aberto)</td></tr><tr><td class=cod>ALM1 / COMM</td><td>Alarme de limite superior</td></tr><tr><td class=cod>ALM2 / COMM</td><td>Alarme de limite inferior</td></tr><tr><td class=cod>TRX+ / TRX−</td><td>RS485 / Modbus (A e B)</td></tr></table></div>
+<h3>Saídas</h3>
+<ul>
+  <li><b>4-20 mA:</b> carga máxima de 750 Ω. Pode ser ligada a 2, 3 ou 4 fios, conforme o sistema que recebe o sinal.</li>
+  <li><b>Pulso / frequência:</b> saída a coletor aberto, até 35 V e 250 mA. Use fonte externa (5 a 24 V) e resistor de carga. Para acionar relé, coloque diodo em paralelo com a bobina. Pulso e frequência usam o mesmo borne: escolha um dos dois na configuração.</li>
+  <li><b>RS485:</b> cabo par trançado blindado. Use resistor de terminação de 120 Ω só em linhas longas.</li>
+  <li><b>Terra do conversor:</b> ligue o borne PE ao terra com cabo de no mínimo 1,5 mm².</li>
+</ul></div></section><section class="cap" id="display"><h2><b>5</b>Display e teclas</h2><div class="corpo">
+<figure class="fig"><img src="../img/display-redondo.png" alt="Display e teclas do conversor redondo." loading="lazy"><figcaption>Display e teclas do conversor redondo.</figcaption></figure>
+<p>A tela mostra a vazão instantânea na linha de cima e, na linha de baixo, o item escolhido: totalizador direto, inverso ou diferença, velocidade, porcentagem da faixa, data e hora.</p>
+<div class="tabela"><table><tr><th>Tecla</th><th>Na tela de medição</th><th>No menu de configuração</th></tr><tr><td><span class="tecla">▲</span> Para cima</td><td>Troca o item da linha de cima</td><td>Aumenta o dígito / página acima</td></tr><tr><td><span class="tecla">▼</span> Para baixo</td><td>Troca o item da linha de baixo</td><td>Diminui o dígito / página abaixo</td></tr><tr><td><span class="tecla">↵</span> Enter</td><td>—</td><td>Entra e sai dos itens. Segurar 2 s volta para a medição</td></tr><tr><td><span class="tecla">F</span> Função</td><td>Com ↵: abre o menu · com ▲/▼: ajusta o contraste</td><td>Com ▲/▼: move o cursor para a direita / esquerda</td></tr></table></div>
+<p>Para usar a tecla <b>Função</b>, mantenha-a pressionada e então aperte a outra tecla. No menu, se nenhuma tecla for usada por alguns segundos, o conversor volta sozinho para a tela de medição.</p></div></section><section class="cap" id="configuracao"><h2><b>6</b>Configuração</h2><div class="corpo">
+<div class="nota">O medidor sai da Techmeter <b>calibrado e configurado</b> com os dados do pedido (diâmetro, faixa, unidade e saídas). Altere a configuração só se precisar.</div>
+
+<h3>Antes de configurar</h3>
+<ul>
+  <li>Confira o aterramento e se o tubo está <b>cheio</b>.</li>
+  <li>Na primeira partida, deixe o líquido em contato com os eletrodos por <b>até 48 horas</b> para estabilizar a leitura antes de fazer o ajuste de zero.</li>
+</ul>
+
+<h3>Como entrar no menu</h3>
+<ol>
+  <li>Na tela de medição, aperte <span class="tecla">F</span> + <span class="tecla">↵</span>. Aparece <b>Parameter Setting</b>.</li>
+  <li>Aperte <span class="tecla">↵</span> e digite a <b>senha</b> com as setas (<span class="tecla">F</span> + seta move o cursor).</li>
+  <li>Aperte <span class="tecla">F</span> + <span class="tecla">↵</span> para entrar.</li>
+  <li>Use <span class="tecla">▲</span> <span class="tecla">▼</span> para escolher o parâmetro e <span class="tecla">↵</span> para editar e confirmar.</li>
+  <li>Para sair, segure <span class="tecla">↵</span> por 2 segundos.</li>
+</ol>
+<p>A senha de acesso é informada pela Techmeter junto com o equipamento. Se não tiver, fale com o suporte.</p>
+
+<h3>Parâmetros mais usados</h3>
+<div class="tabela"><table><tr><th>Nº</th><th>No display</th><th>O que faz</th><th>Opções</th></tr><tr><td class=cod>5</td><td class=cod>Sensor Size</td><td>Diâmetro do medidor (já vem de fábrica)</td><td>3 a 3.000 mm</td></tr><tr><td class=cod>6</td><td class=cod>Flow Range</td><td>Fundo de escala: vazão que corresponde a 20 mA e a 100%</td><td>0 a 99.999</td></tr><tr><td class=cod>—</td><td class=cod>Flow Unit</td><td>Unidade da vazão</td><td>L/s, L/min, L/h, m³/s, m³/min, m³/h</td></tr><tr><td class=cod>7</td><td class=cod>Flow Rspns</td><td>Amortecimento: valores maiores deixam a leitura mais estável e mais lenta</td><td>Seleção</td></tr><tr><td class=cod>8</td><td class=cod>Flow Direct</td><td>Inverte o sentido do fluxo sem mexer na ligação</td><td>Direto / inverso</td></tr><tr><td class=cod>9</td><td class=cod>Flow Zero</td><td>Ajuste de zero, com o tubo cheio e o líquido parado</td><td>± mm/s</td></tr><tr><td class=cod>10</td><td class=cod>Flow Cutoff</td><td>Corte de vazão baixa: abaixo deste valor o medidor mostra zero</td><td>0 a 99% da escala</td></tr><tr><td class=cod>12</td><td class=cod>Total Unit</td><td>Resolução do totalizador</td><td>0,001 L a 1 m³</td></tr><tr><td class=cod>14</td><td class=cod>Analog Type</td><td>Tipo de saída de corrente</td><td>4-20 mA ou 0-10 mA</td></tr><tr><td class=cod>15</td><td class=cod>Pulse Type</td><td>Saída de frequência ou de pulso</td><td>Freq. / pulso</td></tr><tr><td class=cod>16</td><td class=cod>Pulse Unit</td><td>Volume de cada pulso</td><td>0,001 L a 1 m³</td></tr><tr><td class=cod>17</td><td class=cod>Frequen Max</td><td>Frequência que corresponde a 100% da escala</td><td>1 a 5.000 Hz</td></tr><tr><td class=cod>18</td><td class=cod>Mtsensor Ena</td><td>Liga o alarme de tubo vazio</td><td>Habilitar / desabilitar</td></tr><tr><td class=cod>21 a 24</td><td class=cod>Alm High / Low</td><td>Alarmes de vazão alta e baixa, em % da escala</td><td>0 a 199,9%</td></tr><tr><td class=cod>2 e 3</td><td class=cod>Com Address / Baud Rate</td><td>Endereço e velocidade da RS485</td><td>0 a 99 · 600 a 14.400 bps</td></tr><tr><td class=cod>4</td><td class=cod>Com Protocol</td><td>Protocolo de comunicação</td><td>Tipo 1 (RS485) / Tipo 2 (Modbus)</td></tr></table></div>
+<div class="aviso"><b>Não altere</b> o fator do sensor (<b>Sensor Fact</b>) nem o modo de excitação: eles vêm da calibração e estão anotados na plaqueta e no certificado. Alterar esses valores tira o medidor de calibração.</div>
+
+<h3>Exemplos</h3>
+<details><summary>Escolher a unidade e o fundo de escala</summary><div>
+<p>Escolha uma unidade em que a vazão máxima caiba em 5 dígitos. Se o display mostrar <b>overflow</b>, a unidade está pequena demais. Exemplo: em DN200, 1 m/s equivale a 113.097 L/h (6 dígitos); use m³/h (113,10 m³/h).</p>
+<p>Defina <b>Flow Range</b> com a vazão máxima do processo, com uma folga. A saída 4-20 mA e a porcentagem seguem esse valor.</p></div></details>
+<details><summary>Configurar a saída de pulso para um totalizador ou CLP</summary><div>
+<p>Em <b>Pulse Type</b> escolha <b>Pulso</b> e em <b>Pulse Unit</b> o volume de cada pulso (ex.: 1 pulso = 0,01 m³). Mantenha a frequência de pulsos abaixo de 3.000 Hz na vazão máxima: se o volume do pulso for pequeno demais para a vazão, aumente o valor.</p></div></details>
+<details><summary>Fazer o ajuste de zero</summary><div>
+<p>Com o tubo <b>cheio e o líquido parado</b> (válvulas fechadas), entre em <b>Flow Zero</b> e ajuste o valor até a vazão indicada ficar em zero. Anote o valor ajustado.</p></div></details>
+<details><summary>Zerar o totalizador</summary><div>
+<p>No menu, vá até <b>Clr Total Rec</b>, digite a senha de zerar totalizador e confirme com <span class="tecla">F</span> + <span class="tecla">↵</span>. Os totais voltam a zero.</p></div></details></div></section><section class="cap" id="problemas"><h2><b>7</b>Alarmes e solução de problemas</h2><div class="corpo">
+<h3>Alarmes no display</h3>
+<div class="tabela"><table><tr><th>Mensagem</th><th>Significado</th></tr><tr><td class=cod>FQH · UPPER ALARM</td><td>Vazão acima do limite de alarme alto</td></tr><tr><td class=cod>FQL · LOWER ALARM</td><td>Vazão abaixo do limite de alarme baixo</td></tr><tr><td class=cod>FGP · LIQUID ALARM</td><td>Tubo vazio ou parcialmente cheio</td></tr><tr><td class=cod>SYS · SYSTEM ALARM</td><td>Falha na excitação das bobinas</td></tr></table></div>
+<h3>O que verificar</h3>
+<details><summary>Display apagado</summary><div><ul>
+<li>Confira se há alimentação nos bornes e se a tensão é a do equipamento (220 Vca ou 24 Vcc).</li>
+<li>Verifique o fusível do conversor.</li></ul></div></details>
+<details><summary>Alarme de tubo vazio (FGP)</summary><div><ul>
+<li>Confirme se o tubo está realmente cheio (ar na linha, medidor em ponto alto, descarga livre).</li>
+<li>Confira as ligações do sinal (SIG1, SIG2, SGND) no modelo remoto.</li>
+<li>O líquido pode ter condutividade baixa, ou os eletrodos podem estar sujos. Fale com o suporte.</li></ul></div></details>
+<details><summary>Alarme de excitação (SYS)</summary><div><ul>
+<li>No modelo remoto, confira se os fios EXT+ e EXT− estão bem ligados.</li>
+<li>Se a ligação estiver correta, o conversor ou as bobinas precisam de assistência.</li></ul></div></details>
+<details><summary>Leitura oscilando ou diferente do esperado</summary><div><ul>
+<li>Verifique o <b>aterramento</b> (causa mais comum).</li>
+<li>Confira se o tubo está cheio e se há bolhas de ar.</li>
+<li>Confira os trechos retos e se há bomba ou válvula muito perto do medidor.</li>
+<li>Confira se o fator do sensor e o zero estão iguais aos da plaqueta / certificado.</li>
+<li>Aumente o amortecimento (<b>Flow Rspns</b>) se o processo for pulsante.</li></ul></div></details>
+<div class="nota">O conversor não tem peças que o usuário possa consertar. Não abra a parte eletrônica: fale com a assistência técnica Techmeter.</div></div></section><section class="cap" id="especificacoes"><h2><b>8</b>Especificações</h2><div class="corpo"><div class="tabela"><table><tr><th>Característica</th><th>Especificação</th></tr><tr><td>Princípio</td><td>Indução eletromagnética (lei de Faraday)</td></tr><tr><td>Precisão</td><td>±0,5% do valor medido (velocidade ≥ 1 m/s)</td></tr><tr><td>Velocidade do fluido</td><td>0,3 a 15 m/s (fundo de escala)</td></tr><tr><td>Condutividade mínima</td><td>5 µS/cm</td></tr><tr><td>Pressão nominal</td><td>1,6 MPa (até 4,0 MPa sob pedido)</td></tr><tr><td>Revestimento</td><td>PTFE, borracha, poliuretano e outros</td></tr><tr><td>Eletrodos</td><td>Aço inox 316L, Hastelloy B/C, titânio, tântalo, platina-irídio</td></tr><tr><td>Alimentação</td><td>85 a 265 Vca, 45 a 63 Hz ou 24 Vcc · potência < 20 W</td></tr><tr><td>Saídas</td><td>4-20 mA ou 0-10 mA · pulso/frequência até 5.000 Hz · 2 alarmes · RS485 / Modbus</td></tr><tr><td>Temperatura ambiente</td><td>Conversor: -10 a 60 °C · sensor: -40 a 80 °C</td></tr><tr><td>Temperatura do fluido</td><td>Até 70 °C (integrado) · até 80 a 150 °C conforme revestimento (remoto)</td></tr><tr><td>Grau de proteção</td><td>IP65 · IP68 no sensor remoto com revestimento de borracha ou poliuretano</td></tr></table></div><details open><summary>Dimensões (mm) e peso</summary><div>
+<figure class="fig"><img src="../img/dim-flangeado.png" alt="L = comprimento entre flanges · D = diâmetro do flange · H = altura total." loading="lazy" style="width:520px"><figcaption>L = comprimento entre flanges · D = diâmetro do flange · H = altura total.</figcaption></figure>
+<div class="tabela"><table><tr><th>DN</th><th>L</th><th>D</th><th>H</th><th>Peso (kg)</th></tr><tr><td class=cod>15</td><td class=c>200</td><td class=c>95</td><td class=c>220</td><td class=c>8</td></tr><tr><td class=cod>20</td><td class=c>200</td><td class=c>105</td><td class=c>220</td><td class=c>10</td></tr><tr><td class=cod>25</td><td class=c>200</td><td class=c>115</td><td class=c>223</td><td class=c>12</td></tr><tr><td class=cod>32</td><td class=c>200</td><td class=c>140</td><td class=c>240</td><td class=c>13</td></tr><tr><td class=cod>40</td><td class=c>200</td><td class=c>150</td><td class=c>250</td><td class=c>14</td></tr><tr><td class=cod>50</td><td class=c>200</td><td class=c>165</td><td class=c>263</td><td class=c>15</td></tr><tr><td class=cod>65</td><td class=c>200</td><td class=c>185</td><td class=c>283</td><td class=c>18</td></tr><tr><td class=cod>80</td><td class=c>200</td><td class=c>200</td><td class=c>290</td><td class=c>20</td></tr><tr><td class=cod>100</td><td class=c>250</td><td class=c>235</td><td class=c>318</td><td class=c>25</td></tr><tr><td class=cod>125</td><td class=c>250</td><td class=c>270</td><td class=c>350</td><td class=c>28</td></tr><tr><td class=cod>150</td><td class=c>300</td><td class=c>300</td><td class=c>380</td><td class=c>30</td></tr><tr><td class=cod>200</td><td class=c>350</td><td class=c>340</td><td class=c>430</td><td class=c>50</td></tr><tr><td class=cod>250</td><td class=c>450</td><td class=c>405</td><td class=c>495</td><td class=c>70</td></tr><tr><td class=cod>300</td><td class=c>500</td><td class=c>460</td><td class=c>547</td><td class=c>95</td></tr><tr><td class=cod>350</td><td class=c>550</td><td class=c>520</td><td class=c>602</td><td class=c>120</td></tr><tr><td class=cod>400</td><td class=c>600</td><td class=c>580</td><td class=c>665</td><td class=c>140</td></tr><tr><td class=cod>500</td><td class=c>600</td><td class=c>715</td><td class=c>783</td><td class=c>200</td></tr><tr><td class=cod>600</td><td class=c>600</td><td class=c>840</td><td class=c>897</td><td class=c>280</td></tr></table></div>
+<p>Flanges conforme GB/T 9119 (PN40 até DN150, PN16 de DN200 a DN600). Outras normas e diâmetros sob consulta.</p></div></details></div></section><section class="cap" id="suporte"><h2><b>9</b>Suporte técnico</h2><div class="corpo">
+<p>Dúvidas na instalação ou na configuração? Fale com a assistência técnica Techmeter.</p>
+<div class="tabela"><table><tr><th>Canal</th><th>Contato</th></tr><tr><td>WhatsApp</td><td>(11) 97643-5939</td></tr><tr><td>Telefone</td><td>(11) 5071-1630</td></tr><tr><td>Suporte técnico</td><td>manutencao@techmeter.com.br</td></tr><tr><td>Comercial</td><td>vendas@techmeter.com.br</td></tr><tr><td>Atendimento</td><td>Segunda a sexta, das 8h00 às 17h30</td></tr></table></div>
+<p>Para agilizar, tenha em mãos o <b>modelo e o número de série</b> da plaqueta e, se possível, fotos da instalação e do display.</p>
+<p>A Techmeter também faz <b>calibração em laboratório próprio</b>, start-up e manutenção em todo o Brasil.</p></div></section>
+  <footer class="rodape"><b>Techmeter</b> · K&amp;K do Brasil Ltda. · Rua Pedrália, 70 – Vila Gumercindo – São Paulo/SP<br>www.techmeter.com.br · vendas@techmeter.com.br<br><a href="../">Ver outros modelos</a></footer>
+</main>
+<script src="../app.js"></script>
+</body></html>
