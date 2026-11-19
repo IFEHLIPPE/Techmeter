@@ -21,6 +21,7 @@ botão de WhatsApp do suporte e PDF para baixar.
 
 - `qrcodes/<modelo>-etiqueta.png`: etiqueta 60 × 40 mm (300 dpi) pronta para imprimir.
 - `qrcodes/<modelo>-qr.svg` / `.png`: só o QR, para usar em outras artes.
+- `qrcodes/lista-manuais-*`: QR e etiqueta da página com a lista de todos os modelos (para catálogo, balcão, proposta).
 - **O endereço do QR não pode mudar depois de impresso.** Hoje ele aponta para `url_base` em `modelos.json`
   (`https://tm-el-3d.pages.dev`). Se for usar um domínio próprio (ex.: `manual.techmeter.com.br`),
   troque `url_base` e gere de novo **antes** de imprimir.

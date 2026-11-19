@@ -395,28 +395,33 @@ def qrcodes(base_url):
         f = ImageFont.truetype(str(F / "Montserrat[wght].ttf"), s); f.set_variation_by_axes([800]); return f
     fl = lambda s: ImageFont.truetype(str(F / "Lato-Regular.ttf"), s)
     logo = Image.open(AQUI / "img/logo-techmeter.png").convert("RGBA")
-    for m in CFG["modelos"]:
-        url = f"{base_url}/{CFG['caminho']}/{m['slug']}/"
+    itens = [(m["slug"], f"{base_url}/{CFG['caminho']}/{m['slug']}/", m["curto"].split(" ", 1), ("MANUAL DO", "PRODUTO"))
+             for m in CFG["modelos"]]
+    # página com a lista de todos os modelos
+    itens.append(("lista-manuais", f"{base_url}/{CFG['caminho']}/", ["Eletromagnéticos", "Todos os modelos"], ("MANUAIS", "TECHMETER")))
+    for slug, url, linhas, titulo in itens:
         qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_M, border=2, box_size=20)
         qr.add_data(url); qr.make(fit=True)
         img = qr.make_image(fill_color="#14204a", back_color="white").convert("RGB")
-        img.save(dest / f"{m['slug']}-qr.png")
-        qrcode.make(url, image_factory=qrcode.image.svg.SvgPathImage, border=2).save(str(dest / f"{m['slug']}-qr.svg"))
+        img.save(dest / f"{slug}-qr.png")
+        qrcode.make(url, image_factory=qrcode.image.svg.SvgPathImage, border=2).save(str(dest / f"{slug}-qr.svg"))
         # etiqueta 60 x 40 mm a 300 dpi
         W, H = 709, 472
         e = Image.new("RGB", (W, H), "white"); d = ImageDraw.Draw(e)
         d.rectangle([0, 0, W - 1, H - 1], outline="#14204a", width=4)
         q = img.resize((400, 400), Image.NEAREST); e.paste(q, (W - 420, 36))
         lg = logo.copy(); lg.thumbnail((250, 70)); e.paste(lg, (28, 34), lg)
-        d.text((28, 140), "MANUAL DO", font=fb(30), fill="#d01f1f")
-        d.text((28, 176), "PRODUTO", font=fb(30), fill="#d01f1f")
+        d.text((28, 140), titulo[0], font=fb(30), fill="#d01f1f")
+        d.text((28, 176), titulo[1], font=fb(30), fill="#d01f1f")
         y = 240
-        for linha in m["curto"].split(" ", 1):
-            d.text((28, y), linha, font=fb(28), fill="#14204a"); y += 36
+        for linha in linhas:
+            tam = 28
+            while tam > 16 and d.textlength(linha, font=fb(tam)) > W - 420 - 40: tam -= 1
+            d.text((28, y), linha, font=fb(tam), fill="#14204a"); y += 36
         d.text((28, 340), "Aponte a câmera", font=fl(22), fill="#333c4f")
         d.text((28, 368), "do celular", font=fl(22), fill="#333c4f")
         d.text((W // 2, H - 26), url.replace("https://", ""), font=fl(17), fill="#667085", anchor="mm")
-        e.save(dest / f"{m['slug']}-etiqueta.png", dpi=(300, 300))
+        e.save(dest / f"{slug}-etiqueta.png", dpi=(300, 300))
     print("QR codes em", dest)
 
 
