@@ -45,6 +45,11 @@ a { color: var(--azul); }
 .acoes a svg { flex: none; width: 22px; height: 22px; }
 .acoes a.zap { background: #1f9d55; border-color: #1f9d55; color: #fff; }
 
+/* modelo 3D embutido (só visualização) */
+.v3d { background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; margin: 0 0 14px; }
+.v3d iframe { display: block; width: 100%; height: min(70vh, 460px); border: 0; }
+.v3d p { margin: 0; padding: 8px 14px; font-size: 13.5px; color: var(--soft); border-top: 1px solid var(--line); }
+
 /* busca e índice */
 .busca { position: relative; margin: 6px 0 14px; }
 .busca input { width: 100%; padding: 13px 14px 13px 42px; font: 16px Lato; border: 1px solid var(--line); border-radius: 12px; background: var(--card); color: var(--txt); }

@@ -1,3 +1,5 @@
+<script>/* ?visualizar = só o 3D, cores padrão, para embutir no manual */
+if (/[?&]visualizar/.test(location.search)) { document.documentElement.classList.add('vis'); document.documentElement.setAttribute('data-theme', 'light'); }</script>
 <title>Configurador TM-EL 3D</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@500;700;800&display=swap">
@@ -117,6 +119,13 @@ button, input { font: inherit; color: inherit; }
   .vistas .dica { display: none; }
   .marca p { display: none; }
 }
+/* modo visualização (embutido no manual): sem painel de cores */
+html.vis body { display: block; }
+html.vis .stage { position: fixed; inset: 0; height: auto; min-height: 0; }
+html.vis .panel, html.vis .marca { display: none; }
+html.vis #cena { touch-action: pan-y; }
+html.vis .vistas { left: 12px; right: 12px; bottom: 10px; gap: 6px; }
+html.vis .vistas button { padding: 6px 11px; font-size: 12.5px; }
 </style>
 
 <main class="stage">
@@ -198,7 +207,8 @@ button, input { font: inherit; color: inherit; }
   var PECAS = ['head', 'cover', 'base'];
   var ROTULO = { head: 'Cabeçote', cover: 'Tampas', base: 'Base' };
   var estado = { head: '#16255e', cover: '#16255e', base: '#16255e' };
-  try {
+  var VIS = document.documentElement.classList.contains('vis');
+  if (!VIS) try {
     var salvo = JSON.parse(localStorage.getItem('tmel-cores') || 'null');
     if (salvo) PECAS.forEach(function (p) { if (/^#[0-9a-f]{6}$/i.test(salvo[p])) estado[p] = salvo[p].toLowerCase(); });
   } catch (e) {}
@@ -486,7 +496,7 @@ button, input { font: inherit; color: inherit; }
   function soltar(e) { delete pts[e.pointerId]; pinch = 0; if (!Object.keys(pts).length) canvas.classList.remove('arrastando'); }
   canvas.addEventListener('pointerup', soltar); canvas.addEventListener('pointercancel', soltar);
   function zoom(f) { orb.zoom = Math.min(1.9, Math.max(0.42, orb.zoom * f)); orb.rA = distanciaBase() * orb.zoom; sujo = true; }
-  canvas.addEventListener('wheel', function (e) { e.preventDefault(); zoom(e.deltaY > 0 ? 1.08 : 0.925); }, { passive: false });
+  canvas.addEventListener('wheel', function (e) { if (VIS && !e.ctrlKey) return; /* no manual a rolagem continua rolando a página */ e.preventDefault(); zoom(e.deltaY > 0 ? 1.08 : 0.925); }, { passive: false });
 
   var btnGiro = document.getElementById('giro');
   btnGiro.setAttribute('aria-pressed', String(girando));
@@ -525,7 +535,7 @@ button, input { font: inherit; color: inherit; }
       document.getElementById('nome-' + p).innerHTML = nomeDe(estado[p]) + '<small>' + estado[p].toUpperCase() + '</small>';
       document.querySelectorAll('[data-peca="' + p + '"] .amostras button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.cor === estado[p])); });
     });
-    try { localStorage.setItem('tmel-cores', JSON.stringify(estado)); } catch (e) {}
+    if (!VIS) try { localStorage.setItem('tmel-cores', JSON.stringify(estado)); } catch (e) {}
     document.getElementById('copiado').textContent = ''; sujo = true;
   }
   PECAS.forEach(function (p) {

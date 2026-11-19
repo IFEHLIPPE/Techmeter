@@ -331,7 +331,10 @@ def pagina(m, base_url):
     foto = (f'<img src="../img/{m["foto"]}" alt="{html.escape(m["nome"])}">' if m["foto"]
             else '<div class="placeholder">Foto em breve</div>')
     msg = f"Olá! Preciso de suporte com o medidor eletromagnético {m['curto']}."
-    a3d = f'<a href="../../../index.html">{I_3D}Ver em 3D</a>' if m["modelo_3d"] else ""
+    a3d = f'<a href="#ver-3d">{I_3D}Ver em 3D</a>' if m["modelo_3d"] else ""
+    v3d = ('<div class="v3d so-tela" id="ver-3d"><iframe src="../../../index.html?visualizar" loading="lazy" '
+           'title="Modelo 3D do medidor. Arraste para girar."></iframe>'
+           '<p>Modelo 3D ilustrativo. Arraste para girar.</p></div>') if m["modelo_3d"] else ""
     url = f"{base_url}/{CFG['caminho']}/{m['slug']}/"
     return f"""<!doctype html>
 <html lang="pt-BR"><head><meta charset="utf-8">
@@ -355,6 +358,7 @@ def pagina(m, base_url):
     <a href="manual-{m['slug']}.pdf" download>{I_PDF}Baixar PDF</a>
     {a3d}
   </nav>
+  {v3d}
   <div class="busca"><label for="busca" class="so-tela" style="position:absolute;left:-9999px">Buscar no manual</label>{I_BUSCA}<input id="busca" type="search" placeholder="Buscar no manual (ex.: aterramento, senha, 4-20 mA)" autocomplete="off"><p class="vazio" id="busca-vazio" hidden>Nada encontrado. Tente outra palavra ou fale com o suporte.</p></div>
   <nav class="indice" aria-label="Índice">{indice}</nav>
   {secoes}

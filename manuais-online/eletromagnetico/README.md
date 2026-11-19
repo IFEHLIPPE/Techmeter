@@ -17,6 +17,12 @@ botão de WhatsApp do suporte e PDF para baixar.
 2. Rode: `python3 manuais-online/eletromagnetico/build.py` (precisa de `qrcode[pil]` e Chromium).
 3. O resultado vai para `site/manual/eletromagnetico/` (publicado pelo Cloudflare Pages) e os QR codes para `qrcodes/`.
 
+## Modelo 3D
+
+Modelos com `"modelo_3d": true` mostram o 3D logo abaixo dos botões, só para girar e ver (cores padrão).
+É o mesmo configurador de `modelos-3d/medidor-eletromagnetico/`, aberto com `?visualizar`, que esconde o painel de cores.
+Se mudar o configurador, rode `python3 modelos-3d/gerar_site.py` antes deste build.
+
 ## QR codes
 
 - `qrcodes/<modelo>-etiqueta.png`: etiqueta 60 × 40 mm (300 dpi) pronta para imprimir.
