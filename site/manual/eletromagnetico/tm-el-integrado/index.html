@@ -49,15 +49,15 @@
 <ul>
   <li>Instale em trecho <b>ascendente</b> ou no <b>ponto mais baixo</b> da tubulação. Nunca no ponto mais alto, onde se acumula ar.</li>
   <li>Em descarga livre, instale o medidor antes de um trecho que mantenha o tubo cheio (ex.: sifão ou trecho que sobe).</li>
-  <li>Instale o medidor <b>antes da bomba</b> (sucção) e as válvulas de controle e de bloqueio <b>depois</b> do medidor.</li>
+  <li>Instale o medidor <b>depois da bomba</b> e as válvulas de controle e de bloqueio <b>depois</b> do medidor.</li>
   <li>Para líquidos com sólidos, a melhor posição é na <b>vertical, com o fluxo de baixo para cima</b>.</li>
 </ul>
 <figure class="fig"><img src="../img/instalacao-posicao.png" alt="Medidor no ponto mais baixo (esquerda) e em trecho levemente ascendente (direita)." loading="lazy"><figcaption>Medidor no ponto mais baixo (esquerda) e em trecho levemente ascendente (direita).</figcaption></figure>
-<figure class="fig"><img src="../img/instalacao-tubulacao.png" alt="Posições corretas e incorretas: válvulas depois do medidor, medidor antes da bomba e cuidado com pontos altos." loading="lazy"><figcaption>Posições corretas e incorretas: válvulas depois do medidor, medidor antes da bomba e cuidado com pontos altos.</figcaption></figure>
+<figure class="fig"><img src="../img/instalacao-tubulacao.png" alt="Posições corretas e incorretas: válvulas depois do medidor, medidor depois da bomba e cuidado com pontos altos." loading="lazy"><figcaption>Posições corretas e incorretas: válvulas depois do medidor, medidor depois da bomba e cuidado com pontos altos.</figcaption></figure>
 
 <h3>Trechos retos</h3>
 <p>Para a medição ser precisa, mantenha trechos retos de tubulação antes e depois do medidor. <b>D</b> é o diâmetro da tubulação.</p>
-<div class="tabela"><table><tr><th>Situação antes do medidor</th><th>Trecho reto antes</th><th>Trecho reto depois</th></tr><tr><td>Tubulação reta</td><td class=c>5 D</td><td class=c>3 D</td></tr><tr><td>Curva</td><td class=c>10 D</td><td class=c>5 D</td></tr><tr><td>Expansão</td><td class=c>10 D</td><td class=c>5 D</td></tr><tr><td>Válvula antes do medidor</td><td class=c>10 D</td><td class=c>5 D</td></tr><tr><td>Redução</td><td class=c>5 D</td><td class=c>2 D</td></tr><tr><td>Bomba ou manômetro antes do medidor</td><td class=c>15 D</td><td class=c>5 D</td></tr><tr><td>Mistura de líquidos</td><td class=c>30 D</td><td class=c>3 D</td></tr></table></div>
+<div class="tabela"><table><tr><th>Situação antes do medidor</th><th>Trecho reto antes</th><th>Trecho reto depois</th></tr><tr><td>Tubulação reta</td><td class=c>10 D</td><td class=c>3 D</td></tr><tr><td>Curva</td><td class=c>20 D</td><td class=c>5 D</td></tr><tr><td>Expansão</td><td class=c>25 D</td><td class=c>5 D</td></tr><tr><td>Válvula antes do medidor</td><td class=c>50 D</td><td class=c>5 D</td></tr><tr><td>Redução</td><td class=c>25 D</td><td class=c>5 D</td></tr><tr><td>Bomba ou manômetro antes do medidor</td><td class=c>50 D</td><td class=c>5 D</td></tr><tr><td>Mistura de líquidos, derivação em T</td><td class=c>50 D</td><td class=c>5 D</td></tr></table></div>
 <details class="so-tela"><summary>Ver figuras dos trechos retos</summary><div><figure class="fig"><img src="../img/trechos-retos.png" alt="Trechos retos mínimos para cada situação." loading="lazy"><figcaption>Trechos retos mínimos para cada situação.</figcaption></figure></div></details>
 
 <h3>Montagem</h3>
@@ -84,11 +84,11 @@
 
 <p>Os bornes ficam sob a <b>tampa traseira</b> do conversor. Os cabos entram pelos prensa-cabos laterais.</p>
 <figure class="fig"><img src="../img/bornes-redondo.png" alt="Régua de bornes do conversor redondo." loading="lazy" style="width:300px"><figcaption>Régua de bornes do conversor redondo.</figcaption></figure>
-<div class="tabela"><table><tr><th>Borne</th><th>Ligação</th></tr><tr><td class=cod>LN+ / LN−</td><td>Alimentação 220 Vca (ou 24 Vcc, conforme o modelo)</td></tr><tr><td class=cod>IOUT / COMM</td><td>Saída de corrente 4-20 mA (IOUT = sinal, COMM = comum)</td></tr><tr><td class=cod>IVIN</td><td>Alimentação 24 Vcc para a saída de corrente a 2 fios</td></tr><tr><td class=cod>POUT / COMM</td><td>Saída de pulso ou frequência (coletor aberto)</td></tr><tr><td class=cod>ALM1 / COMM</td><td>Alarme de limite superior</td></tr><tr><td class=cod>ALM2 / COMM</td><td>Alarme de limite inferior</td></tr><tr><td class=cod>TRX+ / TRX−</td><td>RS485 / Modbus (A e B)</td></tr></table></div>
+<div class="tabela"><table><tr><th>Borne</th><th>Ligação</th></tr><tr><td class=cod>LN+ / LN−</td><td>Alimentação 220 Vca (ou 24 Vcc, conforme o modelo)</td></tr><tr><td class=cod>IOUT / COMM</td><td>Saída de corrente 4-20 mA (IOUT = sinal, COMM = comum) - SAÍDA ATIVA</td></tr><tr><td class=cod>IVIN</td><td>Alimentação 24 Vcc para a saída de corrente a 2 fios (modelo remoto)</td></tr><tr><td class=cod>POUT / COMM</td><td>Saída de pulso ou frequência (coletor aberto) - SAÍDA ATIVA</td></tr><tr><td class=cod>ALM1 / COMM</td><td>Alarme de limite superior - SAÍDA ATIVA</td></tr><tr><td class=cod>ALM2 / COMM</td><td>Alarme de limite inferior - SAÍDA ATIVA</td></tr><tr><td class=cod>TRX+ / TRX−</td><td>RS485 / Modbus (A e B) - SAÍDA ATIVA</td></tr></table></div>
 <h3>Saídas</h3>
 <ul>
   <li><b>4-20 mA:</b> carga máxima de 750 Ω. Pode ser ligada a 2, 3 ou 4 fios, conforme o sistema que recebe o sinal.</li>
-  <li><b>Pulso / frequência:</b> saída a coletor aberto, até 35 V e 250 mA. Use fonte externa (5 a 24 V) e resistor de carga. Para acionar relé, coloque diodo em paralelo com a bobina. Pulso e frequência usam o mesmo borne: escolha um dos dois na configuração.</li>
+  <li><b>Pulso / frequência:</b> saída a coletor aberto, até 35 V e 250 mA, com resistor de carga. Para acionar relé, coloque diodo em paralelo com a bobina. Pulso e frequência usam o mesmo borne: escolha um dos dois na configuração.</li>
   <li><b>RS485:</b> cabo par trançado blindado. Use resistor de terminação de 120 Ω só em linhas longas.</li>
   <li><b>Terra do conversor:</b> ligue o borne PE ao terra com cabo de no mínimo 1,5 mm².</li>
 </ul></div></section><section class="cap" id="display"><h2><b>5</b>Display e teclas</h2><div class="corpo">

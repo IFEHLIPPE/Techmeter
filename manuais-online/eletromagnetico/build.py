@@ -73,9 +73,9 @@ def cap_recebimento():
 
 def cap_instalacao():
     t_retos = tabela(["Situação antes do medidor", "Trecho reto antes", "Trecho reto depois"], [
-        ["Tubulação reta", "5 D", "3 D"], ["Curva", "10 D", "5 D"], ["Expansão", "10 D", "5 D"],
-        ["Válvula antes do medidor", "10 D", "5 D"], ["Redução", "5 D", "2 D"],
-        ["Bomba ou manômetro antes do medidor", "15 D", "5 D"], ["Mistura de líquidos", "30 D", "3 D"]],
+        ["Tubulação reta", "10 D", "3 D"], ["Curva", "20 D", "5 D"], ["Expansão", "25 D", "5 D"],
+        ["Válvula antes do medidor", "50 D", "5 D"], ["Redução", "25 D", "5 D"],
+        ["Bomba ou manômetro antes do medidor", "50 D", "5 D"], ["Mistura de líquidos, derivação em T", "50 D", "5 D"]],
         [None, "c", "c"])
     return f"""
 <h3>Escolha do local</h3>
@@ -90,11 +90,11 @@ def cap_instalacao():
 <ul>
   <li>Instale em trecho <b>ascendente</b> ou no <b>ponto mais baixo</b> da tubulação. Nunca no ponto mais alto, onde se acumula ar.</li>
   <li>Em descarga livre, instale o medidor antes de um trecho que mantenha o tubo cheio (ex.: sifão ou trecho que sobe).</li>
-  <li>Instale o medidor <b>antes da bomba</b> (sucção) e as válvulas de controle e de bloqueio <b>depois</b> do medidor.</li>
+  <li>Instale o medidor <b>depois da bomba</b> e as válvulas de controle e de bloqueio <b>depois</b> do medidor.</li>
   <li>Para líquidos com sólidos, a melhor posição é na <b>vertical, com o fluxo de baixo para cima</b>.</li>
 </ul>
 {fig("instalacao-posicao.png", "Medidor no ponto mais baixo (esquerda) e em trecho levemente ascendente (direita).")}
-{fig("instalacao-tubulacao.png", "Posições corretas e incorretas: válvulas depois do medidor, medidor antes da bomba e cuidado com pontos altos.")}
+{fig("instalacao-tubulacao.png", "Posições corretas e incorretas: válvulas depois do medidor, medidor depois da bomba e cuidado com pontos altos.")}
 
 <h3>Trechos retos</h3>
 <p>Para a medição ser precisa, mantenha trechos retos de tubulação antes e depois do medidor. <b>D</b> é o diâmetro da tubulação.</p>
@@ -127,12 +127,12 @@ def cap_ligacoes(m):
     if m["conversor"] == "redondo":
         bornes = tabela(["Borne", "Ligação"], [
             ["LN+ / LN−", "Alimentação 220 Vca (ou 24 Vcc, conforme o modelo)"],
-            ["IOUT / COMM", "Saída de corrente 4-20 mA (IOUT = sinal, COMM = comum)"],
-            ["IVIN", "Alimentação 24 Vcc para a saída de corrente a 2 fios"],
-            ["POUT / COMM", "Saída de pulso ou frequência (coletor aberto)"],
-            ["ALM1 / COMM", "Alarme de limite superior"],
-            ["ALM2 / COMM", "Alarme de limite inferior"],
-            ["TRX+ / TRX−", "RS485 / Modbus (A e B)"]], ["cod", None])
+            ["IOUT / COMM", "Saída de corrente 4-20 mA (IOUT = sinal, COMM = comum) - SAÍDA ATIVA"],
+            ["IVIN", "Alimentação 24 Vcc para a saída de corrente a 2 fios (modelo remoto)"],
+            ["POUT / COMM", "Saída de pulso ou frequência (coletor aberto) - SAÍDA ATIVA"],
+            ["ALM1 / COMM", "Alarme de limite superior - SAÍDA ATIVA"],
+            ["ALM2 / COMM", "Alarme de limite inferior - SAÍDA ATIVA"],
+            ["TRX+ / TRX−", "RS485 / Modbus (A e B) - SAÍDA ATIVA"]], ["cod", None])
         bloco = f"""
 <p>Os bornes ficam sob a <b>tampa traseira</b> do conversor. Os cabos entram pelos prensa-cabos laterais.</p>
 {fig("bornes-redondo.png", "Régua de bornes do conversor redondo.", "300px")}
@@ -164,7 +164,7 @@ def cap_ligacoes(m):
 <h3>Saídas</h3>
 <ul>
   <li><b>4-20 mA:</b> carga máxima de 750 Ω. Pode ser ligada a 2, 3 ou 4 fios, conforme o sistema que recebe o sinal.</li>
-  <li><b>Pulso / frequência:</b> saída a coletor aberto, até 35 V e 250 mA. Use fonte externa (5 a 24 V) e resistor de carga. Para acionar relé, coloque diodo em paralelo com a bobina. Pulso e frequência usam o mesmo borne: escolha um dos dois na configuração.</li>
+  <li><b>Pulso / frequência:</b> saída a coletor aberto, até 35 V e 250 mA, com resistor de carga. Para acionar relé, coloque diodo em paralelo com a bobina. Pulso e frequência usam o mesmo borne: escolha um dos dois na configuração.</li>
   <li><b>RS485:</b> cabo par trançado blindado. Use resistor de terminação de 120 Ω só em linhas longas.</li>
   <li><b>Terra do conversor:</b> ligue o borne PE ao terra com cabo de no mínimo 1,5 mm².</li>
 </ul>"""
