@@ -12,7 +12,8 @@ Saída:
 Fonte técnica: "Manual Eletromagnético KF – 2022" (Techmeter). Conteúdo resumido para o cliente:
 instalação, ligações, configuração básica e solução de problemas.
 """
-import html, json, shutil, subprocess, sys
+import html
+import re, json, shutil, subprocess, sys
 from pathlib import Path
 
 AQUI = Path(__file__).resolve().parent
@@ -29,6 +30,28 @@ CONTATO = {"zap": "(11) 97643-5939", "tel": "(11) 5071-1630", "tel_link": "+5511
 I_ZAP = '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.6-.1 1.1z"/></svg>'
 I_TEL = '<svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>'
 I_PDF = '<svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9zM14 3v6h6M12 12v6m-3-3 3 3 3-3"/></svg>'
+# teclas como estão no produto (conversor redondo): mesmo desenho de desenhos/gerar_desenhos.py
+def _svg_tecla(miolo, nome):
+    return (f'<span class="tecla ic" role="img" aria-label="{nome}"><svg viewBox="0 0 64 64" aria-hidden="true">'
+            f'<rect x="3" y="3" width="58" height="58" rx="9" fill="#fff" stroke="currentColor" stroke-width="5"/>{miolo}</svg></span>')
+_LISTRAS = '<g fill="#fff"><rect x="10" y="20" width="44" height="3"/><rect x="10" y="30" width="44" height="3"/><rect x="10" y="40" width="44" height="3"/></g>'
+TECLAS_REAIS = {
+    "F": _svg_tecla('<path fill="currentColor" d="M32 9 52 29H12zM12 35h40L32 55z"/>', "Função"),
+    "▼": _svg_tecla('<path fill="currentColor" d="M12 12h40v40z"/>' + _LISTRAS, "Para baixo"),
+    "▲": _svg_tecla('<path fill="currentColor" d="M52 12v40H12z"/>' + _LISTRAS, "Para cima"),
+    "↵": _svg_tecla('<path fill="currentColor" d="M48 14v26H28v10L12 36l16-14v10h12V14z"/>', "Enter"),
+}
+
+
+def teclas_reais(texto):
+    """Troca F, ▲, ▼ e ↵ pelos desenhos das teclas reais (só no conversor redondo)."""
+    for k, v in TECLAS_REAIS.items():
+        texto = texto.replace(f'<span class="tecla">{k}</span>', v)
+    return texto.replace("com ▲/▼", "com " + TECLAS_REAIS["▲"] + "/" + TECLAS_REAIS["▼"]) \
+                .replace("Com ▲/▼", "Com " + TECLAS_REAIS["▲"] + "/" + TECLAS_REAIS["▼"]) \
+                .replace("Com ↵", "Com " + TECLAS_REAIS["↵"])
+
+
 I_3D = '<svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="m12 2 9 5v10l-9 5-9-5V7zM12 22V12m9-5-9 5-9-5"/></svg>'
 I_MAIL = '<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m3 7 9 6 9-6" fill="none" stroke="currentColor" stroke-width="2"/></svg>'
 I_BUSCA = '<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20-4-4" stroke="currentColor" stroke-width="2"/></svg>'
@@ -42,7 +65,9 @@ def tabela(cab, linhas, classes=None):
 
 def fig(img, legenda, largura=None):
     w = f' style="width:{largura}"' if largura else ""
-    return f'<figure class="fig"><img src="../img/{img}" alt="{html.escape(legenda)}" loading="lazy"{w}><figcaption>{legenda}</figcaption></figure>'
+    alt = html.escape(re.sub("<[^>]+>", "", legenda))
+    return (f'<figure class="fig"><a href="../img/{img}" target="_blank" title="Abrir a figura ampliada">'
+            f'<img src="../img/{img}" alt="{alt}" loading="lazy"{w}></a><figcaption>{legenda}</figcaption></figure>')
 
 
 # ---------------------------------------------------------------- capítulos
@@ -73,9 +98,9 @@ def cap_recebimento():
 
 def cap_instalacao():
     t_retos = tabela(["Situação antes do medidor", "Trecho reto antes", "Trecho reto depois"], [
-        ["Tubulação reta", "10 D", "3 D"], ["Curva", "20 D", "5 D"], ["Expansão", "25 D", "5 D"],
-        ["Válvula antes do medidor", "50 D", "5 D"], ["Redução", "25 D", "5 D"],
-        ["Bomba ou manômetro antes do medidor", "50 D", "5 D"], ["Mistura de líquidos, derivação em T", "50 D", "5 D"]],
+        ["Tubulação reta", "10 DN", "3 DN"], ["Curva", "20 DN", "5 DN"], ["Expansão", "25 DN", "5 DN"],
+        ["Válvula antes do medidor", "50 DN", "5 DN"], ["Redução", "25 DN", "5 DN"],
+        ["Bomba ou manômetro antes do medidor", "50 DN", "5 DN"], ["Mistura de líquidos, derivação em T", "50 DN", "5 DN"]],
         [None, "c", "c"])
     return f"""
 <h3>Escolha do local</h3>
@@ -93,13 +118,23 @@ def cap_instalacao():
   <li>Instale o medidor <b>depois da bomba</b> e as válvulas de controle e de bloqueio <b>depois</b> do medidor.</li>
   <li>Para líquidos com sólidos, a melhor posição é na <b>vertical, com o fluxo de baixo para cima</b>.</li>
 </ul>
-{fig("instalacao-posicao.png", "Medidor no ponto mais baixo (esquerda) e em trecho levemente ascendente (direita).")}
-{fig("instalacao-tubulacao.png", "Posições corretas e incorretas: válvulas depois do medidor, medidor depois da bomba e cuidado com pontos altos.")}
+<div class="figs">
+{fig("instalacao-ponto-baixo.png", "No ponto mais baixo da tubulação.")}
+{fig("instalacao-ascendente.png", "Em trecho levemente ascendente.")}
+</div>
 
 <h3>Trechos retos</h3>
-<p>Para a medição ser precisa, mantenha trechos retos de tubulação antes e depois do medidor. <b>D</b> é o diâmetro da tubulação.</p>
+<p>Para a medição ser precisa, mantenha trechos retos de tubulação antes (L1) e depois (L2) do medidor. <b>DN</b> é o diâmetro nominal: num DN50, por exemplo, 10 DN = 500 mm.</p>
 {t_retos}
-<details class="so-tela"><summary>Ver figuras dos trechos retos</summary><div>{fig("trechos-retos.png", "Trechos retos mínimos para cada situação.")}</div></details>
+<div class="figs">
+{fig("reto-tubulacao-reta.png", "Tubulação reta")}
+{fig("reto-curva.png", "Curva")}
+{fig("reto-expansao.png", "Expansão (tubulação menor antes do medidor)")}
+{fig("reto-reducao.png", "Redução (tubulação maior antes do medidor)")}
+{fig("reto-valvula.png", "Válvula antes do medidor")}
+{fig("reto-bomba.png", "Bomba antes do medidor")}
+{fig("reto-derivacao-t.png", "Derivação em T")}
+</div>
 
 <h3>Montagem</h3>
 <ul>
@@ -118,7 +153,7 @@ def cap_instalacao():
   <li><b>Tubulação metálica sem revestimento:</b> ligue os flanges do medidor aos flanges da tubulação com cabo de cobre de 6 mm² e ao terra.</li>
   <li><b>Tubulação plástica (PVC, PEAD) ou com revestimento interno:</b> instale <b>anéis de aterramento</b> nos dois lados do medidor, ligados ao terra. Se o medidor já tiver eletrodo de aterramento, os anéis não são necessários.</li>
 </ul>
-{fig("aterramento-metalico.png", "Aterramento em tubulação metálica sem revestimento.", "420px")}
+{fig("aterramento-metalico.png", "Aterramento em tubulação metálica sem revestimento.")}
 {fig("aterramento-plastico.png", "Aterramento em tubulação plástica ou revestida, com anéis de aterramento.")}
 <div class="nota">Em tubulações com <b>proteção catódica</b>, os anéis de aterramento devem ser isolados dos flanges da tubulação. Fale com o suporte Techmeter antes de instalar.</div>"""
 
@@ -171,15 +206,15 @@ def cap_ligacoes(m):
 
 
 def cap_display(m):
-    figura = fig("display-redondo.png", "Display e teclas do conversor redondo.") if m["conversor"] == "redondo" else fig("display-quadrado.png", "Display e teclas do conversor quadrado.")
+    figura = fig("display-redondo.png", "Display e teclas do conversor redondo, na ordem em que aparecem no produto.") if m["conversor"] == "redondo" else fig("display-quadrado.png", "Display e teclas do conversor quadrado.")
     return f"""
 {figura}
 <p>A tela mostra a vazão instantânea na linha de cima e, na linha de baixo, o item escolhido: totalizador direto, inverso ou diferença, velocidade, porcentagem da faixa, data e hora.</p>
 {tabela(["Tecla", "Na tela de medição", "No menu de configuração"], [
-    ['<span class="tecla">▲</span> Para cima', "Troca o item da linha de cima", "Aumenta o dígito / página acima"],
+    ['<span class="tecla">F</span> Função', "Com ↵: abre o menu · com ▲/▼: ajusta o contraste", "Com ▲/▼: move o cursor para a direita / esquerda"],
     ['<span class="tecla">▼</span> Para baixo', "Troca o item da linha de baixo", "Diminui o dígito / página abaixo"],
-    ['<span class="tecla">↵</span> Enter', "—", "Entra e sai dos itens. Segurar 2 s volta para a medição"],
-    ['<span class="tecla">F</span> Função', "Com ↵: abre o menu · com ▲/▼: ajusta o contraste", "Com ▲/▼: move o cursor para a direita / esquerda"]])}
+    ['<span class="tecla">▲</span> Para cima', "Troca o item da linha de cima", "Aumenta o dígito / página acima"],
+    ['<span class="tecla">↵</span> Enter', "—", "Entra e sai dos itens. Segurar 2 s volta para a medição"]])}
 <p>Para usar a tecla <b>Função</b>, mantenha-a pressionada e então aperte a outra tecla. No menu, se nenhuma tecla for usada por alguns segundos, o conversor volta sozinho para a tela de medição.</p>"""
 
 
@@ -280,6 +315,11 @@ def cap_especificacoes(m):
         ["Grau de proteção", "IP65 · IP68 no sensor remoto com revestimento de borracha ou poliuretano"]])
     dim = ""
     if m["dimensoes"] == "flangeado":
+        if m["conversor"] == "redondo":
+            fig_dim = fig("dim-flangeado.png", 'L = comprimento entre flanges · D = diâmetro do flange · H = altura total. '
+                          '<span class="validar">VALIDAR: os valores de H vieram do sensor remoto; confirmar a altura total do integrado.</span>', "380px")
+        else:
+            fig_dim = fig("dim-flangeado-remoto.png", "L = comprimento entre flanges · D = diâmetro do flange · H = altura do sensor.", "520px")
         linhas = [["15", "200", "95", "220", "8"], ["20", "200", "105", "220", "10"], ["25", "200", "115", "223", "12"],
                   ["32", "200", "140", "240", "13"], ["40", "200", "150", "250", "14"], ["50", "200", "165", "263", "15"],
                   ["65", "200", "185", "283", "18"], ["80", "200", "200", "290", "20"], ["100", "250", "235", "318", "25"],
@@ -287,7 +327,7 @@ def cap_especificacoes(m):
                   ["250", "450", "405", "495", "70"], ["300", "500", "460", "547", "95"], ["350", "550", "520", "602", "120"],
                   ["400", "600", "580", "665", "140"], ["500", "600", "715", "783", "200"], ["600", "600", "840", "897", "280"]]
         dim = f"""<details open><summary>Dimensões (mm) e peso</summary><div>
-{fig("dim-flangeado.png", "L = comprimento entre flanges · D = diâmetro do flange · H = altura total.", "520px")}
+{fig_dim}
 {tabela(["DN", "L", "D", "H", "Peso (kg)"], linhas, ["cod", "c", "c", "c", "c"])}
 <p>Flanges conforme GB/T 9119 (PN40 até DN150, PN16 de DN200 a DN600). Outras normas e diâmetros sob consulta.</p></div></details>"""
     elif m["dimensoes"] == "triclamp":
@@ -328,6 +368,8 @@ def pagina(m, base_url):
     ]
     indice = "".join(f'<a href="#{i}"><b>{n}</b>{t}</a>' for n, (i, t, _) in enumerate(caps, 1))
     secoes = "".join(f'<section class="cap" id="{i}"><h2><b>{n}</b>{t}</h2><div class="corpo">{c}</div></section>' for n, (i, t, c) in enumerate(caps, 1))
+    if m["conversor"] == "redondo":
+        secoes = teclas_reais(secoes)
     foto = (f'<img src="../img/{m["foto"]}" alt="{html.escape(m["nome"])}">' if m["foto"]
             else '<div class="placeholder">Foto em breve</div>')
     msg = f"Olá! Preciso de suporte com o medidor eletromagnético {m['curto']}."

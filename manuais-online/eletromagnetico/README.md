@@ -32,8 +32,21 @@ Se mudar o configurador, rode `python3 modelos-3d/gerar_site.py` antes deste bui
   (`https://tm-el-3d.pages.dev`). Se for usar um domínio próprio (ex.: `manual.techmeter.com.br`),
   troque `url_base` e gere de novo **antes** de imprimir.
 
+## Desenhos
+
+As figuras de instalação, trechos retos, aterramento, display e dimensões seguem o traço dos desenhos Techmeter
+em `desenhos/fonte/` (enviados pelo Felippe). O que não veio pronto é montado com as peças desses desenhos por
+`desenhos/gerar_desenhos.py`, que grava em `img/`:
+
+```bash
+python manuais-online/eletromagnetico/desenhos/gerar_desenhos.py   # depois rode o build.py
+```
+
+As teclas do display são desenhadas como no produto (Função, para baixo, para cima, Enter). No texto do manual
+do conversor redondo os símbolos F, ▼, ▲ e ↵ viram esses mesmos desenhos.
+
 ## Fontes
 
-Conteúdo resumido do "Manual Eletromagnético KF – 2022" (Techmeter). Figuras de instalação, aterramento,
-display e bornes extraídas desse manual. Fotos do TM-EL integrado: unidade fotografada na Techmeter.
+Conteúdo resumido do "Manual Eletromagnético KF – 2022" (Techmeter). Bornes, display quadrado e dimensões do
+conversor remoto e do tri-clamp ainda são figuras extraídas desse manual. Fotos do TM-EL integrado: unidade fotografada na Techmeter.
 As senhas do conversor não são publicadas na página (o cliente pede ao suporte).

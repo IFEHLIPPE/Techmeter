@@ -26,6 +26,7 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 - `manuais-online/eletromagnetico/`: manual online do medidor eletromagnético (4 modelos), com busca, WhatsApp do suporte, PDF e QR codes/etiquetas por modelo e para a lista de manuais.
 
 ### Alterado
+- Manual online do eletromagnético com figuras novas no traço dos desenhos Techmeter: 7 trechos retos (um para cada linha da tabela, que passou a usar DN), posição na tubulação, aterramento, display com as teclas reais do produto e dimensões do flangeado. Figura antiga de "posições corretas e incorretas" retirada. Figuras abrem ampliadas ao tocar.
 - Manual online do eletromagnético, com as correções do Felippe: medidor depois da bomba, nova tabela de trechos retos (10 D a 50 D antes), saídas do conversor redondo marcadas como ativas, IVIN só no modelo remoto e fonte externa retirada da saída de pulso.
 - Manual online do TM-EL Integrado: modelo 3D embutido na página, só para girar e ver (sem troca de cor). O configurador ganhou o modo `?visualizar` para isso; o configurador completo continua em `site/index.html`.
 - `EM-01` a `EM-20` em `baseline/prompts.csv` substituídos pelos 20 prompts oficiais do Ciclo 1. Intenções alinhadas ao documento (informacional, seleção, comparação, aplicação, comercial, troubleshooting).
