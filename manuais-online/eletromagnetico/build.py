@@ -94,7 +94,7 @@ def cap_conheca(m):
     return f"""
 <p>O medidor eletromagnético mede a <b>vazão de líquidos condutivos</b> (água, efluentes, polpas, químicos) com base na lei de Faraday. Ele <b>não tem partes móveis</b> e não restringe a passagem do fluido, por isso quase não causa perda de carga e exige pouca manutenção.</p>
 <h3>Versões</h3>
-<p>O medidor eletromagnético Techmeter é fabricado em <b>três versões</b>, todas com o mesmo conversor com display. O que muda é o material do corpo, o revestimento interno e a conexão com a tubulação:</p>
+<p>O medidor eletromagnético Techmeter é fabricado em <b>diversas versões</b>, que variam no material do corpo, no revestimento interno e na conexão com a tubulação. Algumas das mais usadas:</p>
 <div class="versoes">{cards}</div>
 {remoto}{gal}
 <ul>
