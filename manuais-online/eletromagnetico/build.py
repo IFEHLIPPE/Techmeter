@@ -71,15 +71,32 @@ def fig(img, legenda, largura=None):
 
 
 # ---------------------------------------------------------------- capítulos
+VERSOES = [
+    ("tm-el-flangeado-carbono.jpg", "Flangeado em aço carbono",
+     "Corpo e flanges em aço carbono pintado, revestimento interno de borracha. Indicado para água, saneamento e efluentes."),
+    ("tm-el-flangeado-inox-ptfe.jpg", "Flangeado em aço inox",
+     "Corpo e flanges em aço inox, revestimento interno de PTFE. Indicado para produtos químicos e líquidos agressivos."),
+    ("tm-el-sanitario-triclamp-inox.jpg", "Sanitário tri-clamp",
+     "Corpo em aço inox com conexões tri-clamp e revestimento de PFA. Indicado para alimentos, bebidas e indústria farmacêutica."),
+]
+
+
 def cap_conheca(m):
-    tipo = "integrado (conversor montado sobre o sensor)" if m["conversor"] == "redondo" else "remoto (conversor separado do sensor, ligado por cabo)"
+    cards = "".join(
+        f'<figure class="versao"><a href="../img/{img}" target="_blank" title="Abrir a foto ampliada">'
+        f'<img src="../img/{img}" alt="Medidor eletromagnético Techmeter, versão {html.escape(t)}" loading="lazy"></a>'
+        f'<figcaption><b>{t}</b>{d}</figcaption></figure>' for img, t, d in VERSOES)
+    remoto = ("<p>Neste modelo o conversor é <b>remoto</b>: fica separado do sensor e é ligado a ele por cabo.</p>"
+              if m["conversor"] == "quadrado" else "")
     gal = ""
     if m["galeria"]:
         gal = '<div class="galeria">' + "".join(f'<img src="../img/{g}" alt="Foto do equipamento" loading="lazy">' for g in m["galeria"]) + "</div>"
     return f"""
 <p>O medidor eletromagnético mede a <b>vazão de líquidos condutivos</b> (água, efluentes, polpas, químicos) com base na lei de Faraday. Ele <b>não tem partes móveis</b> e não restringe a passagem do fluido, por isso quase não causa perda de carga e exige pouca manutenção.</p>
-<p>Este modelo é do tipo <b>{tipo}</b>.</p>
-{gal}
+<h3>Versões</h3>
+<p>O medidor eletromagnético Techmeter é fabricado em <b>três versões</b>, todas com o mesmo conversor com display. O que muda é o material do corpo, o revestimento interno e a conexão com a tubulação:</p>
+<div class="versoes">{cards}</div>
+{remoto}{gal}
 <ul>
   <li><b>Condutividade mínima do líquido:</b> 5 µS/cm. Abaixo disso o medidor não funciona (ex.: água destilada, óleos, gases).</li>
   <li><b>Mede nos dois sentidos</b> e totaliza vazão direta, inversa e a diferença.</li>
