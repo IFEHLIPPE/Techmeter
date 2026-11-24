@@ -23,9 +23,11 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 - `documentos/manuais/radar-80g/`: manual do radar 80G refeito em português no modelo Techmeter, com o protocolo RS485 Modbus incorporado.
 - `documentos/manuais/radar-tmrc/`: manual do radar TMRC com a seção 7.5 Comunicação RS485 Modbus inserida no padrão visual do próprio manual.
 - `campanhas/2026-11-linha-medicao/`: post do feed e stories da campanha da linha de medição (eletromagnético, ultrassônico, Woltmann WPH/WPI e hidrômetros).
+- `midia/fotos-produtos/2026-11-24-tm-el-estudio/`: 4 fotos do TM-EL integrado (frente, traseira, flange e plaqueta) sem fundo e com fundo de estúdio, cor e nitidez tratadas.
 - `manuais-online/eletromagnetico/`: manual online do medidor eletromagnético (4 modelos), com busca, WhatsApp do suporte, PDF e QR codes/etiquetas por modelo e para a lista de manuais.
 
 ### Alterado
+- Manual online do TM-EL Integrado: foto da capa e galeria trocadas pelas versões sem fundo, com fundo de estúdio (traseira, flange e plaqueta). Saíram as fotos com caixas e pessoas ao fundo.
 - Manual online do eletromagnético com figuras novas no traço dos desenhos Techmeter: 7 trechos retos (um para cada linha da tabela, que passou a usar DN), posição na tubulação, aterramento, display com as teclas reais do produto e dimensões do flangeado. Figura antiga de "posições corretas e incorretas" retirada. Figuras abrem ampliadas ao tocar.
 - Manual online do eletromagnético, com as correções do Felippe: medidor depois da bomba, nova tabela de trechos retos (10 D a 50 D antes), saídas do conversor redondo marcadas como ativas, IVIN só no modelo remoto e fonte externa retirada da saída de pulso.
 - Manual online do TM-EL Integrado: modelo 3D embutido na página, só para girar e ver (sem troca de cor). O configurador ganhou o modo `?visualizar` para isso; o configurador completo continua em `site/index.html`.
