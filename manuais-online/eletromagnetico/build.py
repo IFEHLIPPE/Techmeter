@@ -73,11 +73,11 @@ def fig(img, legenda, largura=None):
 # ---------------------------------------------------------------- capítulos
 VERSOES = [
     ("tm-el-flangeado-carbono.jpg", "Flangeado em aço carbono",
-     "Corpo e flanges em aço carbono pintado, revestimento interno de borracha. Indicado para água, saneamento e efluentes."),
+     "Corpo e flanges em aço carbono pintado, com variados revestimentos internos. Indicado para água, saneamento e efluentes."),
     ("tm-el-flangeado-inox-ptfe.jpg", "Flangeado em aço inox",
      "Corpo e flanges em aço inox, revestimento interno de PTFE. Indicado para produtos químicos e líquidos agressivos."),
     ("tm-el-sanitario-triclamp-inox.jpg", "Sanitário tri-clamp",
-     "Corpo em aço inox com conexões tri-clamp e revestimento de PFA. Indicado para alimentos, bebidas e indústria farmacêutica."),
+     "Corpo em aço inox com conexões tri-clamp ou SMS e revestimento de PFA. Indicado para alimentos, bebidas e indústria farmacêutica."),
 ]
 
 
@@ -107,7 +107,7 @@ def cap_conheca(m):
 def cap_recebimento():
     return """
 <ul>
-  <li>Transporte e guarde o medidor <b>na embalagem original</b> até o local da instalação. Não levante o equipamento pelo conversor nem pelos cabos.</li>
+  <li>Transporte e mantenha o medidor <b>na embalagem original</b> até o local da instalação. Não levante o equipamento pelo conversor nem pelos cabos.</li>
   <li>Armazene em local coberto, seco e sem vibração: temperatura de <b>-20 a 60 °C</b> e umidade até 80%.</li>
   <li>Confira na plaqueta: modelo, diâmetro (DN), número de série e <b>fator de calibração</b>. Guarde o certificado de calibração.</li>
 </ul>"""
@@ -237,7 +237,7 @@ def cap_display(m):
 
 def cap_configuracao():
     return f"""
-<div class="nota">O medidor sai da Techmeter <b>calibrado e configurado</b> com os dados do pedido (diâmetro, faixa, unidade e saídas). Altere a configuração só se precisar.</div>
+<div class="nota">O medidor sai da Techmeter <b>calibrado e configurado</b> com os dados do pedido (diâmetro, faixa, unidade e saídas). Altere a configuração só se necessário.</div>
 
 <h3>Antes de configurar</h3>
 <ul>
