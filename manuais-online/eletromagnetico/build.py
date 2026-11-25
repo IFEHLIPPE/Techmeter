@@ -107,7 +107,7 @@ def cap_conheca(m):
 def cap_recebimento():
     return """
 <ul>
-  <li>Transporte e mantenha o medidor <b>na embalagem original</b> até o local da instalação. Não levante o equipamento pelo conversor nem pelos cabos.</li>
+  <li>Transporte e mantenha o medidor <b>na embalagem original</b> até o local da instalação. Não carregue o equipamento pelo conversor nem pelos cabos.</li>
   <li>Armazene em local coberto, seco e sem vibração: temperatura de <b>-20 a 60 °C</b> e umidade até 80%.</li>
   <li>Confira na plaqueta: modelo, diâmetro (DN), número de série e <b>fator de calibração</b>. Guarde o certificado de calibração.</li>
 </ul>"""
